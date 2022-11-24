@@ -1,5 +1,5 @@
 title = 'Bison.docs'
-baseURL = 'https://example.com/'
+baseURL = 'https://docs-bison.netlify.app/'
 
 languageCode = 'es'
 defaultContentLanguage = 'es'
