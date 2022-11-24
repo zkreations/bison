@@ -1,0 +1,184 @@
+
+// Resaltado de codigo para chroma de zkreations.com
+
+.chroma {
+  .nt, .nn {
+    color: #ffd8a8;
+  }
+  .na, .nc {
+    color: #ffa94d;
+  }
+  .p, .o {
+    color: #888;
+  }
+  .c, .cm, .c1, .cp {
+    color: #5c6370;
+    font-style: italic;
+  }
+  .kd, .kr, .nd {
+    color: #dab1eb;
+  }
+  .kd +.nx, .nv, .n {
+    color: #ffb1b1;
+  }
+  .kr +.nx {
+    color: #a3ffed;
+  }
+  .s2 {
+    color: #c7e19e;
+  }
+  .mi, .kt, .mh {
+    color: #a3f2ff;
+  }
+  .nb, .nf {
+    color: #b1c9ff;
+  }
+}
+
+// Estilo de tablas de zkreations.com
+
+table tbody > tr:nth-of-type(odd) {
+  color: var(--color-text);
+  background-color: var(--bg-inset);
+}
+
+
+// Tipo de datos
+
+@mixin setTintVars($color, $prefix){
+  --#{$prefix}: #{$color};
+  --#{$prefix}-bg: #{tint-color($color, 80%)};
+}
+
+$data-types:(
+  "string": #4a148c,
+  "number": #b71c1c,
+  "boolean": #00897b,
+  "url": #0d47a1,
+  "image": #f57f17,
+  "date": #1a237e,
+  "locale": #0097a7,
+  "message": #ff5722,
+  "object": #1b5e20,
+  "array": #827717,
+  "none": #607d8b,
+);
+
+
+.brackets {
+  font-family: var(--font-monospace);
+  &::before, &::after {
+    color: var(--color-border);
+  }
+  &::before {
+    content: "{";
+  }
+  &::after {
+    content: "}";
+  }
+}
+
+
+.type {
+  padding: 0.25em 0.5em;
+  white-space: nowrap;
+  background-color: var(--type-bg, var(--type-inset));
+  color: var(--type, inherit);
+  border-radius: 0.25rem;
+  font-family: var(--font-monospace);
+
+  @each $type, $value in $data-types {
+    &-#{$type} {
+      @include setTintVars($value,"type");
+    }
+  }
+}
+
+.markdown {
+  img {
+    border-radius: 8px;
+  }
+}
+
+.og {
+  max-width: var(--og-width, 500px);
+
+  &-image {
+    background-color: #d7d9e6;
+    padding-bottom: calc(var(--og-ratio-y,9)/ var(--og-ratio-x,16) * 100%);
+    position: relative;
+    svg {
+      fill: #626475;
+      position: absolute;
+      width: 25%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+    }
+  }
+
+  &-meta {
+    background-color: var(--og-meta-bg,#F0F2F5);
+    padding: 1rem 1.25rem;
+    font-size: .875rem;
+  }
+
+  &-url {
+    text-transform: var(--og-url-transform, uppercase);
+  }
+
+  &-title {
+    font-weight: var(--og-title-weight, 700);
+    color: var(--og-title-color, var(--color-title));
+    font-size: var(--og-title-size, 1.125rem);
+  }
+
+  &-fb {
+    --og-ratio-x: 1200;
+    --og-ratio-y: 630;
+  }
+
+  &-twitter {
+    --og-meta-bg: transparent;
+    --og-title-size: 1rem;
+    --og-title-weight: 500;
+    --og-url-transform: none;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+  }
+
+  &-discord {
+    --og-meta-bg: transparent;
+    --og-title-size: 1rem;
+    --og-title-color: #00b0f4;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #2f3136;
+    border-left: 4px solid #202225;
+    color: #dcddde;
+
+    .og-image {
+      margin-top: 1rem;
+    }
+  }
+}
+
+.badge {
+  &-pro {
+    margin-left: 0.5rem;
+    padding: 5px;
+    font-size: 10px;
+    text-transform: uppercase;
+    line-height: 1;
+    background-color: var(--primary);
+    color: #fff;
+    border-radius: 5px;
+  }
+
+  &-big {
+    font-size: 12px;
+    vertical-align: middle;
+    padding: 6px 8px;
+  }
+}

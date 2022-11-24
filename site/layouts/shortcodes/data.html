@@ -1,0 +1,4 @@
+{{- $type := .Get 0 | default "none" -}}
+{{- $class := replaceRE `(\[.*\])` "" $type -}}
+
+<a class="type{{ with $class }} type-{{ . }}{{ end }}" href="#url">{{ $type }}</a>

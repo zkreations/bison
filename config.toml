@@ -1,0 +1,64 @@
+title = 'Bison.docs'
+baseURL = 'https://example.com/'
+
+languageCode = 'es'
+defaultContentLanguage = 'es'
+
+copyright = "Created by zkreations"
+canonifyURLs = true
+enableRobotsTXT = true
+enableGitInfo = false
+
+enableInlineShortcodes = true
+disableKinds = ["taxonomy","taxonomyTerm","term","RSS"]
+
+[languages]
+  [languages.es]
+    languageName = "Español"
+    weight = 1
+
+  [languages.en]
+    languageName = "English"
+    weight = 2
+
+# Shortcodes HTML
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+
+  [markup.highlight]
+    noClasses = false
+
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+
+[module]
+  [[module.mounts]]
+    source = 'site/content'
+    target = 'content'
+  [[module.mounts]]
+    source = 'site/static'
+    target = 'static'
+  [[module.mounts]]
+    source = 'site/layouts'
+    target = 'layouts'
+  [[module.mounts]]
+    source = 'site/assets'
+    target = 'assets'
+  [[module.mounts]]
+    source = 'site/data'
+    target = 'data'
+  [[module.mounts]]
+    source = 'site/i18n'
+    target = 'i18n'
+
+
+[params]
+  main_template = "bison.xml"
+  main_template_url = "https://zkreations.gumroad.com/l/bison"
+
+  main_icon = "gitlab"
+  github_repo_edit = "https://github.com/zkreations/bison/blob/master/content"
+
+  date_format = "January 2, 2006"

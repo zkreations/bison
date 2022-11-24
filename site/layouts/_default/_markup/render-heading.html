@@ -1,0 +1,9 @@
+{{- $proUrl := "https://zkreations.gumroad.com/l/bison" -}}
+
+<h{{ .Level }} id="{{ .Anchor | safeURL }}">
+  {{ .Text | safeHTML }}
+  {{- if in .Page.Params.pro_heading .Text -}}
+    <a href="{{ $proUrl }}" class="badge-pro badge-big" target="_blank" rel="noreferrer noopener">pro</a>
+  {{ end }}
+  <a class="anchor" aria-label="Anchor" href="#{{ .Anchor | safeURL }}">#</a>
+</h{{ .Level }}>

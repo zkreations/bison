@@ -1,0 +1,7 @@
+
+{{- $data := .Get 0 -}}
+
+{{- $data = replace $data "{" (printf `<i class="%s">` "brackets") -}}
+{{- $data = replace $data "}" "</i>" -}}
+
+<pre>{{ $data | markdownify }}</pre>

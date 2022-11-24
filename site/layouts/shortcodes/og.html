@@ -1,0 +1,24 @@
+{{- $title := .Get "title" | default "Titulo de ejemplo" -}}
+{{- $description := .Get "description" | default "Descripcion de ejemplo para compartir en redes" -}}
+{{- $url := .Get "href" | default "example.com" -}}
+{{- $type := .Get "type" | default "fb" -}}
+
+<div class="og og-{{ $type }}">
+  {{ if not (eq $type "discord") }}
+    <div class="og-image">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 11"><path d="M5 2a1 1 0 0 0 2 0 1 1 0 0 0-2 0ZM3.5 4.5a1 1 0 0 1 1.7 0L6 6l2.4-4A1 1 0 0 1 10 2l3.9 6.5A1 1 0 0 1 13 10H2a1 1 0 0 1-.9-1.5Z"/></svg>
+    </div>
+  {{ end }}
+  <div class="og-meta">
+    {{ if not (eq $type "discord") }}
+      <div class="og-url">{{- $url -}}</div>
+    {{ end }}
+    <div class="og-title">{{- $title -}}</div>
+    <div class="og-description">{{- $description -}}</div>
+    {{ if (eq $type "discord") }}
+      <div class="og-image">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 11"><path d="M5 2a1 1 0 0 0 2 0 1 1 0 0 0-2 0ZM3.5 4.5a1 1 0 0 1 1.7 0L6 6l2.4-4A1 1 0 0 1 10 2l3.9 6.5A1 1 0 0 1 13 10H2a1 1 0 0 1-.9-1.5Z"/></svg>
+      </div>
+    {{ end }}
+  </div>
+</div>
