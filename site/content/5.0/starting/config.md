@@ -1,7 +1,6 @@
 ---
 title: Configuración básica
 weight: 2
-date: 2022-09-27T02:26:37.993Z
 ---
 
 Posterior a la instalación de la plantilla, **no es necesario realizar configuraciones adicionales**, todas las opciones que encontrarás en esta parte por lo general Blogger los configura de manera predeterminada, o son opcionales.

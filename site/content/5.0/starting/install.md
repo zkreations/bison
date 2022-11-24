@@ -1,7 +1,6 @@
 ---
 title: Instalar
 weight: 1
-date: 2022-09-26T02:25:47.637Z
 ---
 
 Instalar un tema de Blogger modificado requiere algunos pasos de seguridad y preparación. Por favor, sigue cuidadosamente las indicaciones para evitar la pérdida de información o problemas.
