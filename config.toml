@@ -7,7 +7,7 @@ defaultContentLanguage = 'es'
 copyright = "Created by zkreations"
 canonifyURLs = true
 enableRobotsTXT = true
-enableGitInfo = false
+enableGitInfo = true
 
 enableInlineShortcodes = true
 disableKinds = ["taxonomy","taxonomyTerm","term","RSS"]
