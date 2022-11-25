@@ -24,7 +24,7 @@ Cualquier valor ingresado que no sea falso, se interpretará por defecto como `s
 
 El nombre corto o **"Shortname"** es el identificador de los comentarios de Disqus. Dirígete a tu panel de administración de tu cuenta de Disqus, luego al apartado **"General"** y copia el valor mostrado.
 
-<video controls="">
+<video controls preload="none">
   <source src="/videos/c-disqus.mp4" type="video/mp4">
 </video>
 

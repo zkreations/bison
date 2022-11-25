@@ -31,7 +31,7 @@ Si el valor ingresado no es válido, el valor por defecto será `grid`.
 
 El diseño de cuadriculas mostrará las entradas a **modo de resumen**. Las variables [e.ratio]({{< ref "e-ratio.md" >}}) y [e.colsMin]({{< ref "e-cols-min.md" >}}) están disponibles en este modo, controlando la relación de aspecto y el ancho de la columna respectivamente.
 
-<video controls="">
+<video controls preload="none">
   <source src="/videos/e-type-grid.mp4" type="video/mp4">
 </video>
 
@@ -40,7 +40,7 @@ El diseño de cuadriculas mostrará las entradas a **modo de resumen**. Las vari
 
 El diseño de filas es similar al **modo de resumen**, pero todo el contenido se organiza horizontalmente.
 
-<video controls="">
+<video controls preload="none">
   <source src="/videos/e-type-row.mp4" type="video/mp4">
 </video>
 
@@ -48,7 +48,7 @@ El diseño de filas es similar al **modo de resumen**, pero todo el contenido se
 
 Diseño de presentación de proyectos o portafolio. La imagen tomará mayor protagonismo y las variables [e.ratio]({{< ref "e-ratio.md" >}}) y [e.colsMin]({{< ref "e-cols-min.md" >}}) están disponibles.
 
-<video controls="">
+<video controls preload="none">
   <source src="/videos/e-type-portfolio.mp4" type="video/mp4">
 </video>
 
@@ -57,7 +57,7 @@ Diseño de presentación de proyectos o portafolio. La imagen tomará mayor prot
 
 Entradas clásicas o estilo **"blog clásico"**, en donde las entradas se organizan en una sola fila, la imagen ocupará mas espacio y el resumen de la entrada será mas largo.
 
-<video controls="">
+<video controls preload="none">
   <source src="/videos/e-type-classic.mp4" type="video/mp4">
 </video>
 
@@ -66,7 +66,7 @@ Entradas clásicas o estilo **"blog clásico"**, en donde las entradas se organi
 
 Una lista simple de artículos, que contiene unicamente la miniatura y el título del post. Es el modo mas compacto y puedes controlar la cantidad de columnas con la variable `e.colsMinList`.
 
-<video controls="">
+<video controls preload="none">
   <source src="/videos/e-type-list.mp4" type="video/mp4">
 </video>
 
@@ -75,7 +75,7 @@ Una lista simple de artículos, que contiene unicamente la miniatura y el títul
 
 Galería de imágenes común, en donde la mayor parte de información del articulo no estará disponible. La imagen tomará mayor protagonismo y las variables [e.ratio]({{< ref "e-ratio.md" >}}) y [e.colsMin]({{< ref "e-cols-min.md" >}}) están disponibles.
 
-<video controls="">
+<video controls preload="none">
   <source src="/videos/e-type-gallery.mp4" type="video/mp4">
 </video>
 
@@ -84,7 +84,7 @@ Galería de imágenes común, en donde la mayor parte de información del articu
 
 Galería de imágenes dispersa. A diferencia de una galería normal, este modo es ideal para mostrar imágenes de **mayor resolución**.
 
-<video controls="">
+<video controls preload="none">
   <source src="/videos/e-type-sparse.mp4" type="video/mp4">
 </video>
 
@@ -93,6 +93,6 @@ Galería de imágenes dispersa. A diferencia de una galería normal, este modo e
 
 Galería de imágenes densa, similar a la galería común, pero las imágenes en este caso **intentarán organizarse** siguiendo una lógica impuesta.
 
-<video controls="">
+<video controls preload="none">
   <source src="/videos/e-type-dense.mp4" type="video/mp4">
 </video>

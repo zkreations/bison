@@ -11,7 +11,7 @@ Las variables son valores guardados en una pequeña parte de la memoria que pued
 Para acceder a las variables, dirígete en la sección **Temas** de tu panel de administración de Blogger y utiliza la opción **Editar HTML**, encontrarás todas las variables desde el inicio:
 
 
-<video controls="" poster="/images/posters/localizar-variables.png">
+<video controls preload="none" poster="/images/posters/localizar-variables.png">
   <source src="/videos/localizar-variables.mp4" type="video/mp4">
 </video>
 
@@ -44,6 +44,6 @@ La variable se compone por 4 atributos, pero el único atributo que puedes modif
 La variable `a.tools` ahora se establece en "false" lo que deshabilita su función
 {{< /code >}}
 
-<video controls="" poster="/images/posters/demo-modificar-variable.png">
+<video controls preload="none" poster="/images/posters/demo-modificar-variable.png">
   <source src="/videos/demo-modificar-variable.mp4" type="video/mp4">
 </video>

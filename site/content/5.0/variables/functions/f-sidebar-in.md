@@ -49,7 +49,7 @@ home, index, search, labels, archive, item, static_page, error_page
 
 En la siguiente demostración se especifica `index y labels`, por tanto el sidebar estará presente en **paginación** y **búsqueda por etiquetas**, pero en todas las demás secciones no estará disponible:
 
-<video controls="">
+<video controls preload="none">
   <source src="/videos/f-sidebar-in.mp4" type="video/mp4">
 </video>
 

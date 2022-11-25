@@ -20,7 +20,7 @@ Este widget solo esta disponible en la sección **Header** y está bloqueado. Pa
 
 Escribe guiones bajos "__" al inicio del nombre del elemento del menú. La cantidad de guiones es a preferencia del administrador pero se requieren como mínimo 2:
 
-<video controls="">
+<video controls preload="none">
   <source src="/videos/desplegables.mp4" type="video/mp4">
 </video>
 

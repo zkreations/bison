@@ -25,7 +25,7 @@ Si el valor ingresado no es válido, el valor por defecto será `true`.
 
 Muestra un botón, que al ser pulsado cargará los recursos necesarios para insertar Disqus, el botón será borrado inmediatamente después.
 
-<video controls="">
+<video controls preload="none">
   <source src="/videos/c-disqus-on-click.mp4" type="video/mp4">
 </video>
 

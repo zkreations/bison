@@ -30,7 +30,7 @@ Si el valor ingresado no es válido, el valor por defecto será `default`.
 
 Diseño predeterminado del artículo, este valor se utiliza también por defecto si la plantilla especificada **no existe** o si el valor ingresado es **inválido**.
 
-<video controls="">
+<video controls preload="none">
   <source src="/videos/p-template-default.mp4" type="video/mp4">
 </video>
 
@@ -39,7 +39,7 @@ Diseño predeterminado del artículo, este valor se utiliza también por defecto
 
 Muestra una nueva cabecera en el articulo, comúnmente conocida como "header hero". Los metadatos y el título de la entrada se trasladan a este nuevo header.
 
-<video controls="">
+<video controls preload="none">
   <source src="/videos/p-template-hero.mp4" type="video/mp4">
 </video>
 
@@ -48,7 +48,7 @@ Muestra una nueva cabecera en el articulo, comúnmente conocida como "header her
 
 La plantilla elimina el sidebar y la entrada se extiende hasta ocupar **todo el ancho disponible**. Este valor tendrá prioridad sobre la variable [f.sidebarIn]({{< ref "f-sidebar-in.md" >}}).
 
-<video controls="">
+<video controls preload="none">
   <source src="/videos/p-template-full.mp4" type="video/mp4">
 </video>
 
@@ -57,7 +57,7 @@ La plantilla elimina el sidebar y la entrada se extiende hasta ocupar **todo el 
 
 Similar al modo ancho completo, pero también centra el contenido en relación al cuerpo de la entrada.
 
-<video controls="">
+<video controls preload="none">
   <source src="/videos/p-template-centered.mp4" type="video/mp4">
 </video>
 
@@ -66,7 +66,7 @@ Similar al modo ancho completo, pero también centra el contenido en relación a
 
 Utiliza la primera imagen disponible en el articulo y la muestra de fondo manteniendo una posición fija.
 
-<video controls="">
+<video controls preload="none">
   <source src="/videos/p-template-fixed.mp4" type="video/mp4">
 </video>
 
@@ -76,7 +76,7 @@ Utiliza la primera imagen disponible en el articulo y la muestra de fondo manten
 
 Destaca la imagen principal de la entrada mostrando los metadatos y el título en su interior. Este modo posiciona la imagen antes que las etiquetas.
 
-<video controls="">
+<video controls preload="none">
   <source src="/videos/p-template-featured.mp4" type="video/mp4">
 </video>
 
@@ -85,7 +85,7 @@ Destaca la imagen principal de la entrada mostrando los metadatos y el título e
 
 Configura la entrada como un producto, este modo aprovecha la [meta descripcion]({{< ref "config.md#habilitar-descripcion-de-búsqueda" >}}) y los [enlaces de adjunto]({{< ref "attachments.md" >}}).
 
-<video controls="">
+<video controls preload="none">
   <source src="/videos/p-template-product.mp4" type="video/mp4">
 </video>
 
@@ -105,7 +105,7 @@ Las plantillas de entrada se pueden combinar. Presta atención a la siguiente ta
 
 El orden de los valores no importa, tampoco es necesario agregar ningún carácter de separación, pero de todas formas recomendamos utilizar un guion **"-"** para separar cada plantilla de entrada especificada:
 
-<video controls="">
+<video controls preload="none">
   <source src="/videos/p-template-hero-centered-fixed.mp4" type="video/mp4">
 </video>
 

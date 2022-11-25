@@ -31,7 +31,7 @@ Los filtros avanzados estarán disponibles en las búsquedas por términos, lo q
 
 El **widget etiquetas** se puede convertir [en filtros de búsqueda]({{< ref "filters.md" >}}). Cuando se usan en la consulta solo aparecerán entradas que contengan al menos una de las etiquetas marcadas por el usuario.
 
-<video controls="">
+<video controls preload="none">
   <source src="/videos/f-filter-labels.mp4" type="video/mp4">
 </video>
 
@@ -39,7 +39,7 @@ El **widget etiquetas** se puede convertir [en filtros de búsqueda]({{< ref "fi
 
 Si el **"Modo estricto"** esta marcado, solo aparecerán entradas que tengan todas las etiquetas marcadas a la vez. Al marcar la opción **"Nuevos primero"** ordenará los resultados del más reciente al más antiguo.
 
-<video controls="">
+<video controls preload="none">
   <source src="/videos/f-filter-modes.mp4" type="video/mp4">
 </video>
 

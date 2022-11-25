@@ -25,7 +25,7 @@ Si el valor ingresado no es válido, el valor por defecto será `true`.
 
 El contenido del blog pasa al lado derecho. El sidebar ocupará la posición original del blog.
 
-<video controls="">
+<video controls preload="none">
   <source src="/videos/f-swap-true.mp4" type="video/mp4">
 </video>
 
@@ -34,6 +34,6 @@ El contenido del blog pasa al lado derecho. El sidebar ocupará la posición ori
 
 El blog y el sidebar mantienen su posición original.
 
-<video controls="">
+<video controls preload="none">
   <source src="/videos/f-swap-false.mp4" type="video/mp4">
 </video>

@@ -26,7 +26,7 @@ Si el valor ingresado no es válido, el valor por defecto será `default`.
 
 La paginación de Blogger por defecto. No requiere javascript y también es la que se usará **si el blog es privado** o **los feeds no están disponibles**.
 
-<video controls="">
+<video controls preload="none">
   <source src="/videos/f-pagination-default.mp4" type="video/mp4">
 </video>
 
@@ -35,7 +35,7 @@ La paginación de Blogger por defecto. No requiere javascript y también es la q
 
 Paginación numérica que puede paginar una cantidad infinita de entradas, también muestra en todo momento la primera página o la última según sea el caso.
 
-<video controls="">
+<video controls preload="none">
   <source src="/videos/f-pagination-numeric.mp4" type="video/mp4">
 </video>
 
@@ -44,7 +44,7 @@ Paginación numérica que puede paginar una cantidad infinita de entradas, tambi
 
 Paginación infinita que carga contenido a medida que el usuario se desplaza por la página.
 
-<video controls="">
+<video controls preload="none">
   <source src="/videos/f-pagination-infinite.mp4" type="video/mp4">
 </video>
 
@@ -53,6 +53,6 @@ Paginación infinita que carga contenido a medida que el usuario se desplaza por
 
 Paginación que carga entradas mediante una acción del usuario, la cual consiste en pulsar un botón.
 
-<video controls="">
+<video controls preload="none">
   <source src="/videos/f-pagination-load.mp4" type="video/mp4">
 </video>

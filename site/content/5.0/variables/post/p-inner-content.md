@@ -24,6 +24,6 @@ Si el valor ingresado no es válido, el valor por defecto será `3`.
 
 Los **bloques HTML inyectables** en los artículos estarán disponibles cada cierto numero de párrafos `<p>` o bloques `<div>` configurados.
 
-<video controls="">
+<video controls preload="none">
   <source src="/videos/p-inner-content.mp4" type="video/mp4">
 </video>

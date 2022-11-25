@@ -24,6 +24,6 @@ Si el valor ingresado no es válido o el número ingresado supera la cantidad pe
 
 Establecer el numero `0` deshabilitará la capacidad de responder comentarios. Si existían respuestas todas **serán movidas al hilo principal**, sin embargo, no ocurrirá lo mismo al cambiar entre los niveles `1` al `3`, en donde los comentarios de mayor profundidad se perderán.
 
-<video controls="">
+<video controls preload="none">
   <source src="/videos/c-depth.mp4" type="video/mp4">
 </video>

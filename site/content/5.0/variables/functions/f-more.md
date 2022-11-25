@@ -25,7 +25,7 @@ Si el valor ingresado no es válido, el valor por defecto será `true`.
 
 El botón "Más →" estará disponible al otro extremo del titulo del widget Blog. Su función es llevar al usuario a la **paginación configurada** en la variable [f.pagination]({{< ref "f-pagination.md" >}}).
 
-<video controls="">
+<video controls preload="none">
   <source src="/videos/f-more-true.mp4" type="video/mp4">
 </video>
 
@@ -34,6 +34,6 @@ El botón "Más →" estará disponible al otro extremo del titulo del widget Bl
 
 El botón "Más →" no estará disponible en el blog.
 
-<video controls="">
+<video controls preload="none">
   <source src="/videos/f-more-false.mp4" type="video/mp4">
 </video>

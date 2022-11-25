@@ -14,7 +14,7 @@ En cuanto a las formas de realizarlo, hay distintas maneras y todas son perfecta
 
 Este método funciona con **imágenes subidas a Blogger**, para ello deberás agregar el parámetro `qTemp_` seguido del template o templates deseados. Posteriormente sube la imagen a Blogger y al articulo.
 
-<video controls="" poster="/images/posters/image.png">
+<video controls preload="none" poster="/images/posters/image.png">
   <source src="/videos/template-image-name.mp4" type="video/mp4">
 </video>
 
@@ -23,7 +23,7 @@ Este método funciona con **imágenes subidas a Blogger**, para ello deberás ag
 
 Funciona con **imágenes ya subidas a Blogger** y solo si la imagen contiene el nombre en la url. Agrega el prefijo `qTemp_` seguido del template o templates deseados. La desventaja de este método es que puede influir en el SEO.
 
-<video controls="" poster="/images/posters/link.png">
+<video controls preload="none" poster="/images/posters/link.png">
   <source src="/videos/template-name-proxy.mp4" type="video/mp4">
 </video>
 
@@ -32,7 +32,7 @@ Funciona con **imágenes ya subidas a Blogger** y solo si la imagen contiene el 
 
 Funciona solo con **imágenes alojadas en Google**, a traves de Blogger o google fotos, para ello edita la sección de [parámetros de imagen](#next) agregando un guion medio "-" seguido del texto `qTemp_`  y el template o templates deseados. Este método es el mas limpio ya que deja menos rastros.
 
-<video controls="" poster="/images/posters/image-params.png">
+<video controls preload="none" poster="/images/posters/image-params.png">
   <source src="/videos/template-image-params.mp4" type="video/mp4">
 </video>
 
@@ -41,7 +41,7 @@ Funciona solo con **imágenes alojadas en Google**, a traves de Blogger o google
 
 Este método fue creado para **imágenes alojadas en otros servidores**, solo debes agregar el parámetro de url `?qTemp=` y escribe el template o templates deseados. Recuerda que al usar imágenes externas, se pierden muchas propiedades nativas en Blogger.
 
-<video controls="" poster="/images/posters/link-params.png">
+<video controls preload="none" poster="/images/posters/link-params.png">
   <source src="/videos/template-url-params.mp4" type="video/mp4">
 </video>
 

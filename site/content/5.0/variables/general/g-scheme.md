@@ -26,7 +26,7 @@ Si el valor ingresado no es válido, el valor por defecto será `system`.
 
 Detecta si el usuario ha solicitado un tema de color **claro** u **oscuro**, indicando la preferencia a través de la configuración del sistema operativo o una configuración de [agente de usuario](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme).
 
-<video controls="">
+<video controls preload="none">
   <source src="/videos/g-scheme-system.mp4" type="video/mp4">
 </video>
 

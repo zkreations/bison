@@ -22,7 +22,7 @@ Identificador único del formulario creado en [formspree.io](https://formspree.i
 
 Especificar la id del formulario habilitará el widget **"Formulario de contacto"** en el blog. Para ello debes crear un formulario en [formspree.io](https://formspree.io) y obtener el identificador:
 
-<video controls="">
+<video controls preload="none">
   <source src="/videos/g-formspree.mp4" type="video/mp4">
 </video>
 

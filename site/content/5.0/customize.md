@@ -11,7 +11,7 @@ Este tema esta optimizado para utilizar el **Diseñador de plantillas de Blogger
 
 Para acceder al **Diseñador de plantillas** dirígete en la sección Temas de tu panel de administración de Blogger y utiliza la opción "**Personalizar**", eso es todo, ya podrás personalizar el tema:
 
-<video controls="" poster="/images/posters/personalizar.png">
+<video controls preload="none" poster="/images/posters/personalizar.png">
   <source src="/videos/blogger-design.mp4" type="video/mp4">
 </video>
 
@@ -19,7 +19,7 @@ Para acceder al **Diseñador de plantillas** dirígete en la sección Temas de t
 
 Este tema esta diseñado con **dos esquemas de colores** que podrás editar individualmente. Puedes cambiar rápidamente entre ambos esquemas presionando el botón de "**Esquema**" para visualizar los cambios.
 
-<video controls="" poster="/images/posters/dark-mode-system.png">
+<video controls preload="none" poster="/images/posters/dark-mode-system.png">
   <source src="/videos/design-scheme.mp4" type="video/mp4">
 </video>
 

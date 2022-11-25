@@ -18,7 +18,7 @@ Dirígete a la sección **Temas** de tu panel de administración de Blogger y ut
 Este paso es **opcional**, pero es útil si deseas realizar verdaderamente una **instalación limpia del tema**, para ello, copia el código de la [plantilla blank.xml](https://github.com/zkreations/canvas/tree/master/themes/blank/blank.xml), pégalo en el editor y guarda los cambios. Este proceso borrará los datos de widgets guardados en Blogger, evitando que se transfieran al nuevo tema instalado.
 
 
-<video controls="" poster="/images/posters/borrar-datos-widgets.png">
+<video controls preload="none" poster="/images/posters/borrar-datos-widgets.png">
   <source src="/videos/borrar-datos-widgets.mp4" type="video/mp4">
 </video>
 
@@ -28,6 +28,6 @@ Este paso es **opcional**, pero es útil si deseas realizar verdaderamente una *
 
 Abre el archivo **{{% theme %}}** y copia todo el contenido, luego dirígete a la sección **Temas** de tu panel de administración de Blogger y utiliza la opción **Editar HTML**, pega el código copiado con anterioridad y guarda los cambios.
 
-<video controls="" poster="/images/posters/instalar-tema.png">
+<video controls preload="none" poster="/images/posters/instalar-tema.png">
   <source src="/videos/instalar-tema.mp4" type="video/mp4">
 </video>
