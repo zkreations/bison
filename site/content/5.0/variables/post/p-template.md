@@ -30,64 +30,42 @@ Si el valor ingresado no es válido, el valor por defecto será `default`.
 
 Diseño predeterminado del artículo, este valor se utiliza también por defecto si la plantilla especificada **no existe** o si el valor ingresado es **inválido**.
 
-<video controls preload="none">
-  <source src="/videos/p-template-default.mp4" type="video/mp4">
-</video>
+{{< pagelink title="Demostración Default" name="Bison" href="https://bison.zkreations.com/2022/10/man-and-woman-standing-on-green-grass.html" >}}
 
 
 ## hero
 
 Muestra una nueva cabecera en el articulo, comúnmente conocida como "header hero". Los metadatos y el título de la entrada se trasladan a este nuevo header.
 
-<video controls preload="none">
-  <source src="/videos/p-template-hero.mp4" type="video/mp4">
-</video>
+{{< pagelink title="Demostración Hero" name="Bison" href="https://bison.zkreations.com/2022/08/person-standing-near-rock-formation.html" >}}
 
 
 ## full
 
 La plantilla elimina el sidebar y la entrada se extiende hasta ocupar **todo el ancho disponible**. Este valor tendrá prioridad sobre la variable [f.sidebarIn]({{< ref "f-sidebar-in.md" >}}).
 
-<video controls preload="none">
-  <source src="/videos/p-template-full.mp4" type="video/mp4">
-</video>
-
 
 ## centered
 
 Similar al modo ancho completo, pero también centra el contenido en relación al cuerpo de la entrada.
-
-<video controls preload="none">
-  <source src="/videos/p-template-centered.mp4" type="video/mp4">
-</video>
 
 
 ## fixed
 
 Utiliza la primera imagen disponible en el articulo y la muestra de fondo manteniendo una posición fija.
 
-<video controls preload="none">
-  <source src="/videos/p-template-fixed.mp4" type="video/mp4">
-</video>
-
-
-
 ## featured
 
 Destaca la imagen principal de la entrada mostrando los metadatos y el título en su interior. Este modo posiciona la imagen antes que las etiquetas.
 
-<video controls preload="none">
-  <source src="/videos/p-template-featured.mp4" type="video/mp4">
-</video>
 
+{{< pagelink title="Demostración Featured" name="Bison" href="https://bison.zkreations.com/2022/09/wooden-houses-on-grass-field.html" >}}
 
 ## product
 
 Configura la entrada como un producto, este modo aprovecha la [meta descripcion]({{< ref "config.md#habilitar-descripcion-de-búsqueda" >}}) y los [enlaces de adjunto]({{< ref "attachments.md" >}}).
 
-<video controls preload="none">
-  <source src="/videos/p-template-product.mp4" type="video/mp4">
-</video>
+{{< pagelink title="Demostración Product" name="Bison" href="https://bison.zkreations.com/2022/05/black-aperture-blur.html" >}}
 
 ## Combinaciones
 
@@ -105,10 +83,9 @@ Las plantillas de entrada se pueden combinar. Presta atención a la siguiente ta
 
 El orden de los valores no importa, tampoco es necesario agregar ningún carácter de separación, pero de todas formas recomendamos utilizar un guion **"-"** para separar cada plantilla de entrada especificada:
 
-<video controls preload="none">
-  <source src="/videos/p-template-hero-centered-fixed.mp4" type="video/mp4">
-</video>
+{{< pagelink title="Demostración Hero + Fixed" name="Bison" href="https://bison.zkreations.com/2022/07/white-petaled-flowers.html" >}}
 
+{{< pagelink title="Demostración Hero + Fixed + Centered" name="Bison" href="https://bison.zkreations.com/2022/08/girl-sitting-alone-on-bench.html" >}}
 
 ## Sobrescribir valores
 

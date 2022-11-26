@@ -7,26 +7,25 @@ Es probable que quieras mantenerte al día para recibir las nuevas característi
 
 ## Copia de seguridad
 
-Antes que nada, es recomendable siempre hacer una copia de seguridad por si algo sale mal. Dirígete a la sección **Temas** de tu panel de administración de Blogger y utiliza la opción "**Crear copia de seguridad**".
+Es recomendable siempre hacer una copia de seguridad primero por si algo sale mal. Dirígete a la sección **Temas** de tu panel de administración de Blogger y utiliza la opción "**Crear copia de seguridad**".
 
 ![Crear copia de seguridad](/images/copia-de-seguridad.png)
 
 
 ## Actualizar sin perder cambios
 
-En este método necesitarás crear un blog de prueba, solo se usará para copiar el núcleo del tema. Actualizar el núcleo, en consecuencia, actualizará todo el tema con las ultimas características **sin perder tus cambios**. Realiza los siguientes pasos:
+En este método necesitarás crear un blog de prueba, solo se usará para copiar el núcleo del tema, que sirve para actualizar todo el tema con las ultimas características **sin perder tus cambios**. El núcleo del tema se ve asi:
+
+![Crear copia de seguridad](/images/core.png)
+
+Para actualizar realiza los siguientes pasos:
 
 1. Crea un blog de prueba
-1. Dirígete a la opción **Editar HTML** y pega la nueva version
-2. Presiona **CTRL** + **Y** para colapsar todo el código
-3. Copia todo desde `CORE (v5.x.x)` hasta `/END CORE`
+1. Dirígete a la opción **Editar HTML** y pega la nueva versión
+2. Presiona **CTRL** + **Y** para colapsar todo el código.
+3. Copia todo desde `CORE (v5.x.x)` hasta `/END CORE` 
 4. Dirígete a tu blog principal, **Editar HTML** y presiona **CTRL** + **Y**
-5. Por último reemplaza el código copiado y **guarda los cambios**.
-
-<video controls preload="none" poster="/images/posters/core-update.png">
-  <source src="/videos/core-update.mp4" type="video/mp4">
-</video>
-
+5. Reemplaza el núcleo copiado y **guarda los cambios**.
 
 ## Restablecer plantilla
 

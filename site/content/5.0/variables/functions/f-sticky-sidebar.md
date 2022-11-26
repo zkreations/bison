@@ -39,24 +39,9 @@ Especifica un modo de fijado, lo que permite fijar el sidebar o uno de sus eleme
 | `single-last`  | Fija solo el último widget en páginas y entradas
 {{< /table >}}
 
-
-#### Ejemplo
-
-En la siguiente demostración se especifica `last`, por tanto el ultimo widget del sidebar estará fijo globalmente;
-
-<video controls preload="none">
-  <source src="/videos/f-sticky-sidebar-last.mp4" type="video/mp4">
-</video>
-
-
 ## true
 
 El sidebar se mantendrá fijado al borde superior cuando el usuario se desplace por la página.
-
-<video controls preload="none">
-  <source src="/videos/f-sticky-sidebar.mp4" type="video/mp4">
-</video>
-
 
 ## false
 

@@ -10,14 +10,9 @@ Los widgets poseen características únicas e interactúan con la plantilla depe
 
 Widgets de Blogger con nueva estructura que puedes instalar desde el panel de administración. Para agregarlos pulsa el botón "**Agregar un gadget**" y selecciónalo de la lista.
 
-<video controls preload="none" poster="/images/posters/widgets.png">
-  <source src="/videos/default-widgets.mp4" type="video/mp4">
-</video>
-
-
 ## Super widgets
 
-Estos widgets se crean a partir de widgets normales. Para acceder a ellos debes reemplazar el título por un dato tipo {{< data object >}} válido de Blogger, por ejemplo:
+Se crean a partir de widgets normales. Para acceder a ellos debes reemplazar el título por un dato tipo {{< data object >}} válido de Blogger, por ejemplo:
 
 ```js
 { title: "Prueba", icon: "fire" }

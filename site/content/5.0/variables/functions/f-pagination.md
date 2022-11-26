@@ -26,10 +26,6 @@ Si el valor ingresado no es válido, el valor por defecto será `default`.
 
 La paginación de Blogger por defecto. No requiere javascript y también es la que se usará **si el blog es privado** o **los feeds no están disponibles**.
 
-<video controls preload="none">
-  <source src="/videos/f-pagination-default.mp4" type="video/mp4">
-</video>
-
 
 ## numeric
 
@@ -43,10 +39,6 @@ Paginación numérica que puede paginar una cantidad infinita de entradas, tambi
 ## infinite
 
 Paginación infinita que carga contenido a medida que el usuario se desplaza por la página.
-
-<video controls preload="none">
-  <source src="/videos/f-pagination-infinite.mp4" type="video/mp4">
-</video>
 
 
 ## load

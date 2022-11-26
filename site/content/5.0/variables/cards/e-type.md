@@ -31,68 +31,56 @@ Si el valor ingresado no es válido, el valor por defecto será `grid`.
 
 El diseño de cuadriculas mostrará las entradas a **modo de resumen**. Las variables [e.ratio]({{< ref "e-ratio.md" >}}) y [e.colsMin]({{< ref "e-cols-min.md" >}}) están disponibles en este modo, controlando la relación de aspecto y el ancho de la columna respectivamente.
 
-<video controls preload="none">
-  <source src="/videos/e-type-grid.mp4" type="video/mp4">
-</video>
+{{< pagelink title="Demostración tipo Grid" name="Bison" href="https://bison.zkreations.com/search?max-results=8" >}}
 
 
 ## row
 
 El diseño de filas es similar al **modo de resumen**, pero todo el contenido se organiza horizontalmente.
 
-<video controls preload="none">
-  <source src="/videos/e-type-row.mp4" type="video/mp4">
-</video>
+{{< pagelink title="Demostración tipo Row" name="Bison" href="https://bison.zkreations.com/search?max-results=8&view=row" >}}
+
 
 ## portfolio
 
 Diseño de presentación de proyectos o portafolio. La imagen tomará mayor protagonismo y las variables [e.ratio]({{< ref "e-ratio.md" >}}) y [e.colsMin]({{< ref "e-cols-min.md" >}}) están disponibles.
 
-<video controls preload="none">
-  <source src="/videos/e-type-portfolio.mp4" type="video/mp4">
-</video>
+{{< pagelink title="Demostración tipo Portfolio" name="Bison" href="https://bison.zkreations.com/search?max-results=10&view=portfolio" >}}
+
 
 
 ## classic
 
 Entradas clásicas o estilo **"blog clásico"**, en donde las entradas se organizan en una sola fila, la imagen ocupará mas espacio y el resumen de la entrada será mas largo.
 
-<video controls preload="none">
-  <source src="/videos/e-type-classic.mp4" type="video/mp4">
-</video>
+{{< pagelink title="Demostración tipo Classic" name="Bison" href="https://bison.zkreations.com/search?max-results=5&view=classic" >}}
 
 
 ## list
 
 Una lista simple de artículos, que contiene unicamente la miniatura y el título del post. Es el modo mas compacto y puedes controlar la cantidad de columnas con la variable `e.colsMinList`.
 
-<video controls preload="none">
-  <source src="/videos/e-type-list.mp4" type="video/mp4">
-</video>
+{{< pagelink title="Demostración tipo List" name="Bison" href="https://bison.zkreations.com/search?max-results=30&view=list" >}}
 
 
 ## gallery
 
 Galería de imágenes común, en donde la mayor parte de información del articulo no estará disponible. La imagen tomará mayor protagonismo y las variables [e.ratio]({{< ref "e-ratio.md" >}}) y [e.colsMin]({{< ref "e-cols-min.md" >}}) están disponibles.
 
-<video controls preload="none">
-  <source src="/videos/e-type-gallery.mp4" type="video/mp4">
-</video>
+
+{{< pagelink title="Demostración tipo Gallery" name="Bison" href="https://bison.zkreations.com/search?max-results=15&view=gallery" >}}
+
 
 
 ## sparse
 
 Galería de imágenes dispersa. A diferencia de una galería normal, este modo es ideal para mostrar imágenes de **mayor resolución**.
 
-<video controls preload="none">
-  <source src="/videos/e-type-sparse.mp4" type="video/mp4">
-</video>
+{{< pagelink title="Demostración tipo Sparse" name="Bison" href="https://bison.zkreations.com/search?max-results=9&view=sparse" >}}
 
 
 ## dense
 
 Galería de imágenes densa, similar a la galería común, pero las imágenes en este caso **intentarán organizarse** siguiendo una lógica impuesta.
 
-<video controls preload="none">
-  <source src="/videos/e-type-dense.mp4" type="video/mp4">
-</video>
+{{< pagelink title="Demostración tipo Dense" name="Bison" href="https://bison.zkreations.com/search?max-results=21&view=dense" >}}
