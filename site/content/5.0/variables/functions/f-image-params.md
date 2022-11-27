@@ -24,4 +24,4 @@ Si el valor ingresado no es válido, el valor por defecto será `null`.
 
 Todas las imágenes y videos subidas a los servidores de Google a traves de **Blogger** o **Google Fotos**, se pueden configurar mediante parámetros.
 
-{{< pagelink title="Parámetros de imágenes de Google" name="zkreations" href="https://zkreations.com" >}}
+{{< pagelink title="Parámetros de imágenes de Google" name="zkreations" href="https://www.zkreations.com/2022/11/parametros-de-imagenes-de-blogger.html" >}}
