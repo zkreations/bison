@@ -50,6 +50,7 @@ Este método fue creado para **imágenes alojadas en otros servidores**, solo de
 
 Puedes combinar templates utilizando también el guion bajo "_" el orden no alterará el resultado final, sin embargo no todas se pueden combinar, presta atención a la siguiente tabla:
 
+{{< table >}}
 | Template       | `full`     | `centered` | `hero`     | `fixed`     | `featured` | `product`
 | -------------- | ---------- | ---------- | ---------- | ---------- | ---------- | ----------
 | `full`         | -          | -          | Si         | Si         | Si         | **No**    
@@ -58,6 +59,7 @@ Puedes combinar templates utilizando también el guion bajo "_" el orden no alte
 | `fixed`        | Si         | Si         | Si         | -          | Si         | Si        
 | `featured`     | Si         | Si         | **No**     | Si         | -          | Si        
 | `product`      | **No**     | **No**     | Si         | Si         | Si         | -         
+{{< /table >}}
 
 ## Ejemplos
 

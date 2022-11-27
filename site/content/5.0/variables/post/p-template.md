@@ -71,6 +71,7 @@ Configura la entrada como un producto, este modo aprovecha la [meta descripcion]
 
 Las plantillas de entrada se pueden combinar. Presta atención a la siguiente tabla de **combinaciones**. Un guión `-` indica que no tiene efecto al combinarse, si se puede combinar veras un `Si` y en caso de que no veras un `No`:
 
+{{< table >}}
 | Template       | `full`     | `centered` | `hero`     | `fixed`     | `featured` | `product`
 | -------------- | ---------- | ---------- | ---------- | ---------- | ---------- | ----------
 | `full`         | -          | -          | Si         | Si         | Si         | **No**    
@@ -79,7 +80,7 @@ Las plantillas de entrada se pueden combinar. Presta atención a la siguiente ta
 | `fixed`        | Si         | Si         | Si         | -          | Si         | Si        
 | `featured`     | Si         | Si         | **No**     | Si         | -          | Si        
 | `product`      | **No**     | **No**     | Si         | Si         | Si         | -         
-
+{{< /table >}}
 
 El orden de los valores no importa, tampoco es necesario agregar ningún carácter de separación, pero de todas formas recomendamos utilizar un guion **"-"** para separar cada plantilla de entrada especificada:
 
