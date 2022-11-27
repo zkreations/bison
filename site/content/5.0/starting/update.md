@@ -1,6 +1,6 @@
 ---
 title: Actualizar
-weight: 3
+weight: 4
 ---
 
 Es probable que quieras mantenerte al día para recibir las nuevas características, mejoras o simplemente correcciones a errores encontrados. Aquí aprenderás **como actualizar** con varios métodos.
@@ -29,7 +29,7 @@ Para actualizar realiza los siguientes pasos:
 
 ## Restablecer plantilla
 
-Este método actualiza toda la plantilla rápidamente pero **perderás los cambios** de diseño que hayas realizado, solo **se conservan las opciones de los widgets**. Para ello solo deberás usar la opción "Restaurar", y seleccionar el archivo **{{% theme %}}**.
+Este método actualiza toda la plantilla rápidamente pero **perderás los cambios** de diseño que hayas realizado, solo **se conservan las opciones de los widgets**. Para ello deberás usar la opción "Restaurar", y seleccionar el archivo **{{% theme %}}**.
 
 ![Restaurar](/images/restaurar.png)
 

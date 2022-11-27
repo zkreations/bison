@@ -30,7 +30,7 @@ Funciona con **imágenes ya subidas a Blogger** y solo si la imagen contiene el 
 
 ## Parámetro de imagen
 
-Funciona solo con **imágenes alojadas en Google**, a traves de Blogger o google fotos, para ello edita la sección de [parámetros de imagen](#next) agregando un guion medio "-" seguido del texto `qTemp_`  y el template o templates deseados. Este método es el mas limpio ya que deja menos rastros.
+Funciona solo con **imágenes alojadas en Google**, a traves de Blogger o google fotos, para ello edita la sección de [parámetros de imagen](https://www.zkreations.com/2022/11/parametros-de-imagenes-de-blogger.html) agregando un guion medio "-" seguido del texto `qTemp_`  y el template o templates deseados. Este método es el mas limpio ya que deja menos rastros.
 
 <video controls preload="none" poster="/images/posters/image-params.png">
   <source src="/videos/template-image-params.mp4" type="video/mp4">

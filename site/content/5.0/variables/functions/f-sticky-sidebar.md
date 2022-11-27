@@ -23,7 +23,7 @@ Si el valor ingresado no es válido, el valor por defecto será `true`.
 
 ## fixed_mode
 
-Especifica un modo de fijado, lo que permite fijar el sidebar o uno de sus elementos según sea el caso. **Solo puedes elegir un modo a la vez**, de lo contrario el valor no sera valido y se interpretara como `true`.
+Especifica un modo de fijado, lo que permite fijar el sidebar o uno de sus elementos según sea el caso. **Solo puedes elegir un modo a la vez**, de lo contrario el valor no sera válido y se interpretará como `true`.
 
 #### Modos
 
