@@ -26,8 +26,13 @@
   <a href="{{ .Page.Permalink }}" class="menu-link fs-6{{ if (eq .CurrentPage .Page) }} is-active{{ end }}{{ with .Page.Params.icon }} has-icon{{ end }}">
     {{ partial "svg" (dict "icon" .Page.Params.icon ) }}
     {{- partial "title" .Page -}}
+
     {{- with .Page.Params.pro -}}
       <span class="badge-pro">pro</span>
+    {{ end }}
+
+    {{- with .Page.IsSection -}}
+      {{ partial "svg" (dict "icon" "angle-down" "class" "menu-arrow" ) }}
     {{ end }}
   </a>
 {{ end }}
