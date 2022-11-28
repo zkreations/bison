@@ -29,3 +29,72 @@ Algunos widgets cambian de estructura dependiendo de la sección en la que se en
 <video controls preload="none" poster="/images/posters/mutation-widgets.png">
   <source src="/videos/mutation-widget.mp4" type="video/mp4">
 </video>
+
+
+## Errores
+
+En cualquier caso, puede que te encuentres con algún error, los cuales te indican lo que salió mal con un mensaje. Aquí algunos de ellos con sus respectivas explicaciones.
+
+### Invalid object key
+
+Este problema se da cuando alguno de los elementos del objeto no es valido. Para blogger, los objetos validos deben contener una llave de abiero y de cierre, en su interior, las "key" deben tener siempre un espacio antes de su valor:
+
+```js
+// Correcto
+{ title: "Ejemplo", icon: "fire" }
+
+// Mal hecho (Error)
+{ title:"Ejemplo", icon:"fire" }
+```
+
+### Object is not closed
+
+Significa que la llave no esta cerrada. Simplemente asegúrate de que la ultima llave del objeto este presente:
+
+
+```js
+// Correcto
+{ title: "Ejemplo" }
+
+// Mal hecho (Error)
+{ title:"Ejemplo", icon:"fire"
+```
+
+
+### Invalid content value
+
+Todas las key de los super widgets pueden contener casi cualquier valor, sin embargo la opción `content` esta limitada a los valores que existen en la plantilla, y solo puedes escribir uno de ellos, los cuales son:
+
+```js
+["alert","carousel","featured","hybrid","comments","section","slider","trending"]
+```
+
+
+### Invalid content value for this widget type
+
+Ademas de el número limitado de opciones para la opción `content`, cada valor esta limitado a su tipo de widget, solo puedes usarlo en el tipo que le corresponde.
+
+
+### Invalid value for this option
+
+Este mensaje indica que el valor que haz ingresado en la opción escogida no es valido. Algunas opciones solo aceptan valores de un tipo:
+
+```js
+// Correcto (Solo acepta números)
+{ auto: 5000 }
+
+// Mal hecho (Error)
+{ auto: true }
+```
+
+### Invalid widget type for this section
+
+No todos los widgets están disponibles en todas las secciones, cuando esto ocurra, veras este error, solo debes mover el widget a otra sección.
+
+
+
+
+
+
+
+
