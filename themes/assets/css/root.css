@@ -1,0 +1,106 @@
+/*! skin.css */
+:where(.item-control){ display: none }
+
+:root {
+  --primary: $(accent.primary);
+  --secondary: $(accent.secondary);
+  --color-link: $(accent.primary);
+  --user-selection: $(accent.primary)33;
+  --body-color: $(body.background.color);
+  --body-bg: $(body.background);
+  --font-primary: $(font.primary.family);
+  --font-secondary: $(body.text.font.family);
+  --logo-font: $(blog.logo.font);
+  --description-font: $(blog.desc.font);
+  --nav-font: $(blog.nav.font);
+  --bg-template: $(light.bg.template);
+  --bg-default: $(light.bg.default);
+  --bg-inset: $(light.bg.inset);
+  --color-title: $(light.color.title);
+  --color-text: $(light.color.text);
+  --header-bg: $(light.header.bg);
+  --logo-color: $(light.logo.color);
+  --description-color: $(light.desc.color);
+  --nav-bg: $(light.nav.bg);
+  --nav-color: $(light.nav.color);
+  --subnav-bg: $(light.nav.subnav);
+  --nav-secondary-bg: $(light.nav.secondary.bg);
+  --nav-secondary-color: $(light.nav.secondary.color);
+  --footer-bg: $(light.footer.bg);
+  --footer-lower-bg: $(light.footer.lower.bg);
+  --footer-links-color: $(light.footer.links.color);
+  --cookie-bg: $(light.cookie.bg);
+  --cookie-color: $(light.cookie.color);
+  --news-height: $(height.breaking);
+  --container: $(width.container);
+  --blog-width: $(width.post);
+  --sidebar-width: $(width.sidebar);
+  --more-text: "$(t.more)";
+  --system-text: "$(t.system)";
+  --light-text: "$(t.light)";
+  --dark-text: "$(t.dark)";
+  --copy-text: "$(t.copy)";
+  --copied-text: "$(t.copied)";
+  --hidden-links-text: "$(t.hiddenLink)";
+  --toc-text: "$(t.toc)";
+  --ws-line-clamp: $(e.lineClamp);
+  --code-color-comment: #969896;
+  --code-color-string: #0e3166;
+  --code-color-selector: #7c4bd8;
+  --code-color-property: #0086b3;
+  --code-color-tag: #333333;
+  --code-color-tag-name: #63a35c;
+  --code-color-attr: #7c4bd8;
+}
+
+@media (min-width: 576px) {
+  :root {
+    --space-primary: $(spacing.primary);
+    --space-secondary: $(spacing.secondary);
+    --tg-gallery-spacer: $(spacing.secondary);
+
+    --tg-spacer: $(tg.blocks);
+    --tg-inline-spacer: $(tg.inline);
+    --tg-headings-spacer: $(tg.headings);
+  }
+}
+
+[data-theme=dark] {
+  --body-color: $(dark.body.color);
+  --bg-template: $(dark.bg.template);
+  --bg-default: $(dark.bg.default);
+  --bg-inset: $(dark.bg.inset);
+  --color-title: $(dark.color.title);
+  --color-text: $(dark.color.text);
+  --header-bg: $(dark.header.bg);
+  --logo-color: $(dark.logo.color);
+  --description-color: $(dark.desc.color);
+  --nav-bg: $(dark.nav.bg);
+  --nav-color: $(dark.nav.color);
+  --subnav-bg: $(dark.nav.subnav);
+  --nav-secondary-bg: $(dark.nav.secondary.bg);
+  --nav-secondary-color: $(dark.nav.secondary.color);
+  --footer-bg: $(dark.footer.widgets);
+  --footer-lower-bg: $(dark.footer.bg);
+  --footer-links-color: $(dark.footer.color);
+  --cookie-bg: $(dark.cookie.bg);
+  --cookie-color: $(dark.cookie.color);
+  --code-color-comment: #3f5768;
+  --code-color-string: #5582bb;
+  --code-color-selector: #489cc9;
+  --code-color-property: #8dbac9;
+  --code-color-tag: #5c6670;
+  --code-color-tag-name: #4baeb9;
+  --code-color-attr: #58849e;
+}
+
+.items {
+  --ws-cols-min: $(e.colsMin);
+}
+.items-related {
+  --ws-cols-min: $(p.relCols);
+}
+
+/* 
+=> YOUR CUSTOM CSS STARTS HERE
+*/

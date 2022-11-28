@@ -1,0 +1,1 @@
+body::after{content:"";display:block;position:fixed;left:0;right:0;top:0;bottom:0;z-index:999}button#darkToggler{padding:10px;box-shadow:var(--shadow-medium);left:-4px;top:32px;border-radius:0 32px 32px 0;background-color:#fff;z-index:9999;position:fixed}[data-theme=dark] button#darkToggler{color:var(--primary)}
