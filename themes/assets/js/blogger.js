@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', () => {
     script.src = src; script.onload = resolve; script.onerror = reject;
     document.head.appendChild(script);
   })
-  document.querySelector('[data-bjs]') && loadScript('https://cdn.jsdelivr.net/npm/@zkreations/bjs@1.0/dist/js/blogger.min.js')
+  document.querySelector('[data-bjs]') && loadScript('https://cdn.jsdelivr.net/npm/@zkreations/bjs@1/dist/js/blogger.min.js')
   // ]]>
     .then(() => {
       const options = {
