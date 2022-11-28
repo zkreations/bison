@@ -1,6 +1,7 @@
 # Folders & files
 node_modules/
 package-lock.json
+bison-pro/
 
 # gohugo
 _site/
