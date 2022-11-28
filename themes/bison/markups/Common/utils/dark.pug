@@ -1,0 +1,8 @@
+//- Si un color es demasiado oscuro devuelve una clase
+//- @author zkreations
+//- @param {color} [color] - Elemento del objeto data:skin.vars del tipo color 
+
+b:includable(id='zk:dark')
+  b:with(value='((data:color.red * 299) + (data:color.green * 598) + (data:color.blue * 114)) / 1000', var='brightness')
+    b:if(cond='data:brightness < 155' )
+      b:attr(name='data-theme' value='dark')

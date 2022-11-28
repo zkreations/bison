@@ -1,0 +1,48 @@
+//- Contenido de secciones
+//- @author zkreations
+//- @param {string} label=undefined - Cantidad de texto del resumen
+//- @param {string} [title=label] - Título personalizado
+//- @param {string} [type=e.type] - Tipo de entradas (grid, row, classic, gallery)
+//- @param {number} [max=4] - Cantidad de entradas a extraer
+//- @param {string} [url] - Enlace del blog a cargar
+
+b:includable(id='content:section')
+  b:if(cond='data:widget.sectionId == "Filters"')
+    b:include(name="docs" data='{ warn: "wrongFilter" }')
+
+    b:elseif(cond='data:widget.sectionId not in ["after-content", "before-content"]')
+    b:include(name="docs" data='{ warn: "sectionSection" }')
+
+    b:elseif(cond='data:widget.type != "Text"')
+    b:include(name="docs" data='{ warn: "invalidContentWidget" }')
+
+    b:else
+    //- Guardamos las opciones en un alias para poder manejarlas fácilmente
+    b:with(value='{ max: (data:option.max ?: 4), type: (data:option.type ?: data:skin.vars.e_type), url: (data:content contains "http" ? (data:content + "/") : data:const.homeUrl), label: (data:option.label ?: "undefined") }' var='$section')
+
+      //- Confieso que actualmente deje de entender como funciona esto
+      b:with(value='+("?max-results=",(data:widgets.Blog1.posts.size ?: data:widgets.Blog1.posts.length),"&view=",data:$section.type)', var='path')
+        b:with(value='+(data:$section.url,"search/label/",data:$section.label,data:path)', var='rute')
+
+          //- Se entiende que este content no inyecta el titulo
+          b:include(name="$:title" data='{ defaultTitle: (data:option.title ?: data:$section.label), more: (data:blog.feedLinks.length < 10 or data:blog.isPrivateBlog ? false : data:rute), class: "widget b:skin-sy Section" }')
+
+          b:if(cond='data:$section.label == "undefined"')
+            b:include(name="docs" data='{ warn: "missingLabel" }')
+
+            b:elseif(cond='data:blog.feedLinks.length < 10')
+            b:include(name="docs" data='{ warn: "feedsRequired" }')
+
+            b:elseif(cond='data:blog.isPrivateBlog')
+            b:include(name="docs" data='{ warn: "publicRequired" }')
+
+            b:else
+            b:with(value='data:widgets.Blog1.allBylineItems' var='show')
+              .widget-content
+                .grid.items(data-bjs='section')
+                  b:include(name='post:cards' data='{ type: data:$section.type, render: data:$section.max }')
+
+                  b:attr(name='data-category', expr:value='data:option.label')
+                  b:attr(name='data-max-results', expr:value='data:$section.max')
+                  b:if(cond='data:$section.url != data:const.homeUrl')
+                    b:attr(name='data-homepage' expr:value='data:$section.url')

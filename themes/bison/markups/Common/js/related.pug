@@ -1,0 +1,31 @@
+//- Entradas relacionadas (data:post requerido)
+//- @author zkreations
+
+b:includable(id="js:related")
+  b:if(cond='(data:post.labels filter (l => l.name != "filter")).any')
+    b:include(name='$:title' data='{ defaultTitle: data:skin.vars.t_related }')
+    b:if(cond='data:blog.feedLinks.length < 10')
+      b:include(name="docs" data='{ warn: "feedsRequired" }')
+
+      b:elseif(cond='data:blog.isPrivateBlog')
+      b:include(name="docs" data='{ warn: "publicRequired" }')
+
+      b:else
+      b:with(value='{ max: ([1,2,3,4,5,6,7,8,9,10,11,12] contains data:skin.vars.p_related ? data:skin.vars.p_related : 2), random: data:skin.vars.p_relShuffle }', var='$related')
+
+        //- Post relacionados toma datos de los post globales
+        .grid.items.items-related
+          //- Plantilla y esqueletos
+          b:include(name='post:cards' data='{ type: "gallery", render: data:$related.max }')
+
+          //- Configuración
+          b:attr(name='data-bjs' value='related')
+          b:attr(name='data-id' expr:value='data:post.id')
+          b:attr(name='data-length' expr:value='data:$related.max')
+          b:attr(name='data-locale' expr:value='data:blog.locale')
+          b:attr(name='data-tags' expr:value='(data:post.labels map (l => l.name)) limit 3')
+          b:with(value='(data:$related.random + 0 == data:$related.random ? (data:$related.random * 1) : 8)', var='shuffle')
+            b:attr(name='data-max-results' expr:value='2 + data:$related.max + (data:shuffle <= 99 ? data:shuffle : 99)')
+
+
+

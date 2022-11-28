@@ -1,0 +1,12 @@
+//- Encabezado de comentarios
+//- @author zkreations
+
+b:includable(id="comment:header")
+  b:tag.comment-author.fw-500.color-title(class='inline-flex items-center g-.5 m:me-.5', expr:name='data:comment.authorUrl ? "a" : "span"' expr:href='data:comment.authorUrl')
+    <data:comment.author/>
+
+    b:if(cond='data:comment.extraIconClass')
+      span.comment-badge.color-primary(role="tooltip" expr:aria-label="data:skin.vars.t_authorbadge" data-tts="up")
+        b:include(name='i:svg' data='{ icon: "circle-check"}')
+
+  span.comment-time(class="fs-7 m:inline block") <data:comment.timestamp/>

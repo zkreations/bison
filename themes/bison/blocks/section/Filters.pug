@@ -1,0 +1,24 @@
+//- Sección de filtros (Búsqueda por términos)
+//- @author zkreations
+
++widget("Label")(title='By type')
+
++widget("Label")(title='By color')
+
++widget("Text", { content: "Modo Estricto" })(title='Modo', locked="true")
+  b:includable#content
+  b:includable#main(var='this')
+    b:include(name='$:class', data='{ class: "filter" }')
+    b:include(name='zk:filter', data='{ type: "mode" }')
+
++widget("Text", { content: "Nuevos Primero" })(title='Orden' locked="true")
+  b:includable#content
+  b:includable#main(var='this')
+    b:include(name='$:class', data='{ class: "filter" }')
+    b:include(name='zk:filter', data='{ type: "order" }')
+
++widget("BlogSearch")(title='Términos' locked="true")
+  b:includable#content
+  b:includable#main(var='this')
+    b:include(name='$:class', data='{ class: "filter" }')
+    b:include(name='zk:filter', data='{ type: "query" }')

@@ -1,0 +1,15 @@
+//- Contenido del widget Enqueue
+//- @author zkreations
+
+b:includable(id='widget:Enqueue')
+  b:include(name='$:class', data='{ id: "enqueue", class: "" }')
+  script(type="deferjs").
+    !(function () {
+      const sources = {<b:loop index='i' values='data:sources' var='source'>'asset-<data:i/>':'<data:source.target/>',</b:loop>}//<![CDATA[
+      Object.keys(sources).forEach(function(key) {
+        const type = sources[key].includes(".css") ? "css" : "js";
+        Defer[type](sources[key], key);
+      });
+      document.getElementById('tools').remove()
+      //]]>
+    })();

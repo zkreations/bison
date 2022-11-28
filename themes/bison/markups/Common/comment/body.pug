@@ -1,0 +1,21 @@
+//- Cuerpo del comentario
+//- @author zkreations
+//- @param {boolean|string} [filterLinks=false] - Filtrar enlaces (boolean|only-links)
+//- @param {string} [hiddenText=data:messages.hidden] - Texto de comentario oculto por filtro
+
+b:includable(id="comment:body")
+  b:class(cond='data:comment.isDeleted' name='comment-deleted alert')
+  b:with(value='(data:comment.body + 0) == data:comment.body ? (data:comment.body + "&nbsp;") : data:comment.body' var='safeComment')
+    b:with(value='{ config: (data:filterLinks ?: false), text: (data:hiddenText ?: data:messages.hidden), links: (data:safeComment contains "rel=\\"nofollow\\"") }' var='filter')
+
+      //- Solo filtrar enlaces
+      b:if(cond='data:filter.config == "only-links"')
+        b:class(name='comment-no-links')
+
+      //- Ocultar todo el comentario con enlaces
+      b:if(cond='data:filter.config and data:filter.config != "only-links" and data:filter.links')
+        b:class(name='alert alert-warning')
+        <data:filter.text/>
+
+        b:else
+        <data:safeComment/>

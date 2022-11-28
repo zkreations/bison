@@ -1,0 +1,12 @@
+//- Contenido del widget HTML
+//- @author zkreations
+
+b:includable(id='widget:HTML')
+  b:if(cond='data:widget.sectionId == "Filters"')
+    b:include(name="docs" data='{ warn: "wrongFilter" }')
+
+    b:elseif(cond='data:widget.sectionId == "footer-upper"')
+    b:include(name='widget:Copyright')
+
+    b:else
+    .widget-content <data:content/>

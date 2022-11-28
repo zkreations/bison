@@ -1,0 +1,22 @@
+//- Variante "trending" de posts populares
+//- @author zkreations
+//- @param {string} [ratio=16:9] - Relación de aspecto (21:9, 16:9, 4:3, 1:1, 1:2, 2:3, 5:7)
+
+b:includable(id='content:trending')
+  b:if(cond='data:widget.sectionId == "Filters"')
+    b:include(name="docs" data='{ warn: "wrongFilter" }')
+
+    b:elseif(cond='data:widget.type != "PopularPosts"')
+    b:include(name="docs" data='{ warn: "invalidContentWidget" }')
+
+    b:elseif(cond='data:widget.sectionId == "header"')
+    b:include(name="widget:Breaking")
+
+    b:elseif(cond='data:this.posts.empty')
+    b:include(name='zk:alert' data='{ message: data:messages.theresNothingHere }')
+
+    b:else
+    .trending.grid.cols-auto-fill(class="b:skin-g2")
+      b:with(value='{ ratio: (data:option.ratio ?: "16:9") }' var='$trending')
+        b:loop(values='data:this.posts', var='post')
+          b:include(name="zk:gallery", data='{ class: "populars-trending", ratio: data:$trending.ratio, srcset: false, resize: 360 }')

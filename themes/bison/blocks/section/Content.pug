@@ -1,0 +1,28 @@
+//- Sección de artículos (Global)
+//- @author zkreations
+
++widget("Blog", { showCommentLink: "true" }, 1)(locked="true")
+  b:includable#main(var='this')
+    b:include(name='widget:Blog')
+
+  //- Superior
+  b:includable#postMetadataJSONImage
+    b:with(value='resizeImage((data:post.featuredImage ?: data:const.image), 1200, "1200:630")', var='image')
+      b:if(cond='data:image').
+        "image": {
+          "@type": "ImageObject",
+          "url": "<b:eval expr='data:image.jsonEscaped'/>",
+          "width": <b:eval expr='data:image.width'/>,
+          "height":  <b:eval expr='data:image.height'/>
+        },
+      //- End code
+
+//- HTML inyectable
+each injected in [1,2,3,4]
+  +widget("HTML", {
+      content: `<div class="alert text-center">Injected content #${injected}</div>`
+    }, (250 + injected) )(cond='data:view.isPost and data:content != ""' title=`Injected #${injected}` locked="true" visible='false')
+
+    b:includable#content
+    b:includable#main
+      b:include(name="widget:InnerContent")

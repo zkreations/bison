@@ -1,0 +1,10 @@
+//- Contenido del widget AdSense
+//- @author zkreations
+
+b:includable(id='widget:AdSense')
+  b:if(cond='data:widget.sectionId == "Filters"')
+    b:include(name="docs" data='{ warn: "wrongFilter" }')
+    b:else
+    b:include(name='$:class', data='{ class: ("widget b:skin-sy " + data:widget.type) }')
+    .widget-content
+      b:include(name='@:ads')

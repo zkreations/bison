@@ -1,0 +1,43 @@
+//- Metadatos y scripts
+//- @author zkreations
+
+b:includable(id='zk:head')
+  //- Meta
+  b:include(name='@:meta' data='{ ogImage: data:skin.vars.d_ogImage, favicon: data:skin.vars.d_favicon, https: data:skin.vars.f_cloudflare }')
+  meta(name="color-scheme", expr:content='["light","dark"] contains data:skin.vars.g_scheme ? data:skin.vars.g_scheme : "light dark"')
+
+  //- Pre-conexión a dominios de terceros
+  link(href='https://cdn.jsdelivr.net/', rel='preconnect', crossorigin='anonymous')
+  link(href='https://cdn.jsdelivr.net/', rel='dns-prefetch')
+
+  link(href='https://fonts.gstatic.com/', rel='preconnect', crossorigin='anonymous')
+  link(href='https://fonts.gstatic.com/', rel='dns-prefetch')
+
+  //- Código JS que debe ejecutarse primero
+  b:include(name="zk:assets", data='{ get: "inlineJs" }')
+
+  //- Administrador en la Home
+  b:if(cond='data:view.isMultipleItems and data:skin.vars.a_edit')
+    meta(name='home-blog-admin' expr:content='data:blog.blogId')
+
+  //- CSS
+  b:include(name="zk:assets", data='{ get: "fonts" }')
+  b:include(name="zk:assets", data='{ get: "main" }')
+
+  b:if(cond='data:view.isSingleItem or data:view.isError')
+    b:include(name="zk:assets", data='{ get: "typography" }')
+
+  //- JS
+  b:include(name="zk:assets", data='{ get: "js" }')
+  b:include(name="zk:assets", data='{ get: "bloggerJs" }')
+
+  //- Estilos adicionales
+  b:if(cond='data:view.isPost')
+    b:include(name="zk:assets", data='{ get: "inlineCSS" }')
+
+  //- Google
+  b:include(name="zk:assets", data='{ get: "adsense" }')
+  b:include(data='blog' name='google-analytics')
+
+  b:if(cond='data:view.isPreview')
+    b:include(name="zk:assets", data='{ get: "preview" }')

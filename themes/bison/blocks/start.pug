@@ -1,0 +1,8 @@
+//- Contenido debajo de `<body>`
+//- @author zkreations
+
+//- Herramientas del modo "Diseño"
+b:if(cond='data:skin.vars.a_tools')
+  b:tag.tools(name='div' cond='data:view.isLayoutMode')
+    +section("tools")(maxwidgets='2' showaddelement='false').none
+      include section/Tools

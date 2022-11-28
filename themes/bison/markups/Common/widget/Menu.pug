@@ -1,0 +1,56 @@
+//- Contenido del widget Menu (Mutation: PageList)
+//- @author zkreations
+
+b:includable(id='widget:Menu')
+  b:include(name='$:class', data='{class: "header-navbar"}')
+  b:with(value='"__"', var='prefix')
+    b:if(cond='data:links[0].title contains data:prefix')
+      b:include(name="docs" data='{ warn: "wrongMenu" }')
+      b:elseif(cond='data:links any (l => l.title + 0 == l.title)')
+      b:include(name="docs" data='{ warn: "wrongMenuNumber" }')
+      b:else
+      .navbar.relative.flex(class="l:navbar-expand l:py-0 py-1 b:skin-px")
+        button.navbar-toggle(data-wjs="outside", expr:data-target='"nav-" + data:widget.instanceId', aria-label="Menu")
+          b:include(name="i:svg", data='{ icon: "bars" }')
+
+        .nav-show(expr:id='"nav-" + data:widget.instanceId', class="l:py-0 py-2 y-0 r-1/1")
+          ul.nav.uppercase(data-wjs="accordion", data-outside="true")
+            b:if(cond='data:links.any')
+              b:loop(index='i' values='data:links' var='link')
+                //- Identificamos lo que consideramos el "inicio" de un menu y "el final" siguiendo la lógica planteada a continuación:
+                //- - Si el elemento actual de la lista no contiene el prefijo y el proximo elemento si, entonces este elemento contiene un menu
+                //- - Si el elemento actual contiene prefijo, pero el proximo no, entonces el menu debe finalizar
+
+                b:with(value='{ start: ((data:links[data:i + 1].title contains data:prefix) and (data:link.title not contains data:prefix)), end: ((data:links[data:i + 1].title not contains data:prefix) and (data:link.title contains data:prefix)) }' var='menu')
+                  //- Agregamos una clase a los padres para identificarlos
+                  | &lt;li class="nav-item" <b:if cond='data:menu.start'> data-item="data-item"</b:if>&gt;
+
+                  a.nav-link(expr:href='data:link.href')
+                    <data:link.title/>
+
+                  //- Este elemento tiene un menu, entonces los próximos elementos deberían estar encerrados por una nueva lista
+                  b:if(cond='data:menu.start')
+                    button(data-toggle="data-toggle" aria-label='toggle')
+                    | &lt;ul class='nav-subnav'&gt;
+
+                  //- Un submenu sin padre no tiene sentido, por lo tanto evaluamos desde el segundo elemento
+                  b:if(cond='data:menu.end')
+                    | &lt;/li&gt;&lt;/ul&gt;
+
+                  //- El padre no debería cerrar si un menu esta empezando
+                  b:if(cond='!data:menu.start')
+                    | &lt;/li&gt;
+              b:else
+              li.nav-item
+                span.nav-link <data:messages.noTitle/>
+
+        b:if(cond='!data:view.isPreview')
+          .nav-right.i-bold.ms-auto.flex(class="gx-.75")
+            b:if(cond="data:skin.vars.g_toggleScheme")
+              button.theme-toggle.capitalize(data-tts="down")
+                b:include(name="i:svg", data='{ icon: "moon" }')
+                b:include(name="i:svg", data='{ icon: "sun" }')
+
+            b:if(cond="data:skin.vars.g_modalSearch")
+              button(expr:aria-label="data:messages.search", data-tts="down", data-wjs="modal", data-target="#search")
+                b:include(name="i:svg", data='{ icon: "search" }')

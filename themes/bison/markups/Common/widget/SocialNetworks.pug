@@ -1,0 +1,8 @@
+//- Contenido del widget Social (Mutation: LinkList)
+//- @author zkreations
+
+b:includable(id='widget:SocialNetworks')
+  b:include(name='$:class', data='{ class: "footer-social gt:flex gt:py-.25 flex flex-wrap items-center justify-center g-1 i-m" }')
+  b:loop(values='data:links' var='link')
+    a.social-link(class="color-link:hover", expr:href="data:link.target" expr:aria-label="data:link.name" rel='noopener noreferrer nofollow' target='_blank')
+      b:include(name="i:svg", data='{ icon: data:link.name }')

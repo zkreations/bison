@@ -1,0 +1,61 @@
+//- Main
+//- @author zkreations
+
+//- Contenido principal (antes que main)
+b:section#upper.upper.flex.flex-column(class="b:skin-g1", cond='data:view.isHomepage and data:widgets any (w => w.sectionId == "upper")')
+  include section/Upper
+
+//- Alias según el tipo de pagina ["home", "index", "search", "labels", "archive", "item", "static_page", "error_page"]
+b:with(value='data:view.isHomepage ? "home" : (data:view.search.query ? "search" : ( data:view.isLabelSearch ? "labels" : data:blog.pageType))', var='pageType')
+  b:tag(name='div' cond='!data:view.isLayoutMode')
+
+    //- Clases que configuran estructura basado en preferencias del usuario
+    b:include(cond='!data:view.isLayoutMode' name='zk:layoutClass')
+
+    //- block blog
+    .content.flex.flex-column(class="b:skin-g1")
+      b:section#before-content.flex.flex-column(class="b:skin-g1" cond='data:view.isHomepage and (data:widgets any (w => w.sectionId == "before-content"))')
+        include section/BeforeContent
+
+      b:section#Content.flex.flex-column(class="b:skin-g1", maxwidgets='6')
+        include section/Content
+
+      b:section#after-content.flex.flex-column(class="b:skin-g1" cond='data:view.isHomepage and (data:widgets any (w => w.sectionId == "after-content"))')
+        include section/AfterContent
+
+    //- Almacenamos el valor de la variable para manejarla mejor
+    b:with(value='data:skin.vars.f_sidebarIn' var='sidebar')
+      b:with(value='{ post: ((data:view.isPost or data:view.isLayoutMode) and data:skin.vars.f_postSidebar), page: ((data:view.isPage or data:view.isLayoutMode) and data:skin.vars.f_pageSidebar), filter: ((data:view.search.query or data:view.isLayoutMode) and data:skin.vars.f_filter) }', var='customSidebar')
+
+        //- Si sidebar es false entonces no hay sidebar para nadie
+        b:if(cond='data:sidebar != false')
+
+          //- tips: Evitamos romper el diseño con valores numéricos o boleanos, solo se permite string
+          b:with(value='([false,true] not contains data:sidebar and (data:sidebar + 0 != data:sidebar)) ? data:sidebar : "home, index, search, labels, archive, item, static_page, error_page"' var='hasSidebar')
+
+            b:if(cond='data:hasSidebar contains data:pageType')
+              b:section#sidebar.sidebar.flex.flex-column(class="b:skin-g1", cond='data:widgets any (w => w.sectionId == "sidebar") and not (data:customSidebar.post or data:customSidebar.page or data:customSidebar.filter)', ads='true')
+                include section/SidebarGlobal
+
+              b:if(cond='data:customSidebar.post')
+                +section("sidebar-post").sidebar.sidebar-post.flex.flex-column(class="b:skin-g1")
+                  include section/SidebarPost
+
+              b:if(cond='data:customSidebar.page')
+                +section("sidebar-page").sidebar.sidebar-page.flex.flex-column(class="b:skin-g1")
+                  include section/SidebarPage
+
+              b:if(cond='data:customSidebar.filter')
+                b:tag.sidebar.sidebar-filter.flex.flex-column(name='div', cond='!data:view.isLayoutMode', class="b:skin-g1")
+                  b:tag(name='div', cond='!data:view.isLayoutMode')
+                    b:include(cond='!data:view.isLayoutMode', name='$:title', data='{ title: data:skin.vars.t_filter }')
+                    b:attr(name='class', value='widget b:skin-sy Filter')
+
+                    b:tag.widget-content.bg-default#filterForm(class='m:p-1.75 p-1.25 sy-1.5', name='div', cond='!data:view.isLayoutMode', expr:data-action='data:skin.vars.f_cloudflare ? data:blog.searchUrl.https : data:blog.searchUrl')
+                      +section("Filters")(class="filters sy-1.5")
+                        include section/Filters
+
+                      button#filter.filter-button.btn.btn-full.btn-primary
+                        b:include(name="i:svg", data='{ icon: "filter" }')
+                        <data:skin.vars.t_filterBtn/>
+

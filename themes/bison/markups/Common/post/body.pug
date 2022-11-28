@@ -1,0 +1,29 @@
+//- Cuerpo de una entrada (data:post requerido)
+//- @author zkreations
+//- @param {string} [class] - Clases adicionales
+
+b:includable(id="post:body")
+  .post-content.typography.fs-6(expr:data-post-id='data:post.id')
+
+    //- clases adicionales
+    b:class(cond='data:class' expr:name='data:class')
+
+    //- Si el resaltado de código esta permitido
+    b:class(cond='data:skin.vars.p_highlight' name='has-highlight')
+
+    b:if(cond='data:view.isPost')
+      b:if(cond='data:skin.vars.p_autoToc' )
+        b:attr(name='data-auto-toc' expr:value='data:skin.vars.p_autoToc')
+
+      b:if(cond='data:skin.vars.p_tocHeading' )
+        b:attr(name='data-tags' expr:value='data:skin.vars.p_tocHeading')
+
+      b:if(cond='[1,2,3,4,5,6,7,8,9,10,11,12] contains data:skin.vars.p_innerContent' )
+        b:attr(name='data-content-every' expr:value='data:skin.vars.p_innerContent')
+
+    //- Cuerpo de una entrada
+    <data:post.body/>
+
+  b:if(cond='data:const.temp contains "hero"')
+    script(type='deferjs') document.querySelector('.typography img[src^="<data:blog.postImageUrl/>"]').remove()
+

@@ -1,0 +1,16 @@
+//- Estructura de la lista de comentarios
+//- @author zkreations
+//- @param {number} [minDepth=1] - Nivel mínimo
+//- @param {number} [maxDepth=5] - Nivel máximo
+//- @param {boolean} [formFirst=false] - insertar formulario primero
+
+b:includable(id="comment:list")
+  b:with(value='{ min: (data:minDepth ?: 1), max: (data:maxDepth ?: 5) }' var='level')
+    b:with(value='data:level.min >= data:level.max ? data:level.max : data:level.min' var='depth')
+
+      //- Orden del formulario
+      b:loop(values='(data:formFirst ?: false) ? ["form","content"] : ["content","form"]' var='order')
+        b:include(expr:name='"comment:" + data:order')
+
+      //- Insertamos paginación si hay más de 200 comentarios (incluyendo respuestas)
+      b:include(cond='data:post.commentPagingRequired' name='comment:pagination')

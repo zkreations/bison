@@ -1,0 +1,9 @@
+//- Reemplazo los atributos de widgets de Blogger
+//- @author zkreations
+//- @param {string} [id] - Nuevo identificador
+//- @param {string} [class=widget] - Clases css
+
+b:includable(id='$:class')
+  b:attr(name='data-version' value='')
+  b:attr(name='id' expr:value='data:id')
+  b:attr(name='class' expr:value='data:class ?: "widget"')

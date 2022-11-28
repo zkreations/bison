@@ -1,0 +1,36 @@
+//- Comentarios recientes
+//- @author zkreations
+//- @param {number} [snippet=50] - Cantidad de texto del resumen
+//- @param {number} [max=5] - Cantidad de comentarios recientes
+//- @param {string} [url] - Enlace del blog de últimos comentarios
+
+b:includable(id='content:comments')
+  b:if(cond='data:widget.sectionId == "Filters"')
+    b:include(name="docs" data='{ warn: "wrongFilter" }')
+
+    b:elseif(cond='data:widget.type != "Text"')
+    b:include(name="docs" data='{ warn: "invalidContentWidget" }')
+
+    b:elseif(cond='data:blog.feedLinks.length < 10')
+    b:include(name="docs" data='{ warn: "feedsRequired" }')
+
+    b:elseif(cond='data:blog.isPrivateBlog')
+    b:include(name="docs" data='{ warn: "publicRequired" }')
+
+    b:elseif(cond='([true,false] contains data:option.snippet) or ([true,false] contains data:option.max)')
+    b:include(name="docs" data='{ warn: "invalidOption" }')
+
+    b:else
+    b:with(value='{ snippet: ((data:option.snippet + 0) == data:option.snippet ? (data:option.snippet * 1) : 50), max: ((data:option.max + 0) == data:option.max ? (data:option.max * 1) : 5), url: (data:content contains "http" ? (data:content + "/") : data:const.homeUrl) }' var='$comments')
+      .widget-content
+        .latest.grid.cols-auto-fit.bg-default(data-bjs='comments' class="m:p-1.75 p-1.25 g-1.5")
+
+          b:attr(name='data-max-results' expr:value='data:$comments.max')
+          b:attr(name='data-snippet' expr:value='data:$comments.snippet')
+
+          b:include(name="js:templates" data='{ name: "comments" }')
+          b:loop(values='1 to data:$comments.max', var='num')
+            b:include(name="zk:skeleton", data='{ name: "comments" }')
+
+          b:if(cond='data:$comments.url != data:const.homeUrl')
+            b:attr(name='data-homepage' expr:value='data:$comments.url')

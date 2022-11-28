@@ -1,0 +1,38 @@
+//- Destinada a la etiqueta "main" para controlar estilos de layout
+//- @author zkreations
+
+b:includable(id='zk:layoutClass')
+  //- Clases de todo
+  b:class(name='items-start grid blog b:skin-g1')
+
+  //- Clases que dependen de la existencia del sidebar
+  b:with(value='data:skin.vars.f_sidebarIn' var='sidebar')
+    b:if(cond='data:sidebar != false')
+      //- Purgamos variable para evitar booleanos y números
+      b:with(value='([false,true] not contains data:sidebar and (data:sidebar + 0 != data:sidebar)) ? data:sidebar : "home, index, search, labels, archive, item, static_page, error_page"' var='hasSidebar')
+        b:attr(cond='data:hasSidebar not contains data:pageType' name='class' value='blog-full flex flex-column b:skin-g1')
+      b:else
+      b:attr(name='class' value='blog-full flex flex-column b:skin-g1')
+
+  //- Tips: Controlar sidebar fijo
+  b:with(value='data:skin.vars.f_stickySidebar' var='sticky')
+    b:if(cond='data:sticky != false')
+      b:with(value='([false,true] not contains data:sticky and (data:sticky + 0 != data:sticky)) ? data:sticky : "null"' var='hasSticky')
+        b:with(value='"has-sticky" + (data:hasSticky contains "last" ? "-last" : "")' var='stickyClass')
+
+          b:if(cond='data:hasSticky contains "post"')
+            b:class(cond='data:view.isPost' expr:name='data:stickyClass')
+
+            b:elseif(cond='data:hasSticky contains "page"')
+            b:class(cond='data:view.isPage' expr:name='data:stickyClass')
+
+            b:elseif(cond='data:hasSticky contains "single"')
+            b:class(cond='data:view.isSingleItem' expr:name='data:stickyClass')
+
+            b:else
+            b:class(expr:name='data:stickyClass')
+
+  //- Intercambiamos posición según criterio
+  b:class(cond='data:skin.vars.f_filter and data:view.search.query' name='blog-reverse-mobile')
+  b:class(cond='data:skin.vars.f_swap' name='blog-reverse')
+

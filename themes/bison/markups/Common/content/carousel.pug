@@ -1,0 +1,46 @@
+//- Crea el carrusel de imágenes
+//- @author zkreations
+//- @param {number} [top=0] - Cantidad de elementos Tops (0-3)
+//- @param {string} [ratio=4:3] - Relación de aspecto de celdas (21:9, 16:9, 4:3, 1:1, 1:2, 2:3, 5:7)
+//- @param {string} [topRatio=16:9] - Relación de aspecto de tops (21:9, 16:9, 4:3, 1:1, 1:2, 2:3, 5:7)
+//- @param {number} [auto=null] - Tiempo en milisegundos del desplazamiento automático
+//- @param {boolean} [free=false] - Desplazamiento libre con físicas
+
+b:includable(id='content:carousel')
+  b:if(cond='data:widget.sectionId == "Filters"')
+    b:include(name="docs" data='{ warn: "wrongFilter" }')
+
+    b:elseif(cond='data:widget.type != "PopularPosts"')
+    b:include(name="docs" data='{ warn: "invalidContentWidget" }')
+
+    b:elseif(cond='data:widget.sectionId not in ["upper","after-content","before-content","Content"]')
+    b:include(name="docs" data='{ warn: "carrouselSection" }')
+
+    b:elseif(cond='data:this.posts.empty')
+    b:include(name="docs" data='{ warn: "carrouselEmpty" }')
+
+    b:elseif(cond='([true,false] contains data:option.auto)')
+    b:include(name="docs" data='{ warn: "invalidOption" }')
+
+    b:else
+    .carousel
+      b:with(value='{ top: ([1,2,3] contains data:option.top ? (data:option.top * 1) : 0), ratio: (data:option.ratio ?: "4:3"), topRatio: (data:option.topRatio ?: "16:9"), autoplay: (data:option.auto ?: "null"), freeScroll: (data:option.free ?: false) }' var='$carousel')
+
+        //- Nueva tabla ajustable
+        b:with(value='data:this.posts offset data:$carousel.top', var='cells')
+          b:if(cond='data:$carousel.top != 0')
+            .carousel-featured.grid(class="cols-1")
+              b:class(cond='data:$carousel.top == 2' name='m:cols-2')
+              b:class(cond='data:$carousel.top == 3' name='l:cols-3')
+
+              b:loop(values='data:this.posts take data:$carousel.top', var='post')
+                b:include(name="zk:gallery", data='{ class: "carousel-top", mode: "featured", srcset: false, ratio: data:$carousel.topRatio, resize: 540, loading: false }')
+
+          b:if(cond='data:cells.any')
+            .o-hidden.relative
+              .carousel-content
+                b:with(value='{ autoplay: ((data:$carousel.autoplay + 0 == data:$carousel.autoplay) ? (data:$carousel.autoplay * 1000) : false), freeScroll: ([true,false] contains data:$carousel.freeScroll ? data:$carousel.freeScroll : false) }' var='flickity')
+                  b:attr(cond='data:flickity.autoplay' name='data-autoplay' value='true')
+                  b:attr(cond='!data:view.isPreview and data:cells.length > 4', name="data-flickity", expr:value='"{\\"cellSelector\\": \\".carousel-cell\\", \\"cellAlign\\": \\"left\\", \\"pageDots\\": false, \\"wrapAround\\": true, \\"autoPlay\\": " + data:flickity.autoplay + ", \\"freeScroll\\": " + data:flickity.freeScroll + "}"')
+                  b:loop(values='data:cells', var='post')
+                    b:include(name="zk:gallery", data='{ class: "carousel-cell", srcset: false, ratio: data:$carousel.ratio, resize: 300, loading: false }')

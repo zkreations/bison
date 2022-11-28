@@ -1,0 +1,16 @@
+//- Paginación de comentarios
+//- @author zkreations
+
+b:includable(id="comment:pagination")
+  .comments-paging.flex.flex-wrap(class="g-.5")
+    b:if(cond='data:post.hasOlderLinks')
+      a(expr:href='data:post.oldestLinkUrl').btn.btn-outline
+        b:include(name='i:svg' data='{ icon: "angles-left"}')
+      a(expr:href='data:post.olderLinkUrl').btn.btn-outline <data:messages.older/>
+
+    span.self-center <data:post.commentRangeText/>
+
+    b:if(cond='data:post.hasNewerLinks')
+      a(expr:href='data:post.newerLinkUrl').btn.btn-outline <data:messages.newer/>
+      a(expr:href='data:post.newestLinkUrl').btn.btn-outline
+        b:include(name='i:svg' data='{ icon: "angles-right"}')

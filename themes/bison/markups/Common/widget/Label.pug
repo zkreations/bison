@@ -1,0 +1,42 @@
+//- Contenido del widget Label
+//- @author zkreations
+//- @param {number} [max] - Número máximo de elementos visibles
+
+b:includable(id='widget:Label')
+  b:if(cond='data:widget.sectionId == "Filters"')
+    b:include(name='$:class', data='{ class: "filter" }')
+    b:include(name='zk:filter', data='{ type: "label" }')
+
+    b:elseif(cond='data:widget.sectionId == "header"')
+    b:include(name="docs" data='{ warn: "invalidSection" }')
+
+    b:else
+    b:with(value='{ max: (data:option.max ?: 15) }' var='$label')
+      .widget-content
+        input.labels-trigger.none(expr:id="data:widget.instanceId" type="checkbox")
+        .labels.flex.capitalize(class="b:skin-g2")
+          b:class(expr:name='data:display == "list" ? "flex-column" : "flex-wrap"')
+          b:loop(index='i', values='data:labels', var='label')
+            b:include(name="cloud")
+
+            //- Links de etiquetas
+            a.labels-link.btn(expr:href='data:label.url')
+              b:class(cond='data:label.url == data:view.url', name="is-here")
+              b:class(cond='data:$label.max and data:i gte data:$label.max', name="is-hidden")
+
+              b:attr(cond='data:$label.max and data:i gt data:$label.max', name="style", expr:value='+("--d:",((data:i - (data:$label.max ?: 0)) * 100),"ms")')
+              b:eval(expr="data:label.name")
+              b:if(cond='data:this.showFreqNumbers')
+                span.labels-num.fs-8.fw-500
+                  b:class(cond='data:display == "list"', name="ms-auto")
+                  <data:label.count/>
+            //- Fin de Links de etiquetas
+
+          b:if(cond='data:$label.max and data:$label.max lt data:labels.length')
+            label.labels-link.btn(expr:for="data:widget.instanceId" expr:aria-label="data:messages.viewAll")
+              b:class(cond='data:display == "list"' name='btn-full')
+              b:attr(name="style", expr:value='+("--d:",((data:labels.length - data:$label.max) * 100),"ms")')
+
+              b:include(name='i:svg' data='{ icon: "plus" }')
+              b:include(name='i:svg' data='{ icon: "minus" }')
+

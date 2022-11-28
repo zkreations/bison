@@ -1,0 +1,10 @@
+//- Sección de barra lateral (Global)
+//- @author zkreations
+
++widget("BlogSearch")(title='Search')
+
++widget("FeaturedPost", { useMostRecentPost: "true" })(title='Featured')
+
++widget("Text")(title='{ title: "Comments", content: "comments" }', visible='true')
+
++widget("PopularPosts", { showSnippets: "false" })(title='{ title: "Trending", content: "trending" }', locked="false")

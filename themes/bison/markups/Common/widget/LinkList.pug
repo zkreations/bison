@@ -1,0 +1,18 @@
+//- Contenido del widget LinkList
+//- @author zkreations
+
+b:includable(id='widget:LinkList')
+  b:if(cond='data:widget.sectionId == "Filters"')
+    b:include(name="docs" data='{ warn: "wrongFilter" }')
+
+    b:elseif(cond='data:widget.sectionId == "footer-upper"')
+    b:include(name='widget:SocialNetworks')
+
+    b:else
+    .widget-content
+      .links.fw-500.flex.flex-wrap(class="b:skin-g2")
+        b:loop(values='data:links' var='link')
+          a.links-link.has-icon.btn(expr:href='data:link.target')
+            b:class(cond='data:widget.sectionId == "header"' name='flex-1 justify-center')
+            <data:link.name/>
+

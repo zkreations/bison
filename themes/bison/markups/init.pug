@@ -1,0 +1,113 @@
++markups(includable.compact)
+  +markup
+    //- Canvas
+    include /lib/markups/Common/ads
+    include /lib/markups/Common/adsense
+    include /lib/markups/Common/image
+    include /lib/markups/Common/kind
+    include /lib/markups/Common/meta
+
+    //- Super marcado
+    include Common/super/class
+    include Common/super/content
+    include Common/super/title
+
+    //- Estrictamente necesarios
+    include Common/contentTitle
+    include Common/head
+    include Common/layoutClass
+    include Common/noContent
+    include Common/root
+
+    //- Utilidades
+    include Common/utils/alert
+    include Common/utils/assets
+    include Common/utils/brand
+    include Common/utils/dark
+    include Common/utils/docs
+    include Common/utils/filter
+    include Common/utils/gallery
+    include Common/utils/modal
+    include Common/utils/skeleton
+    include Common/utils/svg
+
+    //- posts
+    include Common/post/admin
+    include Common/post/attachments
+    include Common/post/body
+    include Common/post/card
+    include Common/post/data
+    include Common/post/featuredLabels
+    include Common/post/header
+    include Common/post/hero
+    include Common/post/inlineAd
+    include Common/post/labels
+    include Common/post/meta
+    include Common/post/pagination
+    include Common/post/share
+    include Common/post/title
+    include Common/post/view
+
+    //- js
+    include Common/js/pagination
+    include Common/js/related
+    include Common/js/templates
+
+    //- Comentarios
+    include Common/comment/avatar
+    include Common/comment/body
+    include Common/comment/content
+    include Common/comment/buttons
+    include Common/comment/form
+    include Common/comment/header
+    include Common/comment/item
+    include Common/comment/list
+    include Common/comment/main
+    include Common/comment/pagination
+
+    //- Contents
+    include Common/content/alerts
+    include Common/content/comments
+    include Common/content/carousel
+    include Common/content/section
+    include Common/content/trending
+
+    //- widgets content
+    include Common/widget/AdSense
+    include Common/widget/Blog
+    include Common/widget/BlogContent
+    include Common/widget/BlogHero
+    include Common/widget/BlogSearch
+    include Common/widget/Breaking
+    include Common/widget/ContactForm
+    include Common/widget/Copyright
+    include Common/widget/Enqueue
+    include Common/widget/FeaturedPost
+    include Common/widget/FooterLinks
+    include Common/widget/Header
+    include Common/widget/HTML
+    include Common/widget/Image
+    include Common/widget/InnerContent
+    include Common/widget/Label
+    include Common/widget/LinkList
+    include Common/widget/Menu
+    include Common/widget/Navbar
+    include Common/widget/PageList
+    include Common/widget/PopularPosts
+    include Common/widget/Profile
+    include Common/widget/SocialNetworks
+    include Common/widget/Subscribe
+    include Common/widget/Text
+    include Common/widget/TextList
+
+  //- Formateo de todos los widgets
+  +markup("All")
+    b:includable#main(var="this")
+      b:include(data='data:this.title' name='$:content')
+
+    b:includable#content
+      b:include(expr:name='"widget:" + data:widget.type')
+
+  +markup("AdSense,Blog")
+    b:includable#main
+      b:include(expr:name='"widget:" + data:widget.type')

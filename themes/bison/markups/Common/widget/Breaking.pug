@@ -1,0 +1,16 @@
+//- Contenido del widget Breaking (Mutation: PopularPosts)
+//- @author zkreations
+
+b:includable(id='widget:Breaking')
+  b:include(name='$:class', data='{class: "header-breaking bg-default"}')
+  b:if(cond="data:posts.notEmpty")
+    .breaking.flex.items-center(class='b:skin-px')
+
+      b:include(name="i:svg", data='{ icon: "fire", class: "breaking-icon flex-none" }')
+      b:include(name="i:svg", data='{ icon: "angle-right", class: "breaking-arrow mx-.75 flex-none" }')
+
+      .breaking-content.relative.truncate
+        .breaking-items.flex.flex-column(expr:style='"--news-items:" + data:posts.length')
+          b:loop(values='data:posts', var='post')
+            a(expr:href="data:post.url", tabindex="-1",class="color-link:hover").breaking-item.truncate
+              b:eval(expr='data:post.title.escaped != "" ? data:post.title.escaped : data:messages.noTitle')

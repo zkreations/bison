@@ -1,0 +1,26 @@
+//- Vista post y página
+//- @author zkreations
+
+b:includable(id="post:view" var='post')
+  b:if(cond='data:view.isPost')
+
+    //- ENTRADAS
+    article.article(class="b:skin-sy")
+
+      b:include(name="post:header")
+      b:include(name="post:body")
+      b:include(name="post:attachments" cond='data:post.enclosures.notEmpty')
+      b:include(name="post:share" cond='data:show.share')
+      b:include(name="post:pagination" cond='data:skin.vars.p_pagination')
+      b:include(name="js:related" cond='data:skin.vars.p_related')
+      b:include(name="comment:main")
+
+
+    //- PÁGINA ESTÁTICA
+    b:elseif(cond='data:view.isPage')
+
+    article.article(class="b:skin-sy")
+      header.post-header
+        b:include(name="post:title")
+      b:include(name="post:body")
+      b:include(name="comment:main")

@@ -1,0 +1,30 @@
+//- Contenido del widget Profile
+//- @author zkreations
+
+b:includable(id='widget:Profile')
+  b:if(cond='data:widget.sectionId == "Filters"')
+    b:include(name="docs" data='{ warn: "wrongFilter" }')
+
+    b:else
+    .widget-content
+      .profile.flex.items-start.bg-default(class="g-1 m:p-1.75 p-1.25")
+        b:class(cond='data:team', name='flex-wrap gt:flex-none')
+        b:if(cond='data:team')
+          b:loop(values='data:authors' var='author')
+            a(expr:href='data:author.userUrl' rel='nofollow' expr:aria-label="data:author.display-name", data-tts='up').profile-image
+              b:include(name="@:image" data='{class: "rounded-pill", src: (data:author.authorPhoto.image ?: data:const.avatar), resize: 60, ratio: "1:1", loading: "lazy" }')
+
+          b:else
+          a(expr:href='data:this.userUrl' rel='nofollow' expr:aria-label="data:this.displayname").profile-image.flex-none
+            b:include(name="@:image", data='{class: "rounded-pill", src: (data:this.authorPhoto.image ?: data:const.avatar), resize: 60, ratio: "1:1", loading: "lazy" }')
+
+          .profile-body(class="sy-.5")
+            a.profile-name(expr:href='data:this.userUrl', rel='nofollow', class="color-link:hover").fw-500.color-title <data:this.displayname/>
+            b:if(cond='data:this.aboutme != ""')
+              p.profile-snippet <data:this.aboutme/>
+
+            b:if(cond='data:this.showlocation and data:this.location != ""')
+              .profile-locale.inline-flex
+                b:include(name="i:svg", data='{ icon: "location-dot", class: "me-.5" }')
+                <data:this.location/>
+

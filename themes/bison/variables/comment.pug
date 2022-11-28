@@ -1,0 +1,20 @@
+//- Sistema de comentarios
+//- @author zkreations
+//- @param {number} c.depth - Nivel de respuestas (0-3)
+//- @param {boolean} c.newer - Comentarios recientes primero
+//- @param {boolean} c.formFirst - Mostrar el formulario primero
+//- @param {boolean|string} c.filter - Filtrar enlaces (boolean| only-links)
+//- @param {boolean|string} c.disqus - Nombre corto de Disqus (https://disqus.com/)
+//- @param {boolean} c.disqusOnClick - Cargar disqus mediante un botón
+
+| Comentarios
+| =====================
++variables({
+  "c.depth" : { description: "Replies level", value: "2" },
+  "c.newer" : { description: "New comments first", value: "true" },
+  "c.formFirst" : { description: "Form first", value: "true" },
+  "c.filter": { description: "Enable link filter", value: "true" },
+  "c.disqus": { description: "Disqus shortname", value: "false" },
+  "c.disqusOnClick": { description: "Click and load Disqus", value: "false" },
+})
+| #{'\n'}

@@ -1,0 +1,9 @@
+//- Contenido del widget FooterLinks (Mutation: PageList)
+//- @author zkreations
+
+b:includable(id='widget:FooterLinks')
+  b:include(name='$:class', data='{class: "flex flex-wrap g-1 b:skin-p"}')
+  b:loop(values='data:links' var='link')
+    a.lower-link(expr:href="data:link.href")
+      b:class(cond='data:link.isCurrentPage', name='is-here')
+      <data:link.title/>

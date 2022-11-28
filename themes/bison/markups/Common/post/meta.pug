@@ -1,0 +1,19 @@
+//- Datos meta de entrada (data:post requerido)
+//- @author zkreations
+
+b:includable(id="post:meta")
+  b:if(cond='data:show.author')
+    a.meta-item.has-icon(expr:href='data:post.author.profileUrl != ""  ? data:post.author.profileUrl : data:skin.vars.d_profileUrl', expr:title="data:post.author.name" rel="author")
+      b:include(name='@:image', data='{ src: (data:post.author.authorPhoto.image ?: data:const.avatar), class: "author-avatar rounded-pill", alt: data:post.author.name, resize: 30, ratio: "1:1" }')
+
+  b:if(cond='data:show.timestamp')
+    time.meta-item.has-icon.capitalize(expr:datetime='data:post.date.iso8601')
+      b:include(name='i:svg' data='{ icon: "clock" }')
+      <data:post.date/>
+
+  b:if(cond='data:show.comments')
+    a.meta-item.has-icon(expr:href='data:post.url.canonical fragment "comments"')
+      b:include(name='i:svg' data='{ icon: "comment" }')
+      <data:post.numberOfComments/>
+
+  b:include(name="post:admin")

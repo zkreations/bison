@@ -1,0 +1,8 @@
+//- Contenido del widget Inner (Mutation: HTML)
+//- @author zkreations
+
+b:includable(id='widget:InnerContent')
+  b:include(name='$:class' data='{class: "inner-content none"}')
+  textarea(readonly hidden)
+    .inner-item
+      <data:content/>

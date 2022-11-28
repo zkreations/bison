@@ -1,0 +1,118 @@
+//- Generador de tipos de entradas resumidas
+//- @author zkreations
+//- @param {string} [class] - Clases adicionales
+//- @param {string} [type=e.type] - Tipo de tarjeta (grid, row, classic, gallery)
+//- @param {string} [ratio=e.ratio] - Relación de aspecto global (21:9, 16:9, 4:3, 1:1, 1:2, 2:3, 5:7)
+//- @param {number} [render] - Cantidad de elementos del tipo seleccionado (generalmente si no se trata del widget Blog)
+//- @param {boolean} [forceType] - Fuerza los tipos de entradas
+
+b:includable(id="post:cards")
+
+  //- Opciones
+  b:with(value='{ ratio: (data:ratio ?: data:skin.vars.e_ratio), claRatio: data:skin.vars.e_claRatio, gaRatio: data:skin.vars.e_gaRatio, type: (data:type ?: data:skin.vars.e_type), navi: data:skin.vars.f_pagination, params: data:skin.vars.f_imageParams, json: (!(data:blog.feedLinks.length < 10) and !data:blog.isPrivateBlog) }', var='$config')
+
+    //- Normalizamos los valores
+    b:with(value='["grid","row","classic","gallery"] contains data:$config.type ? data:$config.type : "grid"', var='$type')
+
+      //- Almacenamos en un alias el tipo de tarjeta
+      b:with(value='{ row: (data:$type == "row"), classic: (data:$type == "classic"), gallery: (data:$type == "gallery") }', var='$card')
+
+        //- Relación de aspecto
+        b:with(value='data:$card.classic ? data:$config.claRatio : (data:$card.gallery ? data:$config.gaRatio : data:$config.ratio)', var='$ratios')
+          b:with(value='data:$card.row ? "1:1" : (["21:9","16:9","4:3","1:1","1:2","2:3","5:7"] contains data:$ratios ? data:$ratios : "16:9")', var='$ratio')
+
+            //- Devolvemos clases solo al widget Blog o render forzado
+            b:if(cond='data:widget.type == "Blog" or data:render or data:forceType')
+
+              //- Clases dependiendo si es una carta o una galería
+              b:class(expr:name='"items-" + data:$type')
+              b:class(expr:name='data:$type == "gallery" ? "b:skin-g2" : "b:skin-g1"')
+              
+              b:if(cond='["grid","gallery"] contains data:$type')
+                b:class(name="cols-auto-fill items-start")
+
+              b:if(cond='!data:view.search.query and data:$config.json and (["numeric", "infinite", "load"] contains data:$config.navi) or data:render')
+                b:if(cond='!(data:view.isHomepage and data:$config.navi == "numeric") or data:render')
+
+                  //- Miniatura de YouTube
+                  b:attr(name='data-yt-thumbnail' expr:value='(["default","mqdefault","hqdefault","sddefault","maxresdefault"] contains data:skin.vars.e_ytThumbnail ? data:skin.vars.e_ytThumbnail : "hqdefault")')
+                  
+                  //- Jugando con fuerzas oscuras más allá de mi comprensión
+                  b:with(value='{ grid: "400", row: "200", classic: "800", gallery: "400" }', var='sizes')
+                    b:with(expr:value='"data:sizes." + data:$type', var='jsize')
+                      b:with(value='resizeImage("https://lh3.googleusercontent.com/a/default-user", data:jsize, (data:$type == "row" ? "1:1" : data:$ratio))', var='jimg')
+                        b:attr(name='data-image-size' expr:value='+("w",data:jimg.width,(data:jimg.height ? "-h" + data:jimg.height + "-p-k-no-nu-" : "-"),data:$config.params)')
+
+                  //- Iniciar Blogger JS
+                  b:if(cond='data:widget.type == "Blog"')
+                    b:attr(name='data-bjs' value='entry')
+                    b:attr(name='data-per-page' expr:value='data:posts.length')
+                    b:attr(cond='data:view.isLabelSearch' name='data-label' expr:value='data:view.search.label')
+
+
+            b:if(cond='( data:widget.type == "Blog" and data:$config.json and data:view.isSearch and !data:view.search.query and (data:$config.navi == "numeric")) or data:render')
+
+              //- Iterar sobre esqueletos
+              b:loop(values='1 to (data:render ?: data:items.length)' var='label')
+                b:include(name='zk:skeleton' data='{ name: data:$type, ratio: data:$ratio }')
+
+              //- Template
+              b:include(name="js:templates" data='{ name: data:$type, ratio: data:$ratio }')
+
+              b:else
+
+              //- ITERAR: Si Dios quiere y la luna esta en cuarto menguante
+              b:loop(index='index', values='data:items', var='post')
+
+                //- Imagen principal si existe
+                b:with(value='data:post.featuredImage ?: data:const.image', var='image')
+
+                  //- Si es uno de los modos de galerías y es el widget Blog
+                  b:if(cond='data:$card.gallery')
+                    b:include(name="zk:gallery", data='{ srcset: [200,500], ratio: data:$ratio, sizes: "(min-width: 480px) 500px, 200px" }')
+
+                    //- Si es una tipo de tarjeta
+                    b:else
+                    article(expr:class='"card card-" + (data:featured ?: data:$type)')
+                      b:class(cond='data:$card.row' name='flex')
+
+                      b:if(cond='data:display.showFeaturedImage ?: true')
+                        header.card-header.relative
+                          b:class(cond='data:$card.row' name='flex-none w-1/4')
+                          b:include(cond='data:post.labels.any and data:show.labels' name='post:featuredLabels' data='{ tags: data:post.labels }')
+
+                          a.card-image.ratio.o-hidden.mask(expr:href="data:post.url.canonical", expr:aria-label="data:messages.image")
+
+                            b:class(cond='data:$card.row' name='h-1/1')
+                            b:class(expr:name='"ratio-" + data:$ratio')
+                            b:include(name='@:image', data='{ class: "fit-image", src: data:image, alt: data:post.title.escaped, srcset: (data:$card.classic ? [400,800] : false), sizes: (data:$card.classic ? "(min-width: 780px) 800px, (min-width: 400px) 400px, 300px" : false), resize: (data:$card.classic ? 800 : (data:$card.row ? 200 : 400)), ratio: data:$ratio, loading: "lazy", params: data:$config.params }')
+
+                      //- Cuerpo
+                      .card-body(class="m:p-1.75 p-1.25 sy-1")
+                        b:class(cond='data:$card.classic' name='text-center')
+                        b:class(cond='data:$card.row' name='flex-auto')
+
+                        b:if(cond='data:display.showTitle ?: true')
+                          h3.card-title.font-primary(class="m:fs-3 s:fs-4 fs-5")
+                            a(expr:href="data:post.url.canonical") 
+                              b:eval(expr='data:post.title.escaped != "" ? data:post.title.escaped : data:messages.noTitle')
+
+                        b:if(cond='data:display.showSnippet ?: data:skin.vars.e_snippet and ((data:post.snippets.short snippet { linebreaks: false }) != "")')
+                          p.card-snippet.truncate-line(class="s:fs-6")
+                            //- tips: purgar un numero (es obligatorio purgar también los boleanos)
+                            b:with(value='((data:skin.vars.e_truncate not in [true,false]) and (data:skin.vars.e_truncate + 0) == data:skin.vars.e_truncate) ? (data:skin.vars.e_truncate * 1) : 100', var='truncate')
+                              b:eval(expr='data:post.snippets.long snippet { length: data:truncate, links: false, linebreaks: false, ellipsis: true }')
+                        
+                        b:if(cond='data:skin.vars.e_meta')
+                          footer.card-meta.flex.items-center.flex-wrap.g-1
+                            b:class(cond='data:$card.classic' name='justify-center')
+                          
+                            b:if(cond='data:show.author or data:show.timestamp or data:show.comments')
+                              b:include(name='post:meta')
+
+                    b:if(cond='data:widget.type == "Blog" and (data:$type in ["grid","row","classic"])')
+                      b:include(name="post:inlineAd", data="post")
+
+              //- Template fuera del loop
+              b:if(cond='["infinite", "load"] contains data:$config.navi')
+                b:include(name="js:templates" data='{ name: data:$type, ratio: data:$ratio }')

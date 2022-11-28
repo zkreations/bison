@@ -1,0 +1,8 @@
+//- Hero
+//- @author zkreations
+
+//- Solo visible en post, Se usará como Header estilo Hero
+b:if(cond='!data:view.isLayoutMode and data:view.isPost')
+  //- Limitamos a un solo widget, Solo puede contener "Blog" y solo contenido "Hero"
+  b:section#Hero.post-header(class="b:skin-sy", cond='data:const.temp contains "hero"' maxwidgets='1')
+    +widget("Blog",{},99)(locked="true")

@@ -1,0 +1,13 @@
+//- Contenido del widget Image
+//- @author zkreations
+
+b:includable(id='widget:Image')
+  b:if(cond='data:widget.sectionId == "Filters"')
+    b:include(name="docs" data='{ warn: "wrongFilter" }')
+    b:else
+    .widget-content
+      figure.media.relative
+        b:tag(name='a', cond='data:link', expr:href='data:link').color-inverse
+          b:include(name="@:image", data='{id: ("image-" + data:widget.instanceId), class: "media-image w-1/1", src: data:sourceUrl, resize: (data:shrinkToFit ? 500 : 1280), width: data:width, height: data:height, loading: (data:widget.sectionId != "header" ? "lazy" : false), params: data:skin.vars.f_imageParams }')
+          b:if(cond='data:caption')
+            figcaption.media-caption.bg-overlay.fw-500.absolute.l-0.b-0.p-1 <data:caption/>

@@ -1,0 +1,37 @@
+//- Contenido del widget PopularPosts
+//- @author zkreations
+
+b:includable(id='widget:PopularPosts')
+  b:with(value='data:items ?: data:posts', var='$posts')
+    b:if(cond='data:widget.sectionId == "Filters"')
+      b:include(name="docs" data='{ warn: "wrongFilter" }')
+
+      b:elseif(cond='data:widget.sectionId == "header"')
+      b:include(name="widget:Breaking")
+
+      b:elseif(cond='data:$posts.empty')
+      b:include(name='zk:alert', data='{ message: data:messages.theresNothingHere }')
+
+      b:elseif(cond='!data:option.content and (["grid","row","classic","gallery"] contains data:option.type) and (["upper","after-content","before-content","Content"] contains data:widget.sectionId)')
+      .widget-content
+        .grid.items
+          b:with(value='data:widgets.Blog1.allBylineItems' var='show')
+            b:include(name='post:cards' data='{ items: data:$posts, type: data:option.type, forceType: true }')
+
+      b:else
+      .populars.grid.cols-auto-fit.content-start.bg-default(class="g-1.5 m:p-1.75 p-1.25 gt:flex gt:items-start")
+        b:loop(values='data:$posts', var='item')
+          .populars-item
+            b:if(cond='data:postDisplay.showFeaturedImage')
+              a(expr:href="data:item.url.canonical", class="ratio ratio-1:1").populars-image.flex-none.o-hidden.me-1
+                b:with(value='data:item.featuredImage ?: data:const.image', var='postImage')
+                  b:include(name='@:image', data='{ src: data:postImage, class: "populars-image fit-image", alt: data:item.title.escaped, resize: 65, ratio: "1:1", loading: "lazy", params: data:skin.vars.f_imageParams }')
+            .populars-body(class="sy-.25")
+              b:if(cond='data:postDisplay.showTitle')
+                a.populars-name(expr:href="data:item.url.canonical", class="color-link:hover").fw-500.color-title
+                  b:eval(expr='data:item.title.escaped != "" ? data:item.title.escaped : data:messages.noTitle')
+
+              b:if(cond='data:postDisplay.showSnippet')
+                p.populars-snippet
+                  b:eval(expr='data:item.snippets.long snippet { length: 50, links: false, linebreaks: false }')
+              .populars-meta.capitalize <data:item.date/>

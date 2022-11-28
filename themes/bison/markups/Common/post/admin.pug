@@ -1,0 +1,17 @@
+//- Botón para editar artículos
+//- @author zkreations
+
+b:includable(id="post:admin")
+  b:if(cond='!data:view.isPreview')
+    b:if(cond='data:skin.vars.a_edit')
+      span(expr:class='"item-control " + (data:post.adminClass ?: "blog-admin")')
+        a.meta-item.flex.items-center(rel='nofollow noopener noreferrer' expr:href='"https://www.blogger.com/blog/post/edit/" + data:blog.blogId + "/" + data:post.id')
+          b:include(name='i:svg', data='{ icon: "pencil", class: "me-.5"}')
+          <data:messages.edit/>
+
+    //- Falta el salto de línea en la entrada
+    b:if(cond='data:view.isMultipleItems and data:skin.vars.a_jumpLink and !data:post.hasJumpLink')
+      span(expr:class='"item-control " + (data:post.adminClass ?: "blog-admin")')
+        span.meta-item.flex.items-center
+          b:include(name="i:svg" data='{ icon: "circle-exclamation", class: "me-.5" }')
+          | <data:skin.vars.t_missingJumpLink/>

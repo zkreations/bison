@@ -1,0 +1,15 @@
+//- Botón eliminar y responder comentario
+//- @author zkreations
+//- @param {string} [deleteText=data:messages.deleteComment] - Texto del botón eliminar
+//- @param {string} [replyText=data:messages.postAComment] - Texto del botón responder
+
+b:includable(id="comment:deleteButton")
+  span(expr:class='"absolute t-0 r-0 item-control " + data:comment.adminClass')
+    a(expr:href='data:comment.deleteUrl').comment-delete-button
+      b:include(name='i:svg' data='{ icon: "trash"}')
+
+b:includable(id="comment:replyButton")
+  b:if(cond='data:post.allowNewComments')
+    button.comment-reply-button.has-icon(expr:data-parent-id="data:comment.id")
+      b:include(name='i:svg' data='{ icon: "turn-down-right"}')
+      b:eval(expr='data:replyText ?: data:messages.postAComment')

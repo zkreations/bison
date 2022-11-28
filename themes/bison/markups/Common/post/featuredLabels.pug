@@ -1,0 +1,12 @@
+//- Destaca etiquetas especificas
+//- @author zkreations
+//- @param {array} tags - Matriz de etiquetas
+//- @param {string} [class] - Clases adicionales
+
+b:includable(id="post:featuredLabels")
+  b:if(cond='data:skin.vars.e_definedTags != false')
+    .card-ftag.absolute.t-0.z-10.pt-2.fw-500.capitalize
+      //- Agrega clases adicionales
+      b:class(cond='data:class', expr:name='data:class')
+      b:loop(values='data:skin.vars.e_definedTags != "" and data:skin.vars.e_definedTags != true ? data:tags where (t => t.name in data:skin.vars.e_definedTags) take 3 : data:tags.first', var='label')
+        a(expr:class='"ftag ftag-" + data:label.name', expr:href='data:label.url') <data:label.name/>

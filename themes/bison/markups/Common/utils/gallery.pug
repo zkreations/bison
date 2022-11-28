@@ -1,0 +1,34 @@
+//- Crea elementos de una galería
+//- @author zkreations
+//- @param {string} [class] - Clases adicionales
+//- @param {string} [mode=default] - Modo de organización de galería (featured,default)
+//- @param {number} [resize=400] - Cambiar el tamaño de imagen
+//- @param {string} [ratio=4:3] - Relación de aspecto (21:9, 16:9, 4:3, 1:1, 1:2, 2:3, 5:7)
+//- @param {array} [srcset] - Matriz de imágenes adaptables
+//- @param {boolean|string} [sizes] - Atributo sizes
+//- @param {boolean|string} [loading=lazy] - Atributo loading
+
+b:includable(id='zk:gallery')
+  b:with(value='{ ratio: (["21:9","16:9","4:3","1:1","1:2","2:3","5:7"] contains data:ratio ? data:ratio : "4:3"), mode: (data:mode == "featured" ? data:mode : "default"), title: (data:post.title.escaped != "" ? data:post.title.escaped : data:messages.noTitle) }' var='$gallery')
+
+    a.gallery.ratio.mask(expr:href="data:post.url.canonical")
+
+      b:class(cond='data:class' expr:name='data:class')
+      b:class(expr:name='"gallery-" + data:$gallery.mode')
+      b:class(expr:name='"ratio-" + data:$gallery.ratio')
+
+      //- Pasamos los parámetros de imagen
+      b:with(value='data:post.featuredImage ?: data:const.image', var='image')
+        b:include(name="@:image" data='{ src: data:image, class: "fit-image", resize: (data:resize ?: 400), srcset: (data:srcset ?: [200,400]), alt: data:$gallery.title, ratio: data:$gallery.ratio, loading: (data:loading ?: "lazy"), sizes: (data:sizes ?: false), params: data:skin.vars.f_imageParams }')
+
+      //- El contenido consume las opciones del usuario
+      .gallery-content(class="sy-.5")
+        b:if(cond="data:display.showTitle ?: true")
+          .gallery-name.fw-500
+            b:class(cond='data:$gallery.mode == "featured"' name='font-primary fs-5 l:fs-3')
+            b:eval(expr='data:$gallery.title')
+
+        b:if(cond="(data:display.showSnippet ?: data:show.timestamp) ?: true")
+          .gallery-time.has-icon.capitalize
+            b:include(name='i:svg' data='{ icon: "clock" }')
+            | <data:post.date/>

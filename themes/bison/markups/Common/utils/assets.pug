@@ -1,0 +1,51 @@
+//- Incluye estilos y scripts listo para obtener
+//- @author zkreations
+
+b:includable(id='zk:assets')
+  b:with(value='{ temp: (data:view.isPost and (data:blog.postImageUrl contains "qTemp") ? data:blog.postImageUrl : ("qTemp" + data:skin.vars.p_template)), image: (data:skin.vars.d_image != "" ? data:skin.vars.d_image : "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="), avatar: (data:skin.vars.d_avatar != ""  ? data:skin.vars.d_avatar : "https://lh3.googleusercontent.com/a/default-user"), homeUrl: (data:skin.vars.f_cloudflare ? data:blog.homepageUrl.canonical.https : data:blog.homepageUrl.canonical) }' var='const')
+    b:switch(var='data:get')
+      b:case(value='main')
+      +cdata
+        include /themes/assets/vendor/whale.min.css
+        include /themes/assets/css/main.min.css
+        include /themes/assets/css/non-critical.min.css
+
+      b:case(value='typography')
+      +cdata: include /themes/assets/css/typography.min.css
+
+      b:case(value='preview')
+      +cdata: include /themes/assets/css/preview.css
+      +cdata("script"): include /themes/assets/js/preview.js
+
+      b:case(value='js')
+      script(src="https://cdn.jsdelivr.net/gh/zkreations/bison@5/themes/assets/js/bison.min.js" defer)
+
+      b:case(value='bloggerJs')
+      b:if(cond='!(data:blog.feedLinks.length < 10) and !data:blog.isPrivateBlog')
+        script: include /themes/assets/js/blogger.js
+
+      b:case(value='fonts')
+      b:if(cond='data:view.isPreview or data:skin.vars.font_primary_family == "var(--font-oswald)"')
+        +cdata: include /themes/assets/css/fonts/oswald.min.css
+
+      b:if(cond='data:view.isPreview or data:skin.vars.font_secondary_family == "var(--font-roboto)"')
+        +cdata: include /themes/assets/css/fonts/roboto.min.css
+
+      b:case(value='adsense')
+      b:if(cond='data:blog.adsenseHostId and data:blog.adsenseClientId and data:blog.adsenseHasAds')
+        //- Evitamos mostrar anuncios en blanco
+        //- https://support.google.com/adsense/answer/10762946?hl=es-419
+        style ins.adsbygoogle[data-ad-status=unfilled] { display: none !important }
+        b:if(cond='!data:blog.adsenseAutoAds')
+          meta(name='google-adsense-client' expr:content='data:blog.adsenseClientId')
+
+      b:case(value='inlineJs')
+      b:if(cond='data:skin.vars.g_toggleScheme or (["light","dark"] not contains data:skin.vars.g_scheme)')
+        +cdata("script"): include /themes/assets/js/dark.min.js
+      b:if(cond='data:widgets.HTML any ( t => t.title contains "content: \\"alert\\"")')
+        +cdata("script"): include /themes/assets/js/alerts.min.js
+
+      b:case(value='inlineCSS')
+      b:if(cond='data:const.temp contains "hero"')
+        style .typography img[src^="<data:blog.postImageUrl/>"]{ display:none }
+

@@ -1,0 +1,15 @@
+//- Distintos contenidos posibles para modal
+//- @author zkreations
+//- @param {string} [dialog] - Contenido del modal (search)
+
+b:includable(id='zk:modal')
+  .modal
+    b:switch(var='data:dialog')
+      b:case(value='search')
+      b:attr(name='id', value='search')
+      form.nav-search.flex.items-center.justify-center.bg-overlay(class='h-1/1', expr:action="data:blog.searchUrl", method="get", tabindex="-1")
+        .px-2(data-dialog, class="m:w-1/2 w-1/1")
+          input.nav-search-input.uppercase.font-primary.fw-500.pb-1(class="w-1/1 m:fs-1 fs-4", autocomplete="off", name="q", placeholder="Search", required="required", spellcheck="false", type="text")
+
+    button.color-inverse.fixed.i-xxl.r-2.t-2(data-close='')
+      b:include(name="i:svg", data='{ icon: "xmark" }')

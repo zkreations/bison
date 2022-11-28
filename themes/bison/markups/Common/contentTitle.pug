@@ -1,0 +1,12 @@
+//- Títulos del widget Blog según pagina y configuración de usuario
+//- @author zkreations
+
+b:includable#contentTitle
+  b:if(cond='data:view.isHomepage and data:skin.vars.t_recent != ""')
+    b:include(data='{ title: data:skin.vars.t_recent, more: (data:skin.vars.f_more and data:olderPageUrl ? (data:$navi.js ? (data:const.homeUrl + "search?page=2&max-results=" + data:posts.length) : data:olderPageUrl) : false ) }', name='$:title')
+
+    b:elseif(cond='data:view.isSearch')
+    b:include(data='{ title: (data:view.isLabelSearch ? data:view.search.label : data:skin.vars.t_searching ) }', name='$:title')
+
+    b:elseif(cond='data:view.isArchive')
+    b:include(data='{ title: data:messages.archive }', name='$:title')

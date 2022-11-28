@@ -1,0 +1,8 @@
+//- Contenido del widget Text
+//- @author zkreations
+
+b:includable(id='widget:Text')
+  b:if(cond='data:widget.sectionId == "Filters"')
+    b:include(name="docs" data='{ warn: "wrongFilter" }')
+    b:else
+    .widget-content <data:content/>

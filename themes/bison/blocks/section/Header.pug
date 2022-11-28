@@ -1,0 +1,11 @@
+//- Sección de encabezado (Global)
+//- @author zkreations
+
++widget("Header")
+
++widget("PageList")(title='Menu', locked="true")
+  b:includable#content
+  b:includable#main
+    b:include(name="widget:Menu")
+
++widget("PopularPosts")(title='Breaking News')

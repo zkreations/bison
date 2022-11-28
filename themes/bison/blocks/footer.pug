@@ -1,0 +1,19 @@
+//- Footer
+//- @author zkreations
+
+//- Footer superior
++section("footer-upper").footer-upper.bg-default.flex.items-center.g-1(class="l:flex-row flex-column b:skin-p", maxwidgets='2')
+  include section/FooterUpper
+
+//- Footer Widgets
+b:if(cond='data:widgets any (w => w.sectionId in {"footer-1","footer-2","footer-3"}) or data:view.isLayoutMode')
+  b:tag.footer-widgets-area.grid(name='div' cond='!data:view.isLayoutMode' class="l:cols-3 m:cols-2 cols-1 b:skin-p b:skin-g1")
+    b:include(name="zk:dark", data='{ color: data:skin.vars.light_footer_bg }')
+
+    //- Espacios para widgets (vació por defecto)
+    each number in [1,2,3]
+      +section("footer-" + number).footer-sidebar(class="b:skin-sy")
+
+//- Footer links
++section("footer-lower").footer-lower(maxwidgets='1')
+  include section/FooterLower

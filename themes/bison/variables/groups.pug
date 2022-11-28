@@ -1,0 +1,102 @@
+//- Grupos de variables exclusivos de personalización
+//- @author zkreations
+
+| Personalizar
+| =====================
+//- Fix del editor
++variables({ 
+  "keycolor": { type: "color", value: "#2196f3" },
+  "body.background": {
+    description: "Background",
+    type: "background",
+    color: "$(body.background.color)",
+    value: "$(color) none repeat scroll top center"
+  },
+})
+
+Group(description="Accents")
+  +variables({ 
+    "accent.primary": { description: "Action color", type: "color", value: "#10aeb9" },
+    "accent.secondary": { description: "Alternate Color", type: "color", value: "#0a686f" },
+  })
+
+Group(description="Font")
+  +variables({ 
+    "blog.logo.font": { description: "Blog Title Font", type: "font", value: "32px var(--font-primary)" },
+    "blog.desc.font": { description: "Blog Description Font", type: "font", value: "14px var(--font-secondary)" },
+    "blog.nav.font": { description: "Page list font", type: "font", value: "15px var(--font-primary)" },
+    "font.primary": { description: "Title Font", type: "font", value: "normal normal 10px var(--font-oswald)" },
+    "body.text.font": { description: "Content font", type: "font", value: "normal normal 10px var(--font-roboto)"},
+  })
+
+Group(description="Widths")
+  +variables({ 
+    "width.container": { description: "Content width", type: "length", min: "900px", max: "2000px", value: "1216px"},
+    "width.sidebar": { description: "Sidebar width", type: "length", min: "200px", max: "500px", value: "340px"},
+    "width.post": { description: "Post width (stream)", type: "length", min: "600px", max: "800px", value: "800px"},
+    "height.breaking": { description: "Breaking news", type: "length", min: "46px", max: "100px", value: "46px"},
+    "spacing.primary": { description: "Primary spacing", type: "length", min: "0px", max: "50px", value: "30px"},
+    "spacing.secondary": { description: "Secondary spacing", type: "length", min: "0px", max: "50px", value: "2px"},
+    "tg.blocks": { description: "Typography block space ", type: "length", min: "0px", max: "50px", value: "24px"},
+    "tg.headings": { description: "Typography headings space ", type: "length", min: "0px", max: "50px", value: "24px"},
+    "tg.inline": { description: "Typography inline space ", type: "length", min: "0px", max: "50px", value: "8px"},
+  })
+
+Group(description="Light mode")
+  +variables({
+    "body.background.color": { description: "Body background color",type: "color",value: "#e4e4e7" },
+    "light.bg.template": { description: "Main Background Color", type: "color", value: "#fff" },
+    "light.bg.default": { description: "Background color (Bottom)", type: "color", value: "#f2f2f2" },
+    "light.bg.inset": { description: "Background color (Top)", type: "color", value: "#e6e6e6" },
+    "light.color.title": { description: "Title color", type: "color", value: "#404040" },
+    "light.color.text": { description: "Content color", type: "color", value: "#808080" },
+    "light.header.bg": { description: "Header Background", type: "color", value: "#fff" },
+    "light.logo.color": { description: "Blog Title Color", type: "color", value: "#262626" },
+    "light.desc.color": { description: "Blog Description Color", type: "color", value: "#808080" },
+    "light.nav.bg": { description: "Nav Background", type: "color", value: "#1c1c1c" },
+    "light.nav.color": { description: "Nav Color", type: "color", value: "#fff" },
+    "light.nav.subnav": { description: "Nav Subnav Background", type: "color", value: "#090909" },
+    "light.nav.secondary.bg": { description: "Nav Secondary Background", type: "color", value: "transparent" },
+    "light.nav.secondary.color": { description: "Nav Secondary Color", type: "color", value: "#404040" },
+    "light.footer.bg": { description: "Footer Gadget Background", type: "color", value: "#090909" },
+    "light.footer.lower.bg": { description: "Footer Background", type: "color", value: "#1c1c1c" },
+    "light.footer.links.color": { description: "Footer Links", type: "color", value: "#fff" },
+    "light.cookie.bg": { description: "Cookie Background", type: "color", value: "#fff" },
+    "light.cookie.color": { description: "Cookie Color", type: "color", value: "#3f3f46" },
+  })
+
+Group(description="Dark mode")
+  +variables({
+    "dark.body.color": { description: "Body background color", type: "color", value: "#000000" },
+    "dark.bg.template": { description: "Main Background Color", type: "color", value: "#101010" },
+    "dark.bg.default": { description: "Background color (Bottom)", type: "color", value: "#161717" },
+    "dark.bg.inset": { description: "Background color (Top)", type: "color", value: "#282a2a" },
+    "dark.color.title": { description: "Title color", type: "color", value: "#fff" },
+    "dark.color.text": { description: "Content color", type: "color", value: "#8f8f98" },
+    "dark.header.bg": { description: "Header Background", type: "color", value: "#101010" },
+    "dark.logo.color": { description: "Blog Title Color", type: "color", value: "#fff" },
+    "dark.desc.color": { description: "Blog Description Color", type: "color", value: "#8f8f98" },
+    "dark.nav.bg": { description: "Nav Background", type: "color", value: "#202222" },
+    "dark.nav.color": { description: "Nav Color", type: "color", value: "#fff" },
+    "dark.nav.subnav": { description: "Nav Subnav Background", type: "color", value: "#090909" },
+    "dark.nav.secondary.bg": { description: "Nav Secondary Background", type: "color", value: "transparent" },
+    "dark.nav.secondary.color": { description: "Nav Secondary Color", type: "color", value: "#fff" },
+    "dark.footer.widgets": { description: "Footer Gadget Background", type: "color", value: "#090909" },
+    "dark.footer.bg": { description: "Footer Background", type: "color", value: "#202222" },
+    "dark.footer.color": { description: "Footer Links", type: "color", value: "#fff" },
+    "dark.cookie.bg": { description: "Cookie Background", type: "color", value: "#000" },
+    "dark.cookie.color": { description: "Cookie Color", type: "color", value: "#fff" },
+  })
+| #{'\n'}
+
+| Formulario de comentarios
+| =====================
++variables({
+  "posts.text.color" : { description: "Content color", type: "color", value: "#666", hideEditor: "true" },
+  "posts.link.color" : { value: "#666"},
+  "posts.text.font" : { value: "15px Roboto"},
+  "posts.background.color" : { value: "transparent"},
+  "posts.title.color" : { value: "false"},
+  "body.link.color" : { value: "false"},
+})
+| #{'\n'}

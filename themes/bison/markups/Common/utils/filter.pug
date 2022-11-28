@@ -1,0 +1,33 @@
+//- Agrega un segmento de filtro
+//- @author zkreations
+//- @param {string} [type] - Tipo de filtro (mode, order, query, label)
+
+b:includable(id='zk:filter')
+
+  label.fw-500.mb-1.block.color-title.fs-6 <data:this.title/>
+  .filter-type.capitalize.grid.cols-auto-fit.g-1
+
+    b:switch(var='data:type')
+      b:case(value='mode')
+      .filter-check.form-check
+        input(type="checkbox" name="strict-mode" id="strict-mode")
+        label(for="strict-mode").filter-name <data:this.content.escaped/>
+
+      b:case(value='order')
+      .filter-check.form-check
+        input(type="checkbox" name="by-date" id="by-date")
+        label(for="by-date").filter-name <data:this.content.escaped/>
+
+      b:case(value='query')
+      input.filter-query.form-control#q(autocomplete="off" name="q" expr:placeholder="data:messages.search" required="required" spellcheck="false" type="text")
+
+      b:case(value='label')
+      b:loop(values='data:this.labels', var='label')
+        .filter-check.form-check
+          b:with(value='+(data:widget.instanceId,"-",data:label.name)', var='for')
+            b:with(value='"label:\\"" + data:label.name + "\\""', var='queryLabel')
+              b:tag(name='input' expr:id='data:for', type='checkbox', expr:value='data:label.name')
+                b:attr(name='name' value='cat')
+                b:attr(name='b:whitespace' value='remove')
+                b:attr(cond='data:view.search.query contains data:queryLabel' name='checked' value='checked')
+              label(expr:for='data:for').filter-name <data:label.name/>

@@ -1,0 +1,6 @@
+//- Contenido del widget Blog
+//- @author zkreations
+
+b:includable(id='widget:Blog')
+  b:if(cond='data:widget.sectionId in ["Hero","Content"]')
+    b:include(expr:name='"widget:Blog" + data:widget.sectionId')

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+include /lib/init
+include _config
+
+html&attributes(html.layout3)(b:css="false", b:js="true")
+  b:include(name="root")
+  head
+    title <data:view.title.escaped/>
+    b:include(name="zk:head")
+
+    //- Aquí empieza b:skin
+    b:if(cond='!data:view.isLayoutMode')
+      +cdata("b:skin")
+        include _variables
+        include ../assets/css/root.css
+
+      //- Estilos del modo Diseño
+      b:else
+      +cdata("b:template-skin")
+        include ../assets/css/admin.min.css
+    //- Fin de b:skin
+    
+    b:comment CORE (v5.0.0): Do not make changes!
+    include markups/init
+    b:comment /END CORE
+
+    //- Imagen responsive de fondo
+    b:include(cond='not data:view.isPreview' data='{ selector: "body", image: data:skin.vars.body_background.image }' name='responsiveImageStyle')
+
+  body.color-text.preload
+    //- Inserta una clase a body según el tipo de página
+    b:include(name="@:kind")
+    include blocks/start
+
+    //- Declaración de variables globales
+    b:with(value='{ temp: (data:view.isPost and (data:blog.postImageUrl contains "qTemp") ? data:blog.postImageUrl : ("qTemp-" + data:skin.vars.p_template)), image: (data:skin.vars.d_image != "" ? data:skin.vars.d_image : "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="), avatar: (data:skin.vars.d_avatar != ""  ? data:skin.vars.d_avatar : "https://lh3.googleusercontent.com/a/default-user"), homeUrl: (data:skin.vars.f_cloudflare ? data:blog.homepageUrl.canonical.https : data:blog.homepageUrl.canonical) }' var='const')
+
+      //- Template
+      b:tag(expr:class='"template fs-7 l:px-2" + (data:view.isLayoutMode and data:skin.vars.a_access ? " layout-accessibility" : "")' name='div')
+        .template-content.flex.flex-column.container
+          b:class(name='layout-accessibility')
+        
+          header.header.layout-section
+            include blocks/header
+
+          include blocks/hero
+          main.main.layout-section.bg-template.flex-1(class='b:skin-p b:skin-sy')
+            include blocks/main
+
+          footer.footer.layout-section
+            include blocks/footer
+
+      //- Arriba de `</body>`
+      include blocks/end
+

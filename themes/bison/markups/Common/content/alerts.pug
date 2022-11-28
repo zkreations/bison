@@ -1,0 +1,22 @@
+//- Alertas adaptables y cerrables que recuerdan su estado
+//- @author zkreations
+//- @param {boolean} [close=true] - Alerta cerrable
+//- @param {string} [type] - Tipo de alerta (warning, info, danger, success)
+
+b:includable(id='content:alert')
+  b:if(cond='data:widget.type != "HTML"')
+    b:include(name="docs" data='{ warn: "invalidContentWidget" }')
+    b:else
+    b:with(value='{ close: (data:option.close ?: true) }' var='$alert')
+      b:include(name='$:class', data='{ class: "widget Alert alert" }')
+      b:attr(name="id", expr:value='"alert-" + data:widget.instanceId')
+
+      b:if(cond='["warning","info","danger","success"] contains data:option.type')
+        b:class(expr:name='"alert-" + data:option.type')
+
+      b:if(cond='data:$alert.close')
+        button.alert-close(aria-label="Close")
+          b:include(name="i:svg", data='{ icon: "xmark" }')
+      <data:this.content/>
+
+

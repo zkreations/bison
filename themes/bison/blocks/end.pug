@@ -1,0 +1,12 @@
+//- Contenido arriba de `</body>`
+//- @author zkreations
+
+//- Modales
+b:if(cond='data:skin.vars.g_modalSearch')
+  b:include(name="zk:modal", data='{ dialog: "search" }')
+
+//- All CSS & JS
+b:if(cond='data:view.isPreview')
+  button#darkToggler
+    b:include(name='i:svg' data='{ icon: "moon" }')
+

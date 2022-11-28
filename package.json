@@ -1,0 +1,31 @@
+{
+  "name": "bison",
+  "version": "5.0.0",
+  "description": "Desarrollo y documentación del tema Bison",
+  "scripts": {
+    "build": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zkreations/bison.git"
+  },
+  "keywords": [
+    "xml",
+    "blogger",
+    "css",
+    "pugjs"
+  ],
+  "author": "Developed by authors (https://github.com/zkreations/bison/graphs/contributors)",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/zkreations/bison/issues"
+  },
+  "homepage": "https://github.com/zkreations/bison#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.3.0",
+    "gulp-pug": "^5.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-replace": "^1.1.3"
+  }
+}

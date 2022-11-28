@@ -1,0 +1,8 @@
+//- Etiquetas (data:post requerido)
+//- @author zkreations
+
+b:includable(id="post:labels")
+  b:if(cond='data:post.labels.any')
+    .flex.flex-wrap(class="g-.5")
+      b:loop(values='data:post.labels', var='label')
+        a.btn.btn-outline(expr:href='data:label.url') <data:label.name/>

@@ -1,0 +1,46 @@
+//- Cuerpo de comentarios y respuestas
+//- @author zkreations
+
+b:includable(id="comment:item" var='comment')
+  b:with(value='(data:currentDepth ?: -1) + 1' var='currentDepth')
+
+    .comment.relative(class="m:flex", expr:id='"c" + data:comment.id' expr:data-depth='data:currentDepth')
+
+      //- Botón eliminar
+      b:include(name="comment:deleteButton")
+
+      //- Avatar
+      .comment-avatar(class="me-1.25 flex-none")
+        b:include(name="comment:avatar")
+
+      //- Comentario
+      .comment-block.flex-1
+
+
+        .comment-header.fs-6(class="m:mb-.5 mb-1")
+          b:include(name="comment:header")
+
+        //- Comentario
+        .comment-content.fs-6
+          b:include(name="comment:body")
+
+
+        //- Filtramos las respuestas que corresponden al comentario padre
+        b:with(value='data:post.comments where (c => c.inReplyTo == data:comment.id)' var='replies')
+          b:if(cond="(data:depth gt 0) and (data:currentDepth lt data:depth)")
+            b:tag.comment-footer(cond='data:replies.any or data:post.allowNewComments' name='div' class="mt-1 flex flex-wrap items-center g-1")
+              b:include(name="comment:replyButton")
+
+              //- Si es que existe alguna respuesta mostramos controlador
+              b:if(cond='data:replies.any')
+                label.cursor-pointer.has-icon(expr:for='"r"+ data:comment.id')
+                  b:include(name='i:svg' data='{ icon: "message-dots"}')
+                  b:eval(expr='data:replies.length + " " + data:skin.vars.t_replies')
+
+            //- Si es que existe alguna, entonces agregamos un input
+            b:if(cond='data:replies.any')
+              input(type="checkbox" expr:id='"r"+ data:comment.id' name='replies').none.comment-toggle
+
+            .comments-replies(class='gt:mt-1.25')
+              b:loop(expr:reverse='data:newestFirst ?: false' values="data:replies" var='reply')
+                b:include(name='comment:item' data='reply')

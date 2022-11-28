@@ -1,0 +1,36 @@
+//- Contenido del widget ContactForm
+//- @author zkreations
+
+b:includable(id='widget:ContactForm')
+  b:if(cond='data:widget.sectionId == "Filters"')
+    b:include(name="docs" data='{ warn: "wrongFilter" }')
+
+    b:elseif(cond='data:widget.sectionId == "header"')
+    b:include(name="docs" data='{ warn: "invalidSection" }')
+
+    b:else
+    .widget-content
+      b:with(value='data:skin.vars.g_formspree' var='action')
+        b:if(cond='data:action == "" or data:action == "YourID"')
+          b:include(name="docs" data='{ warn: "missingFormspreeId" }')
+
+          b:else
+          form(expr:action='"https://formspree.io/f/" + data:action', method="POST").contact-form.sy-1
+            .group-x
+              span.form-text.flex-none
+                b:include(name="i:svg", data='{ icon: "user" }')
+              input.contact-input.form-control(type="text", expr:placeholder="data:contactFormNameMsg", name="name", required)
+            .group-x
+              span.form-text.flex-none
+                b:include(name="i:svg", data='{ icon: "at" }')
+              input.contact-input.form-control(type="email", expr:placeholder="data:contactFormEmailMsg", name="email", required)
+            .group-x
+              span.form-text.flex-none
+                b:include(name="i:svg", data='{ icon: "pencil" }')
+              input.contact-input.form-control(type="text", expr:placeholder="data:skin.vars.t_subject", name="subject", required)
+
+            textarea.contact-textarea.form-control(expr:placeholder="data:contactFormMessageMsg", name="Message", required)
+
+            button.contact-button.btn.btn-full.btn-primary(type="submit")
+              b:include(name="i:svg", data='{ icon: "paper-plane" }')
+              <data:contactFormSendMsg/>

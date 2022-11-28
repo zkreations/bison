@@ -1,0 +1,11 @@
+//- Contenido del widget TextList
+//- @author zkreations
+
+b:includable(id='widget:TextList')
+  b:if(cond='data:widget.sectionId == "Filters"')
+    b:include(name="docs" data='{ warn: "wrongFilter" }')
+    b:else
+    .widget-content
+      ul.textlist
+        b:loop(values='data:items' var='item')
+          li.textlist-item <data:item/>

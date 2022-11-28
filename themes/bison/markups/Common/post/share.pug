@@ -1,0 +1,47 @@
+//- Botones de compartir (data:post requerido)
+//- @author zkreations
+
+b:includable(id="post:share")
+  b:with(value='data:skin.vars.p_shareOn' var='$share')
+    b:if(cond='data:$share != false')
+
+      //- Evitamos romper el diseño con valores numéricos o boleanos
+      b:with(value='([true] not contains data:$share and (data:$share + 0 != data:$share)) ? data:$share : "facebook, twitter, whatsapp, telegram, pinterest, tumblr, reddit, vk"' var='hasShare')
+
+        .post-share.flex.flex-wrap(class="g-.5 i-m")
+          b:loop(values='["facebook","twitter","whatsapp","telegram","pinterest","tumblr","reddit","vk"]', var="social")
+
+            b:if(cond='data:hasShare contains data:social')
+              a.share.btn.btn-outline(expr:aria-label="data:social" target="_blank" rel='noopener noreferrer nofollow')
+                b:class(expr:name='"share-" + data:social')
+                b:include(name="i:svg" data='{ icon: data:social }')
+
+                //- Atributo href dependiendo de la red social
+                b:with(value='{ url: (data:skin.vars.f_cloudflare ? data:post.url.canonical.https : data:post.url.canonical), text: (data:post.title.escaped != "" ? data:post.title.escaped : data:messages.noTitle) }' var='link')
+                  b:switch(var='data:social')
+                    b:case(value='facebook')
+                    b:attr(expr:value='"https://www.facebook.com/sharer.php" params {u: data:link.url}' name='href')
+
+                    b:case(value='twitter')
+                    b:attr(expr:value='"https://twitter.com/intent/tweet" params {url: data:link.url, text: data:link.text}' name='href')
+
+                    b:case(value='pinterest')
+                    b:attr(expr:value='"https://pinterest.com/pin/create/button/" params {url: data:link.url}' name='href')
+
+                    b:case(value='whatsapp')
+                    b:attr(expr:value='"https://wa.me/" params {text: data:link.url, text: data:link.text}' name='href')
+
+                    b:case(value='telegram')
+                    b:attr(expr:value='"https://t.me/share/url" params {url: data:link.url}' name='href')
+
+                    b:case(value='tumblr')
+                    b:attr(expr:value='"https://tumblr.com/widgets/share/tool" params {canonicalUrl: data:link.url, title: data:link.text}' name='href')
+
+                    b:case(value='reddit')
+                    b:attr(expr:value='"https://reddit.com/submit" params {url: data:link.url, title: data:link.text}' name='href')
+
+                    b:case(value='vk')
+                    b:attr(expr:value='"http://vk.com/share.php" params {url: data:link.url, title: data:link.text}' name='href')
+
+              b:else
+              b:class(expr:name='data:social + "-is-hidden"')

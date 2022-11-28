@@ -1,0 +1,30 @@
+//- Tarjetas de la vista de entradas multiples
+//- @author zkreations
+//- @param {string} e.type - Tipo de tarjeta (grid, row, classic, gallery)
+//- @param {boolean} e.snippet - Mostrar resumen
+//- @param {boolean} e.meta - Mostrar meta datos
+//- @param {string} e.colsMin - Unidad de medida mínima de una columna (200px, 20rem, 20%, etc)
+//- @param {number} e.truncate=100 - Cantidad de caracteres para truncar (50 - 1000)
+//- @param {number} e.lineClamp - Numero máximo de lineas del resumen
+//- @param {string} e.ratio - Relación de aspecto por defecto (21:9, 16:9, 4:3, 1:1, 1:2, 2:3, 5:7)
+//- @param {string} e.claRatio - Relación de aspecto para modo "classic" (21:9, 16:9, 4:3, 1:1, 1:2, 2:3, 5:7)
+//- @param {string} e.gaRatio - Relación de aspecto para modo "gallery" (21:9, 16:9, 4:3, 1:1, 1:2, 2:3, 5:7)
+//- @param {string} e.ytThumbnail - Miniatura de YouTube de entradas (default, mqdefault, hqdefault, sddefault, maxresdefault)
+//- @param {boolean|string} e.definedTags - Lista de etiquetas destacadas (boolean| Airplane, Travel, tutorial, etc)
+
+| Cards
+| =====================
++variables({
+  "e.type" : { description: "Card type", value: "grid"},
+  "e.snippet" : { description: "Show Snippet", value: "true"},
+  "e.meta" : { description: "Show Meta", value: "true"},
+  "e.colsMin" : { description: "Min column width", value: "16rem"},
+  "e.truncate" : { description: "Amount of text", value: "300"},
+  "e.lineClamp" : { description: "Number of lines", value: "2"},
+  "e.ratio" : { description: "Default cover ratio", value: "16:9"},
+  "e.claRatio" : { description: "Classic cover ratio", value: "21:9"},
+  "e.gaRatio" : { description: "Gallery cover ratio", value: "4:3"},
+  "e.ytThumbnail": { description: "Posts YouTube thumbnail", value: "hqdefault" },
+  "e.definedTags" : { description: "Feature Tags", value: "true"},
+})
+| #{'\n'}

@@ -1,0 +1,38 @@
+//- Inserta un icono dependiendo de la url (destinado a marcas)
+//- @author zkreations
+//- @param {string} [url] - Enlace de la empresa
+
+b:includable(id='zk:brand')
+
+  b:if(cond='data:url contains "drive.google.com"')
+    b:include(name="i:svg", data='{ icon: "google-drive" }')
+
+    b:elseif(cond='data:url contains "mediafire.com"')
+    b:include(name="i:svg", data='{ icon: "fire" }')
+
+    b:elseif(cond='(data:url contains "onedrive.live.com") or (data:url contains "1drv.ms")')
+    b:include(name="i:svg", data='{ icon: "cloud" }')
+
+    b:elseif(cond='(data:url contains "mega.io") or (data:url contains "mega.co.nz") or (data:url contains "mega.nz")')
+    b:include(name="i:svg", data='{ icon: "mega" }')
+
+    b:elseif(cond='(data:url contains "gumroad.com") or (data:url contains "gum.co")')
+    b:include(name="i:svg", data='{ icon: "gumroad" }')
+
+    b:elseif(cond='(data:url contains "paypal.com") or (data:url contains "paypal.me")')
+    b:include(name="i:svg", data='{ icon: "paypal" }')
+
+    b:elseif(cond='(data:url contains "github.com") or (data:url contains "githubusercontent.com")')
+    b:include(name="i:svg", data='{ icon: "github" }')
+
+    b:elseif(cond='(data:url contains "ko-fi.com")')
+    b:include(name="i:svg", data='{ icon: "coffee" }')
+
+    b:elseif(cond='(data:url contains "sellfy.store") or (data:url contains "sellfy.com")')
+    b:include(name="i:svg", data='{ icon: "cart-shopping" }')
+
+    b:elseif(cond='(data:url contains "coinbase.com")')
+    b:include(name="i:svg", data='{ icon: "coinbase" }')
+
+    b:else
+    b:include(name="i:svg", data='{ icon: "paperclip" }')

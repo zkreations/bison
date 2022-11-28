@@ -1,0 +1,10 @@
+//- Enlaces de adjunto (data:post requerido)
+//- @author zkreations
+
+b:includable(id="post:attachments")
+  .post-attachments.flex.flex-wrap(class="g-.5 i-m")
+    b:loop(values='data:post.enclosures' var='enclosure')
+      a.attached.btn(target="_blank" expr:href='data:enclosure.url' rel='noopener noreferrer nofollow')
+        b:include(name="zk:brand", data='{ url: data:enclosure.url }')
+        <data:enclosure.mimeType/>
+  .hr-dashed

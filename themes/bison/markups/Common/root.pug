@@ -1,0 +1,12 @@
+//- Configura atributos de la etiqueta :root
+//- @author zkreations
+
+b:includable#root
+  b:if(cond='["dark","light"] contains data:skin.vars.g_scheme')
+    b:attr(name='data-theme' expr:value='data:skin.vars.g_scheme')
+
+  b:if(cond="data:skin.vars.f_cleanXml")
+    b:attr(name='xmlns' value='')
+    b:attr(name='xmlns:b' value='')
+    b:attr(name='xmlns:data' value='')
+    b:attr(name='xmlns:expr' value='')

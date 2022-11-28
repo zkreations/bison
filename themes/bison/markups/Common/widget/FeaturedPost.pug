@@ -1,0 +1,18 @@
+//- Contenido del widget FeaturedPost
+//- @author zkreations
+//- @param {string} [type=grid] - Tipo de tarjeta (grid, row, classic, gallery)
+
+b:includable(id='widget:FeaturedPost')
+  b:if(cond='data:widget.sectionId == "Filters"')
+    b:include(name="docs" data='{ warn: "wrongFilter" }')
+
+    b:elseif(cond='data:widget.sectionId == "header"')
+    b:include(name="docs" data='{ warn: "invalidSection" }')
+
+    b:elseif(cond='data:this.posts.empty')
+    b:include(name='zk:alert', data='{ message: data:messages.theresNothingHere }')
+
+    b:else
+    .widget-content
+      b:with(value='data:widgets.Blog1.allBylineItems' var='show')
+        b:include(name="post:cards", data='{ items: data:this.posts.first, display: data:this.postDisplay, type: (data:option.type ?: "grid") }')

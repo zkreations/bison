@@ -1,0 +1,56 @@
+//- Estructura "esqueleto" para reducir el flujo en diseño
+//- @author zkreations
+//- @param {string} [class] - Clases adicionales
+//- @param {string} [name] - Esqueleto deseado (infinite, load, numeric, comments, grid, row, classic, gallery)
+
+b:includable(id='zk:skeleton')
+  b:tag.skel(expr:name='data:name == "numeric" ? "li" : "div"' expr:aria-label="data:messages.loading" role="alert")
+    b:class(cond='data:class', expr:name='data:class')
+
+    b:switch(var='data:name')
+
+      //- PAGINATION
+      b:case(value='infinite')
+      b:attr(name='class' value='loading w-1/1 flex justify-center')
+      b:include(name="i:svg" data='{ icon: "ellipsis" }')
+
+      b:case(value='load')
+      b:attr(name='class' value='btn btn-full')
+      <data:messages.loadMorePosts/>
+
+      b:case(value='numeric')
+      b:attr(name='class' value='')
+      a.btn.btn-outline.bjs-number(expr:href="data:const.homeUrl") 1
+
+      b:case(value='comments')
+      .flex.items-start
+        .skel-item.latest-image.flex-none.me-1
+        .flex-auto(class='sy-.5')
+          .skel-item.pb-1(class="w-1/2")
+          .skel-item.pb-1(class="w-1/1")
+
+      b:case(value='gallery')
+      b:class(expr:name='"bg-inset ratio ratio-" + data:ratio')
+
+
+      b:default
+      b:class(expr:name='"card card-" + data:name')
+      b:class(cond='data:name == "row"' name='flex')
+      .skel-item.ratio
+        b:class(expr:name='"ratio-" + data:ratio')
+        b:if(cond='data:name == "row"')
+          b:class(name='flex-none w-1/4')
+      .card-body(class="m:p-1.75 p-1.25 sy-1")
+        b:class(cond='data:name == "row"' name='flex-auto')
+        .skel-item(class="fs-5 m:fs-3 s:fs-4")
+          <data:messages.loading/>
+        b:if(cond='data:skin.vars.e_snippet')
+          .skel-item.skel-text
+            b:class(cond='data:name == "row"' name='s:block none')
+        b:if(cond='data:skin.vars.e_meta')
+          .g-1
+            b:class(expr:name='data:name == "row" ? "m:flex none" : "flex"')
+            b:class(cond='data:name == "classic"' name='justify-center')
+            b:if(cond='data:show.author')
+              .skel-item.author-avatar.rounded-pill
+            .skel-item.skel-line(class="w-1/2")

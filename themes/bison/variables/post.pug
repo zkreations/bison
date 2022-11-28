@@ -1,0 +1,28 @@
+//- Características de entradas
+//- @author zkreations
+//- @param {string} p.shareOn - Lista de botones de compartir (facebook, twitter, whatsapp, telegram, pinterest, tumblr, reddit, vk)
+//- @param {boolean} p.pagination - Mostrar paginación en post (Paginación simple)
+//- @param {string} p.template - Plantilla de post por defecto (default, hero)
+//- @param {number} p.innerContent - Contenido interno cada X párrafos (1-12)
+//- @param {boolean} p.highlight - Habilitar highlight.js
+//- @param {boolean|string} p.autoToc - Habilitar tabla de contenido automática (true, before-first-heading, after-first-heading, before-first-paragraph, after-first-paragraph)
+//- @param {boolean|number} p.related - Habilitar post relacionados, configura una cantidad a mostrar (1-9)
+//- @param {number} p.relShuffle - Nivel de aleatoriedad
+//- @param {string} p.relCols - Ancho mínimo de las columnas de los relacionados
+
+
+| Post
+| =====================
++variables({
+  "p.shareOn" : { description: "Share on", value: "facebook, twitter, whatsapp, telegram"},
+  "p.pagination" : { description: "Pagination in post", value: "false"},
+  "p.template" : { description: "Default post template", value: "default"},
+  "p.innerContent": { description: "Internal content every", value: "4" },
+  "p.highlight": { description: "Enable highlight.js", value: "false" },
+  "p.autoToc": { description: "Enable auto TOC", value: "false" },
+  "p.tocHeading": { description: "Headings for TOC", value: "h2, h3, h4" },
+  "p.related": { description: "Enable related post", value: "2" },
+  "p.relShuffle": { description: "Randomness level", value: "8" },
+  "p.relCols": { description: "Min related width", value: "18rem" },
+})
+| #{'\n'}

@@ -1,0 +1,12 @@
+//- Aviso de "sin contenido"
+//- @author zkreations
+
+b:includable#noContentPlaceholder
+  //- Si no hay contenido, distinguimos entre filtros activados y no
+  b:if(cond='data:posts.empty')
+    b:include(name='zk:alert', data='{ class: "b:skin-my", message: (data:view.search.query and data:skin.vars.f_filter ? data:messages.noResultsFound : data:this.navMessage) }')
+
+    //- En cambio, si hay contenido, mostramos a todos menos a filtros
+    b:elseif(cond='data:view.search.query or data:view.isArchive or data:view.isLabelSearch')
+    b:if(cond='!data:skin.vars.f_filter')
+      b:include(name='zk:alert', data='{ class: "b:skin-my", message: (data:view.isArchive ? data:view.archive.rangeMessage : data:view.search.resultsMessageHtml) }')

@@ -1,0 +1,13 @@
+//- Sección de herramientas (Modo diseño)
+//- @author zkreations
+
+//- Subir imágenes rápidamente a Blogger
++widget("Image",{},30)(cond="data:view.isLayoutMode" title='Upload images' locked="true" visible="false")
+  b:includable#content
+  b:includable#main
+
+//- Poner en cola código JS & CSS
++widget("LinkList",{},30)(cond='data:links.any' title='Enqueue' locked="true" visible="false")
+  b:includable#content
+  b:includable#main
+    b:include(name='widget:Enqueue' data='{ sources: data:links }')

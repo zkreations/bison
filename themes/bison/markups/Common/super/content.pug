@@ -1,0 +1,41 @@
+//- Reemplaza la inclusion "content" original por una con datos
+//- @author zkreations
+//- @param {string} [str] - El valor esperado debe ser string
+
+b:includable(id='$:content', var='str')
+  //- Comprobamos la variable data:str (title) y verificamos si podemos tratarlo como un objeto
+  b:if(cond='and((data:str contains "{"), (data:str contains "}"), (data:str contains ": \\""), (data:str not contains ":\\""))')
+
+    //- Convertimos a objeto "data:option.key"
+    //- Esto funciona ya que "expr:" tratará los valores string como datos de Blogger
+    b:with(expr:value='data:str' var='option')
+
+      //- En el caso de la key "content", validamos con una matriz (Esto evita que se rompa todo y yo quede así: 🤡 )
+      b:with(value='["alert","carousel","comments","section","trending"] contains data:option.content' var='available')
+
+        b:if(cond='data:option.content and data:available')
+          b:include(cond='["section","alert"] not contains data:option.content' name="$:title")
+          b:include(expr:name='"content:" + data:option.content')
+
+          //- Si la key "content" no es válida, mostramos un aviso
+          b:elseif(cond='data:option.content and !data:available')
+          b:include(name="docs" data='{ warn: "invalidContent" }')
+
+          b:else
+          //- Si la key "content" no existe volvemos a la inclusion normal (contiene data:option)
+          b:include(name="$:title")
+          b:include(name="content")
+
+    //- Si el objeto no está cerrado
+    b:elseif(cond='and((data:str contains ": \\""), (data:str contains "{" and data:str not contains "}"))')
+    b:include(name="docs" data='{ warn: "invalidObject" }')
+
+    //- Si una key no es válida para Blogger
+    b:elseif(cond='and((data:str contains "{" and data:str contains "}"), (data:str contains ":\\""))')
+    b:include(name="docs" data='{ warn: "invalidKey" }')
+
+    //- Si no podemos tratar el título como objeto devolvemos el valor original
+    //- En este caso, no esta disponible `data:option`
+    b:else
+    b:include(name="$:title")
+    b:include(name="content")

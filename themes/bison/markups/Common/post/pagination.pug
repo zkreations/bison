@@ -1,0 +1,27 @@
+//- Paginación de entradas (widget Blog requerido)
+//- @author zkreations
+
+b:includable(id="post:pagination")
+
+  //- Obtener el tipo de página
+  b:if(cond='data:newerPageUrl or data:olderPageUrl')
+    .flex.flex-wrap#blog-pager(class='g-.5')
+      b:class(cond='data:view.isPost', name="post-pagination justify-between")
+
+      //- Botón MAS RECIENTES
+      b:if(cond='data:newerPageUrl')
+        a(expr:href='data:newerPageUrl').btn.btn-outline
+
+          //- Remplaza la url con el parámetro de entrada
+          b:attr(name='href' cond='data:newerPageUrl != data:blog.homepageUrl.canonical and (data:$navi.layout != data:skin.vars.e_type)' expr:value='data:newerPageUrl params {view: data:$navi.layout}')
+          b:include(name="i:svg", data='{ icon: "arrow-left" }')
+          <data:messages.newer/>
+
+      //- Botón MAS ANTIGUOS
+      b:if(cond='data:olderPageUrl')
+        a(expr:href='data:olderPageUrl').btn.btn-outline
+
+          //- Remplaza la url con el parámetro de entrada
+          b:attr(name='href' cond='data:$navi.layout != data:skin.vars.e_type' expr:value='data:olderPageUrl params {view: data:$navi.layout}')
+          <data:messages.older/>
+          b:include(name="i:svg", data='{ icon: "arrow-right" }')

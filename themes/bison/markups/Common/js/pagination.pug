@@ -1,0 +1,17 @@
+//- Entradas paginadas con numeración
+//- @author zkreations
+
+b:includable(id="js:pagination")
+  b:tag.flex.flex-wrap(class='g-.5' data-bjs="pagination" expr:name='data:$navi.type == "numeric" ? "ul" : "div"' expr:data-per-page='data:posts.length')
+
+    //- Atributos especiales
+    b:attr(name='data-first-page' value='true')
+    b:attr(name='data-infinite' expr:value='["infinite","load"] contains data:$navi.type')
+    
+    b:if(cond='data:$navi.type == "load"')
+      b:attr(name='data-with-button' value='true')
+      b:attr(name='data-button-text' expr:value='data:messages.loadMorePosts')
+      b:attr(name='data-button-text-loading' expr:value='data:messages.loading')
+
+    //- Esqueleto
+    b:include(name="zk:skeleton", data='{ name: data:$navi.type }')

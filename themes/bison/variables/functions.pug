@@ -1,0 +1,30 @@
+//- Funciones avanzadas
+//- @author zkreations
+//- @param {boolean|string} f.sidebarIn - Mostrar sidebar en paginas especificas: (boolean|home, index, search, labels, archive, item, static_page, error_page)
+//- @param {boolean} f.postSidebar - Sidebar personalizado en entradas
+//- @param {boolean} f.pageSidebar - Sidebar personalizado en página estática
+//- @param {boolean|string} f.stickySidebar - Fijar sidebar (boolean|last, single, post, page, single-last, post-last, page-last)
+//- @param {boolean} f.swap - Intercambiar posición entre blog y sidebar
+//- @param {boolean} f.filter - Habilitar filtros de búsqueda
+//- @param {boolean} f.more - Mostrar el botón "Más" en el widget (Solo afecta a Blog)
+//- @param {string} f.pagination - Tipo de paginación (default, numeric, infinite, load)
+//- @param {boolean} f.cleanXml - Remover atributos de Blogger y XML
+//- @param {string} f.imageParams - Parámetros adicionales de imágenes de Google
+//- @param {string} f.cloudflare - Configura enlaces con HTTPS de Cloudflare
+
+| Funciones
+| =====================
++variables({
+  "f.sidebarIn" : { description: "Show sidebar", value: "true"},
+  "f.postSidebar" : { description: "Custom post sidebar", value: "false"},
+  "f.pageSidebar" : { description: "Custom page sidebar", value: "false"},
+  "f.stickySidebar" : { description: "Sticky sidebar", value: "false"},
+  "f.swap" : { description: "Swap blog and sidebar", value: "false"},
+  "f.filter" : { description: "Enable search filters", value: "true"},
+  "f.more" : { description: "Show more button", value: "true"},
+  "f.pagination" : { description: "Navigation type", value: "default"},
+  "f.cleanXml": { description: "Clean blogger XML", value: "true" },
+  "f.imageParams": { description: "Custom image parameters", value: "rw-l80-e30" },
+  "f.cloudflare": { description: "SSL/TLS by Cloudflare", value: "false" },
+})
+| #{'\n'}

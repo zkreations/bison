@@ -1,0 +1,21 @@
+//- Contenido del widget PageList
+//- @author zkreations
+
+b:includable(id='widget:PageList')
+  b:if(cond='data:widget.sectionId == "Filters"')
+    b:include(name="docs" data='{ warn: "wrongFilter" }')
+
+    b:elseif(cond='data:widget.sectionId == "footer-lower"')
+    b:include(name='widget:FooterLinks')
+
+    b:elseif(cond='data:widget.sectionId == "header"')
+    b:include(name='widget:Navbar')
+
+    b:else
+    .widget-content
+      .fw-500.flex.flex-wrap.pagelist(class='b:skin-g2')
+        b:loop(values='data:links', var='link')
+          a.pagelist-link.btn.has-icon(expr:href='data:link.href')
+            b:class(cond='data:link.isCurrentPage', name='is-here')
+            <data:link.title/>
+

@@ -1,0 +1,23 @@
+//- Contenido del widget Subscribe
+//- @author zkreations
+
+b:includable(id='widget:Subscribe')
+  b:if(cond='data:widget.sectionId == "Filters"')
+    b:include(name="docs" data='{ warn: "wrongFilter" }')
+
+    b:elseif(cond='data:widget.sectionId == "header"')
+    b:include(name="docs" data='{ warn: "invalidSection" }')
+
+    b:else
+    .widget-content
+      b:with(value='data:skin.vars.g_revue' var='action')
+        b:if(cond='data:action == "" or data:action == "UserID"')
+          b:include(name="docs" data='{ warn: "missingRevueId" }')
+          
+
+          b:else
+          form(expr:action='+("https://www.getrevue.co/profile/",data:action,"/add_subscriber")', method="POST").subscribe-form.sy-1
+            .group-x
+              input.subscribe-input.form-control#member_email(type="email", expr:placeholder="data:messages.emailAddress", name="member[email]",required)
+              button.subscribe-button.btn.btn-primary.flex-none(type="submit")
+                b:include(name="i:svg", data='{ icon: "envelope" }')

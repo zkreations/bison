@@ -1,0 +1,77 @@
+//- Templates destinados a Javascript
+//- @author zkreations
+//- @param {string} [ratio] - Relación de aspecto (21:9, 16:9, 4:3, 1:1, 1:2, 2:3, 5:7)
+//- @param {string} [name] - Tipo de template (comments, grid, row, classic, gallery)
+
+b:includable(id="js:templates")
+  b:switch(var='data:name')
+
+    //- COMMENTS
+    b:case(value='comments')
+    .latest-item.flex.items-start(data-bjs="template")
+      a(href="{{url}}").latest-thumbnail.flex-none.me-1: img.latest-image(data-src='{{author_image}}', alt='{{author_name}}', width="45", height="45")
+      .latest-body
+        p.latest-snippet.truncate-line
+          a.latest-name(href="{{url}}", class="color-link:hover").fw-500.color-title {{author_name}}
+          |  — 
+          | {{snippet}}
+
+    //- GALLERY
+    b:case(value='gallery')
+    a.gallery.ratio.mask(data-bjs="template" href="{{url}}")
+      b:class(expr:name='"ratio-" + data:ratio')
+      img(alt="{{title}}" class="fit-image" data-src="{{img}}" loading='lazy')
+      .gallery-content(class="sy-.5")
+        .gallery-name.fw-500 {{title}}
+        b:if(cond="data:show.timestamp")
+          .gallery-time.has-icon
+            b:include(name='i:svg' data='{ icon: "clock" }')
+            | {{time}}
+
+    //- GRID, CLASSIC, ROW
+    b:default
+    article.card(data-bjs="template")
+      b:class(expr:name='"card-" + data:name')
+      b:class(cond='data:name == "row"' name='flex')
+      header.card-header.relative
+        b:class(cond='data:name == "row"' name='flex-none w-1/4')
+        b:if(cond='data:skin.vars.e_definedTags != "" and data:skin.vars.e_definedTags != true')
+          | {{labels_filter}}
+          b:elseif(cond='data:skin.vars.e_definedTags != false')
+          | {{labels_links}}
+        a.card-image.ratio.o-hidden.mask(aria-label='Imagen' href='{{url}}')
+          b:if(cond='data:name == "row"')
+            b:class(name='h-1/1 ratio-1:1')
+            b:elseif(cond='data:name == "classic"')
+            b:class(name='ratio-21:9')
+            b:else
+            b:class(expr:name='"ratio-" + data:ratio')
+          img.fit-image(alt='{{title}}' loading='lazy' data-src='{{img}}')
+      .card-body.sy-1(class='m:p-1.75 p-1.25')
+        b:class(cond='data:name == "row"' name='flex-auto')
+        b:class(cond='data:name == "classic"' name='text-center')
+        h3.card-title.font-primary.fs-5(class='m:fs-3 s:fs-4')
+          a(href='{{url}}') {{title}}
+        b:if(cond='data:skin.vars.e_snippet')
+          p.card-snippet.truncate-line(class='s:fs-6') {{snippet}}
+        b:if(cond='data:skin.vars.e_meta')
+          footer.card-meta.flex.items-center.flex-wrap.g-1
+            b:class(cond='data:name == "classic"' name='justify-center')
+            b:if(cond='data:show.author')
+              a.meta-item.has-icon(href='{{author_url}}' rel='author' title='{{author_name}}')
+                img.author-avatar.rounded-pill(alt='{{author_name}}' height='30' data-src='{{author_image}}' width='30')
+            b:if(cond='data:show.timestamp')
+              span.meta-item.has-icon.capitalize
+                b:include(name='i:svg' data='{ icon: "clock" }')
+                | {{time}}
+            b:if(cond='data:show.comments')
+              a.meta-item.has-icon(href='{{url}}#comments')
+                b:include(name='i:svg' data='{ icon: "comment" }')
+                | {{thr}}
+            b:if(cond='!data:view.isPreview and data:skin.vars.a_edit')
+              span.item-control.blog-admin
+                a.meta-item.flex.items-center(href='https://www.blogger.com/blog/post/edit/{{blog_id}}/{{post_id}}')
+                  b:include(name='i:svg', data='{ icon: "pencil", class: "me-.5"}')
+                  <data:messages.edit/>
+
+

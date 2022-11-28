@@ -1,0 +1,11 @@
+//- Crea tipos de alertas
+//- @author zkreations
+//- @param {string} [class] - Clases adicionales
+//- @param {string} [type] - Tipo de alerta (info, warning, danger, success)
+//- @param {string} [message] - Texto de la alerta
+
+b:includable(id='zk:alert')
+  .alert
+    b:class(cond='data:class', expr:name='data:class')
+    b:class(cond='data:type', expr:name='"alert-" + data:type')
+    b:eval(expr='data:message ?: data:messages.theresNothingHere')

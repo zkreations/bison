@@ -1,0 +1,12 @@
+//- Datos del header
+//- @author zkreations
+
+b:includable(id='post:header')
+  b:if(cond='data:const.temp contains "hero"')
+    b:include(name="post:labels" cond='data:show.labels')
+
+    b:else
+    header.post-header.sy-1
+      b:include(name="post:labels" cond='data:show.labels')
+      b:include(name="post:title")
+      b:include(name="post:data")

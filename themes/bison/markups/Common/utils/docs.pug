@@ -1,0 +1,9 @@
+//- Mensajes de ayuda para el usuario
+//- @author zkreations
+//- @param {url} [warn] - Tipo de mensaje
+
+b:includable(id='docs')
+  b:switch(var='data:warn')
+    each warn, key in warning
+      b:case(value=key)
+      b:include(name="zk:alert", data=`{ message: "${warn}", type: "warning" }`)

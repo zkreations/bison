@@ -1,0 +1,20 @@
+//- Contenido del widget Header
+//- @author zkreations
+
+b:includable(id='widget:Header')
+  b:if(cond='data:widget.sectionId != "header"')
+    b:include(name="docs" data='{ warn: "headerSection" }')
+
+    b:else
+    b:include(name='$:class', data='{class: "header-wrapper b:skin-p"}')
+    .header-logo
+      //- Inserta logo (si existe), titulo y descripción
+      b:if(cond='data:image')
+        a(expr:href='data:blog.homepageUrl')
+          img.logo-image(expr:alt='data:title' expr:height='data:height' expr:src='data:image' expr:width='data:width')
+
+      b:if(cond='data:imagePlacement == "BEHIND"')
+        a(expr:href='data:blog.homepageUrl').logo-name <data:title/>
+
+      b:if(cond='data:description and data:imagePlacement != "REPLACE"')
+        .logo-descripcion <data:description/>

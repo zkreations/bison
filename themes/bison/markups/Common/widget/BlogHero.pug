@@ -1,0 +1,7 @@
+//- Contenido del widget Hero (Mutation: Blog)
+//- @author zkreations
+
+b:includable(id='widget:BlogHero')
+  b:include(name='$:class', data='{class: "post-cover relative has-cover bg-black"}')
+  b:with(value='data:posts.first', var='post')
+    b:include(name='post:hero', data='{ titleClass: "m:fs-1 fs-3", class: "text-center py-3 px-1.25" }')

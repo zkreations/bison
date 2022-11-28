@@ -1,0 +1,17 @@
+//- Utilidades para administradores
+//- @author zkreations
+//- @param {boolean} a.tools - Mostrar herramientas en la sección "Diseño"
+//- @param {boolean} a.access - Modo accesibilidad en la sección "Diseño"
+//- @param {boolean} a.edit - Mostrar botón para editar entradas 
+//- @param {boolean} a.jumpLink - Aviso de "<!--more-->" o salto de linea faltante
+
+| Admin
+| =====================
++variables({
+  "a.tools" : { description: "Admin tools", value: "true"},
+  "a.access" : { description: "Accessibility mode", value: "false"},
+  "a.edit" : { description: "Shortcut edit post", value: "false"},
+  "a.jumpLink" : { description: "JumpLink alert", value: "false"},
+})
+| #{'\n'}
+

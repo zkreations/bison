@@ -1,0 +1,36 @@
+//- Constructor de títulos (requiere data:widget)
+//- @author zkreations
+//- @param {string} [defaultTitle] - Titulo alternativo qu se lle antes de data:tittle
+//- @param {number} [numComments] - Cantidad de comentarios
+//- @param {url} [more] - Enlace del botón "Ver más"
+
+b:includable(id='$:title')
+  //- Limpiar atributos de widgets
+  b:if(cond='!(data:widget.type == "Blog" and data:view.isSingleItem) or data:defaultTitle or data:numComments')
+    b:if(cond='data:skin.vars.f_cleanXml and !(data:widget.type == "Blog" and data:view.isSingleItem)')
+      b:include(name='$:class', data='{class: (data:class ?: ("widget b:skin-sy " + data:widget.type))}')
+      b:else
+      b:class(name="b:skin-sy")
+
+    b:if(cond='!(["header","Filters","footer-upper","footer-lower"] contains data:widget.sectionId)')
+      b:if(cond='data:defaultTitle or (data:option ? data:option.title : data:title.length != 0)')
+        .widget-title.flex.o-hidden.uppercase
+          span.widget-name.has-icon
+
+            //- Iconos de zkreations
+            b:include(cond="data:option.icon" name='i:svg' data='{ icon: data:option.icon }')
+
+            //- Cantidad de comentarios
+            b:if(cond='data:numComments')
+              b:message(name='messages.numberOfComments')
+                b:param(expr:value='data:numComments' name='numComments')
+
+              //- Titulo SSJ3
+              b:else
+              b:eval(expr='data:option.title ?: (data:defaultTitle ?: data:title)')
+
+          b:if(cond='data:more')
+            a(expr:href='data:more', expr:aria-label="data:messages.showAll").widget-name.name-more.ms-auto.has-icon
+              b:include(name="i:svg", data='{ icon: "arrow-right-long" }')
+
+
