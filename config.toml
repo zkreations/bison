@@ -56,7 +56,7 @@ disableKinds = ["taxonomy","taxonomyTerm","term","RSS"]
 
 [params]
   main_template = "bison.xml"
-  main_template_url = "https://zkreations.gumroad.com/l/bison"
+  main_template_url = "https://zkreations.gumroad.com/l/bison-xml"
 
   main_icon = "gitlab"
   github_repo_edit = "https://github.com/zkreations/bison/blob/main/site/content"
