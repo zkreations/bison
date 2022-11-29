@@ -41,3 +41,6 @@ b:includable(id='zk:head')
 
   b:if(cond='data:view.isPreview')
     b:include(name="zk:assets", data='{ get: "preview" }')
+
+  b:if(cond='data:skin.vars.c_disqus and data:skin.vars.c_disqus != ""')
+    b:include(name="zk:assets", data='{ get: "disqusCountJs" }')

@@ -49,3 +49,6 @@ b:includable(id='zk:assets')
       b:if(cond='data:const.temp contains "hero"')
         style .typography img[src^="<data:blog.postImageUrl/>"]{ display:none }
 
+      b:case(value='disqusCountJs')
+      script#dsq-count-scr(expr:src='"//" + data:skin.vars.c_disqus + ".disqus.com/count.js"' type='deferjs')
+
