@@ -1728,7 +1728,7 @@ window.addEventListener('DOMContentLoaded', () => {
                   <b:include name="i:svg" data="{ icon: &quot;disqus&quot;}"/><data:messages.postAComment/>
                 </div>
               </b:if>
-              <div id="disqus_thread" expr:data-post-url="data:post.url.canonical" expr:data-post-id="data:post.id" expr:data-shortname="data:skin.vars.c_disqus"></div>
+              <div id="disqus_thread" expr:data-post-url="data:post.url.canonical.https" expr:data-post-id="data:post.id" expr:data-shortname="data:skin.vars.c_disqus"></div>
               <b:else/>
               <div class="post-comments">
                 <b:include name="$:title" data="{ numComments: data:post.numberOfComments }"/>

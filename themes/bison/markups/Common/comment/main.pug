@@ -19,7 +19,7 @@ b:includable(id="comment:main")
           b:include(name='i:svg' data='{ icon: "disqus"}')
           <data:messages.postAComment/>
 
-      #disqus_thread(expr:data-post-url="data:post.url.canonical" expr:data-post-id="data:post.id" expr:data-shortname="data:skin.vars.c_disqus")
+      #disqus_thread(expr:data-post-url="data:post.url.canonical.https" expr:data-post-id="data:post.id" expr:data-shortname="data:skin.vars.c_disqus")
 
       b:else
       .post-comments
