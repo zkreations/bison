@@ -79,7 +79,7 @@ b:includable(id="post:cards")
                       b:if(cond='data:display.showFeaturedImage ?: true')
                         header.card-header.relative
                           b:class(cond='data:$card.row' name='flex-none w-1/4')
-                          b:include(cond='data:post.labels.any and data:show.labels' name='post:featuredLabels' data='{ tags: data:post.labels }')
+                          b:include(cond='data:post.labels.any' name='post:featuredLabels' data='{ tags: data:post.labels }')
 
                           a.card-image.ratio.o-hidden.mask(expr:href="data:post.url.canonical", expr:aria-label="data:messages.image")
 
