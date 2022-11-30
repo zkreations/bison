@@ -33,7 +33,7 @@ b:with(value='data:view.isHomepage ? "home" : (data:view.search.query ? "search"
           //- tips: Evitamos romper el diseño con valores numéricos o boleanos, solo se permite string
           b:with(value='([false,true] not contains data:sidebar and (data:sidebar + 0 != data:sidebar)) ? data:sidebar : "home, index, search, labels, archive, item, static_page, error_page"' var='hasSidebar')
 
-            b:if(cond='data:hasSidebar contains data:pageType')
+            b:if(cond='(data:hasSidebar contains data:pageType) or data:view.isLayoutMode')
               b:section#sidebar.sidebar.flex.flex-column(class="b:skin-g1", cond='data:widgets any (w => w.sectionId == "sidebar") and not (data:customSidebar.post or data:customSidebar.page or data:customSidebar.filter)', ads='true')
                 include section/SidebarGlobal
 

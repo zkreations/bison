@@ -2454,7 +2454,7 @@ window.addEventListener('DOMContentLoaded', () => {
                   <b:with value="{ post: ((data:view.isPost or data:view.isLayoutMode) and data:skin.vars.f_postSidebar), page: ((data:view.isPage or data:view.isLayoutMode) and data:skin.vars.f_pageSidebar), filter: ((data:view.search.query or data:view.isLayoutMode) and data:skin.vars.f_filter) }" var="customSidebar">
                     <b:if cond="data:sidebar != false">
                       <b:with value="([false,true] not contains data:sidebar and (data:sidebar + 0 != data:sidebar)) ? data:sidebar : &quot;home, index, search, labels, archive, item, static_page, error_page&quot;" var="hasSidebar">
-                        <b:if cond="data:hasSidebar contains data:pageType">
+                        <b:if cond="(data:hasSidebar contains data:pageType) or data:view.isLayoutMode">
                           <b:section class="sidebar flex flex-column b:skin-g1" id="sidebar" cond="data:widgets any (w =&gt; w.sectionId == &quot;sidebar&quot;) and not (data:customSidebar.post or data:customSidebar.page or data:customSidebar.filter)" ads="true">
                             <b:widget id="BlogSearch51" type="BlogSearch" version="2" title="Search"/>
                             <b:widget id="FeaturedPost51" type="FeaturedPost" version="2" title="Featured">
