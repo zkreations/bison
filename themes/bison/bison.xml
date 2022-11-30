@@ -1414,8 +1414,8 @@ window.addEventListener('DOMContentLoaded', () => {
         </b:includable>
         <b:includable id="post:labels">
           <b:if cond="data:post.labels.any">
-            <div class="flex flex-wrap g-.5">
-              <b:loop values="data:post.labels" var="label"><a class="btn btn-outline" expr:href="data:label.url"><data:label.name/></a></b:loop>
+            <div class="post-labels flex flex-wrap g-.5">
+              <b:loop values="data:post.labels" var="label"><a class="post-labels-label btn btn-outline" expr:href="data:label.url"><data:label.name/></a></b:loop>
             </div>
           </b:if>
         </b:includable>
