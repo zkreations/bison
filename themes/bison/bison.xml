@@ -593,7 +593,7 @@
           <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin="anonymous"/>
           <link href="https://fonts.gstatic.com/" rel="dns-prefetch"/>
           <b:include name="zk:assets" data="{ get: &quot;inlineJs&quot; }"/>
-          <b:if cond="data:view.isMultipleItems and data:skin.vars.a_edit">
+          <b:if cond="data:view.isMultipleItems and (data:skin.vars.a_edit or data:skin.vars.a_jumpLink)">
             <meta name="home-blog-admin" expr:content="data:blog.blogId"/>
           </b:if>
           <b:include name="zk:assets" data="{ get: &quot;fonts&quot; }"/>
@@ -1334,12 +1334,12 @@ window.addEventListener('DOMContentLoaded', () => {
                                   </p>
                                 </b:if>
                                 <b:if cond="data:skin.vars.e_meta">
-                                  <footer class="card-meta flex items-center flex-wrap g-1">
-                                    <b:class cond="data:$card.classic" name="justify-center"/>
-                                    <b:if cond="data:show.author or data:show.timestamp or data:show.comments">
+                                  <b:if cond="data:show.author or data:show.timestamp or data:show.comments or data:skin.vars.a_edit or data:skin.vars.a_jumpLink">
+                                    <footer class="card-meta flex items-center flex-wrap g-1">
+                                      <b:class cond="data:$card.classic" name="justify-center"/>
                                       <b:include name="post:meta"/>
-                                    </b:if>
-                                  </footer>
+                                    </footer>
+                                  </b:if>
                                 </b:if>
                               </div>
                             </article>
@@ -1360,9 +1360,11 @@ window.addEventListener('DOMContentLoaded', () => {
           </b:with>
         </b:includable>
         <b:includable id="post:data">
-          <div class="article-meta flex items-center flex-wrap g-1">
-            <b:include name="post:meta"/>
-          </div>
+          <b:if cond="data:show.author or data:show.timestamp or data:show.comments or data:skin.vars.a_edit">
+            <div class="article-meta flex items-center flex-wrap g-1">
+              <b:include name="post:meta"/>
+            </div>
+          </b:if>
         </b:includable>
         <b:includable id="post:featuredLabels">
           <b:if cond="data:skin.vars.e_definedTags != false">
@@ -1399,10 +1401,14 @@ window.addEventListener('DOMContentLoaded', () => {
               <b:class cond="data:titleClass" expr:name="data:titleClass"/>
               <b:eval expr="data:post.title.escaped != &quot;&quot; ? data:post.title.escaped : data:messages.noTitle"/>
             </h1>
-            <div class="hero-meta article-meta flex g-1 flex-wrap color-inverse">
-              <b:class expr:name="data:metaClass ?: &quot;items-center justify-center&quot;"/>
-              <b:include name="post:meta" data="{ show: data:widgets.Blog1.allBylineItems }"/>
-            </div>
+            <b:with value="data:widgets.Blog1.allBylineItems" var="show">
+              <b:if cond="data:show.author or data:show.timestamp or data:show.comments or data:skin.vars.a_edit">
+                <div class="hero-meta article-meta flex g-1 flex-wrap color-inverse">
+                  <b:class expr:name="data:metaClass ?: &quot;items-center justify-center&quot;"/>
+                  <b:include name="post:meta"/>
+                </div>
+              </b:if>
+            </b:with>
           </div>
         </b:includable>
         <b:includable id="post:inlineAd">

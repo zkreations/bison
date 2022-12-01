@@ -104,10 +104,9 @@ b:includable(id="post:cards")
                               b:eval(expr='data:post.snippets.long snippet { length: data:truncate, links: false, linebreaks: false, ellipsis: true }')
                         
                         b:if(cond='data:skin.vars.e_meta')
-                          footer.card-meta.flex.items-center.flex-wrap.g-1
-                            b:class(cond='data:$card.classic' name='justify-center')
-                          
-                            b:if(cond='data:show.author or data:show.timestamp or data:show.comments')
+                          b:if(cond='data:show.author or data:show.timestamp or data:show.comments or data:skin.vars.a_edit or data:skin.vars.a_jumpLink')
+                            footer.card-meta.flex.items-center.flex-wrap.g-1
+                              b:class(cond='data:$card.classic' name='justify-center')
                               b:include(name='post:meta')
 
                     b:if(cond='data:widget.type == "Blog" and (data:$type in ["grid","row","classic"])')

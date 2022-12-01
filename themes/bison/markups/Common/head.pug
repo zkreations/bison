@@ -17,7 +17,7 @@ b:includable(id='zk:head')
   b:include(name="zk:assets", data='{ get: "inlineJs" }')
 
   //- Administrador en la Home
-  b:if(cond='data:view.isMultipleItems and data:skin.vars.a_edit')
+  b:if(cond='data:view.isMultipleItems and (data:skin.vars.a_edit or data:skin.vars.a_jumpLink)')
     meta(name='home-blog-admin' expr:content='data:blog.blogId')
 
   //- CSS

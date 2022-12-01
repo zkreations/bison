@@ -18,6 +18,8 @@ b:includable(id='post:hero')
       b:class(cond='data:titleClass', expr:name='data:titleClass')
       b:eval(expr='data:post.title.escaped != "" ? data:post.title.escaped : data:messages.noTitle')
 
-    .hero-meta.article-meta.flex.g-1.flex-wrap.color-inverse
-      b:class(expr:name='data:metaClass ?: "items-center justify-center"')
-      b:include(name='post:meta', data='{ show: data:widgets.Blog1.allBylineItems }')
+    b:with(value='data:widgets.Blog1.allBylineItems', var='show')
+      b:if(cond='data:show.author or data:show.timestamp or data:show.comments or data:skin.vars.a_edit')
+        .hero-meta.article-meta.flex.g-1.flex-wrap.color-inverse
+          b:class(expr:name='data:metaClass ?: "items-center justify-center"')
+          b:include(name='post:meta')
