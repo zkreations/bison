@@ -75,6 +75,7 @@
         <Variable name="p.related" description="Enable related post" type="string" value="2"/>
         <Variable name="p.relShuffle" description="Randomness level" type="string" value="8"/>
         <Variable name="p.relCols" description="Min related width" type="string" value="18rem"/>
+        <Variable name="p.ads" description="Include post ads" type="string" value="true"/>
 
         Funciones
         =====================
@@ -1412,9 +1413,15 @@ window.addEventListener('DOMContentLoaded', () => {
           </div>
         </b:includable>
         <b:includable id="post:inlineAd">
-          <b:if cond="data:post.includeAd">
+          <b:if cond="data:post.includeAd and data:view.isMultipleItems">
             <b:if cond="data:post.adNumber + data:widgets.AdSense.size lt 3">
               <b:include name="@:ads"/>
+            </b:if>
+            <b:elseif cond="data:view.isPost and data:skin.vars.p_ads"/>
+            <b:if cond="data:blog.adsenseHostId and data:blog.adsenseClientId and data:blog.adsenseHasAds">
+              <b:if cond="!data:blog.adsenseAutoAds">
+                <b:include name="@:ads"/>
+              </b:if>
             </b:if>
           </b:if>
         </b:includable>
@@ -1502,7 +1509,9 @@ window.addEventListener('DOMContentLoaded', () => {
           <b:if cond="data:view.isPost">
             <article class="article b:skin-sy">
               <b:include name="post:header"/>
+              <b:include name="post:inlineAd"/>
               <b:include name="post:body"/>
+              <b:include name="post:inlineAd"/>
               <b:include name="post:attachments" cond="data:post.enclosures.notEmpty"/>
               <b:include name="post:share" cond="data:show.share"/>
               <b:include name="post:pagination" cond="data:skin.vars.p_pagination"/>

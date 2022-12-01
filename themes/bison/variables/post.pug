@@ -9,7 +9,7 @@
 //- @param {boolean|number} p.related - Habilitar post relacionados, configura una cantidad a mostrar (1-9)
 //- @param {number} p.relShuffle - Nivel de aleatoriedad
 //- @param {string} p.relCols - Ancho mínimo de las columnas de los relacionados
-
+//- @param {boolean} p.ads - Habilitar anuncios al principio y al final del artículo
 
 | Post
 | =====================
@@ -24,5 +24,6 @@
   "p.related": { description: "Enable related post", value: "2" },
   "p.relShuffle": { description: "Randomness level", value: "8" },
   "p.relCols": { description: "Min related width", value: "18rem" },
+  "p.ads": { description: "Include post ads", value: "true" },
 })
 | #{'\n'}
