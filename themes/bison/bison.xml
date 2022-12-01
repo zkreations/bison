@@ -83,7 +83,7 @@
         <Variable name="f.pageSidebar" description="Custom page sidebar" type="string" value="false"/>
         <Variable name="f.stickySidebar" description="Sticky sidebar" type="string" value="false"/>
         <Variable name="f.swap" description="Swap blog and sidebar" type="string" value="false"/>
-        <Variable name="f.filter" description="Enable search filters" type="string" value="true"/>
+        <Variable name="f.filter" description="Enable search filters" type="string" value="false"/>
         <Variable name="f.more" description="Show more button" type="string" value="true"/>
         <Variable name="f.pagination" description="Navigation type" type="string" value="default"/>
         <Variable name="f.cleanXml" description="Clean blogger XML" type="string" value="true"/>
@@ -2500,8 +2500,6 @@ window.addEventListener('DOMContentLoaded', () => {
                                 <b:attr name="class" value="widget b:skin-sy Filter"/>
                                 <b:tag class="widget-content bg-default m:p-1.75 p-1.25 sy-1.5" id="filterForm" name="div" cond="!data:view.isLayoutMode" expr:data-action="data:skin.vars.f_cloudflare ? data:blog.searchUrl.https : data:blog.searchUrl">
                                   <b:section class="filters sy-1.5" id="Filters" cond="data:widgets any (w =&gt; w.sectionId == &quot;Filters&quot;)">
-                                    <b:widget id="Label51" type="Label" version="2" title="By type"/>
-                                    <b:widget id="Label52" type="Label" version="2" title="By color"/>
                                     <b:widget id="Text52" type="Text" version="2" title="Modo" locked="true">
                                       <b:widget-settings>
                                         <b:widget-setting name="content">Modo Estricto</b:widget-setting>
