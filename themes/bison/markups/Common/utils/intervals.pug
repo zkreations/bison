@@ -1,0 +1,21 @@
+//- Crea elementos de un archivo
+//- @author zkreations
+
+b:includable(id='zk:intervals' var='intervalData')
+  ul.hierarchy-list
+    b:loop(values='data:intervalData' var='interval')
+      li.hierarchy-item
+        //- Enlace
+        a.hierarchy-date(class='has-icon mb-.5 capitalize' expr:href='data:interval.url')
+          span.hierarchy-name.capitalize.fw-500.color-title <data:interval.name/>
+          |  — 
+          span.hierarchy-count <data:interval.post-count/>
+
+        //- Contenido
+        b:tag.hierarchy-content(class='mb-.5' name='div' cond='data:interval.data or data:interval.posts')
+          b:include(cond='data:interval.data' data='interval.data' name='zk:intervals')
+          b:if(cond='data:interval.posts')
+            ul.hierarchy-posts
+              b:loop(values='data:interval.posts' var='post')
+                li.hierarchy-post
+                  a.hierarchy-post-link(class='color-link:hover' expr:href='data:post.url') <data:post.title/>

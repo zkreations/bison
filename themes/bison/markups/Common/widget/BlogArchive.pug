@@ -2,4 +2,26 @@
 //- @author zkreations
 
 b:includable(id='widget:BlogArchive')
-  b:include(name="zk:alert", data='{ message: data:messages.theresNothingHere }')
+  b:if(cond='data:widget.sectionId == "Filters"')
+    b:include(name="docs" data='{ warn: "wrongFilter" }')
+
+    b:elseif(cond='data:widget.sectionId == "header"')
+    b:include(name="docs" data='{ warn: "invalidSection" }')
+
+    b:else
+    .widget-content
+      
+      b:switch(var='data:style')
+        b:case(value='HIERARCHY')
+        .hierarchy.bg-default(class='m:p-1.75 p-1.25')
+          b:include(data='data' name='zk:intervals')
+
+        b:default
+        .flat
+          ul.flat-list.grid(class='b:skin-g2 m:cols-2 cols-1 ')
+            b:loop(values='data:data' var='i')
+              li.flat-item
+                a.flat-link(class='btn flat-link w-1/1' expr:href='data:i.url')
+                  span.flat-name.capitalize.fw-500.color-title <data:i.name/>
+                  |  — 
+                  span.flat-count <data:i.post-count/>
