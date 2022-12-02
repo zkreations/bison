@@ -838,41 +838,41 @@ window.addEventListener('DOMContentLoaded', () => {
         <b:includable id="docs">
           <b:switch var="data:warn">
             <b:case value="invalidKey"/>
-            <b:include name="zk:alert" data="{ message: &quot;Invalid &amp;quot;object&amp;quot; key. &lt;a href=\&quot;https://docs-bison.netlify.app/5.0/widgets/#invalid-object-key\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
+            <b:include name="zk:alert" data="{ message: &quot;Invalid &amp;quot;object&amp;quot; key. &lt;a href=\&quot;https://bison.hudocs.com/5.0/widgets/#invalid-object-key\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
             <b:case value="invalidObject"/>
-            <b:include name="zk:alert" data="{ message: &quot;Object is not closed, missing &amp;quot;}&amp;quot;. &lt;a href=\&quot;https://docs-bison.netlify.app/5.0/widgets/#object-is-not-closed\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
+            <b:include name="zk:alert" data="{ message: &quot;Object is not closed, missing &amp;quot;}&amp;quot;. &lt;a href=\&quot;https://bison.hudocs.com/5.0/widgets/#object-is-not-closed\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
             <b:case value="invalidContent"/>
-            <b:include name="zk:alert" data="{ message: &quot;Invalid &amp;quot;content&amp;quot; value. &lt;a href=\&quot;https://docs-bison.netlify.app/5.0/widgets/#invalid-content-value\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
+            <b:include name="zk:alert" data="{ message: &quot;Invalid &amp;quot;content&amp;quot; value. &lt;a href=\&quot;https://bison.hudocs.com/5.0/widgets/#invalid-content-value\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
             <b:case value="invalidContentWidget"/>
-            <b:include name="zk:alert" data="{ message: &quot;Invalid &amp;quot;content&amp;quot; value for this widget type. &lt;a href=\&quot;https://docs-bison.netlify.app/5.0/widgets/#invalid-content-value-for-this-widget-type\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
+            <b:include name="zk:alert" data="{ message: &quot;Invalid &amp;quot;content&amp;quot; value for this widget type. &lt;a href=\&quot;https://bison.hudocs.com/5.0/widgets/#invalid-content-value-for-this-widget-type\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
             <b:case value="invalidOption"/>
-            <b:include name="zk:alert" data="{ message: &quot;Invalid &amp;quot;value&amp;quot; for this option. &lt;a href=\&quot;https://docs-bison.netlify.app/5.0/widgets/#invalid-value-for-this-option\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
+            <b:include name="zk:alert" data="{ message: &quot;Invalid &amp;quot;value&amp;quot; for this option. &lt;a href=\&quot;https://bison.hudocs.com/5.0/widgets/#invalid-value-for-this-option\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
             <b:case value="invalidSection"/>
-            <b:include name="zk:alert" data="{ message: &quot;Invalid widget type for this section. &lt;a href=\&quot;https://docs-bison.netlify.app/5.0/widgets/#invalid-widget-type-for-this-section\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
+            <b:include name="zk:alert" data="{ message: &quot;Invalid widget type for this section. &lt;a href=\&quot;https://bison.hudocs.com/5.0/widgets/#invalid-widget-type-for-this-section\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
             <b:case value="carrouselEmpty"/>
-            <b:include name="zk:alert" data="{ message: &quot;Not enough items to display carousel. &lt;a href=\&quot;https://docs-bison.netlify.app/5.0/widgets/popularposts/carousel/\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
+            <b:include name="zk:alert" data="{ message: &quot;Not enough items to display carousel. &lt;a href=\&quot;https://bison.hudocs.com/5.0/widgets/popularposts/carousel/\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
             <b:case value="carrouselSection"/>
-            <b:include name="zk:alert" data="{ message: &quot;Carousel is only available in the section &amp;quot;Upper&amp;quot;, &amp;quot;Before-content&amp;quot; or &amp;quot;After-content&amp;quot;. Please, move the widget and save the changes. &lt;a href=\&quot;https://docs-bison.netlify.app/5.0/widgets/popularposts/carousel/#disponibilidad\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
+            <b:include name="zk:alert" data="{ message: &quot;Carousel is only available in the section &amp;quot;Upper&amp;quot;, &amp;quot;Before-content&amp;quot; or &amp;quot;After-content&amp;quot;. Please, move the widget and save the changes. &lt;a href=\&quot;https://bison.hudocs.com/5.0/widgets/popularposts/carousel/#disponibilidad\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
             <b:case value="headerSection"/>
-            <b:include name="zk:alert" data="{ message: &quot;Header is only available in the section &amp;quot;Header&amp;quot;. Please, move the widget and save the changes. &lt;a href=\&quot;https://docs-bison.netlify.app/5.0/widgets/header/#disponibilidad\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
+            <b:include name="zk:alert" data="{ message: &quot;Header is only available in the section &amp;quot;Header&amp;quot;. Please, move the widget and save the changes. &lt;a href=\&quot;https://bison.hudocs.com/5.0/widgets/header/#disponibilidad\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
             <b:case value="sectionSection"/>
-            <b:include name="zk:alert" data="{ message: &quot;Section is only available in the section &amp;quot;Before-content&amp;quot; or &amp;quot;After-content&amp;quot;. Please, move the widget and save the changes. &lt;a href=\&quot;https://docs-bison.netlify.app/5.0/widgets/text/section/#disponibilidad\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
+            <b:include name="zk:alert" data="{ message: &quot;Section is only available in the section &amp;quot;Before-content&amp;quot; or &amp;quot;After-content&amp;quot;. Please, move the widget and save the changes. &lt;a href=\&quot;https://bison.hudocs.com/5.0/widgets/text/section/#disponibilidad\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
             <b:case value="missingFormspreeId"/>
-            <b:include name="zk:alert" data="{ message: &quot;Please add Formspree form id. &lt;a href=\&quot;https://docs-bison.netlify.app/5.0/variables/general/g-formspree/\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
+            <b:include name="zk:alert" data="{ message: &quot;Please add Formspree form id. &lt;a href=\&quot;https://bison.hudocs.com/5.0/variables/general/g-formspree/\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
             <b:case value="missingRevueId"/>
-            <b:include name="zk:alert" data="{ message: &quot;Please add your Revue account user ID. &lt;a href=\&quot;https://docs-bison.netlify.app/5.0/variables/general/g-revue/\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
+            <b:include name="zk:alert" data="{ message: &quot;Please add your Revue account user ID. &lt;a href=\&quot;https://bison.hudocs.com/5.0/variables/general/g-revue/\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
             <b:case value="wrongFilter"/>
-            <b:include name="zk:alert" data="{ message: &quot;This widget is not a valid filter. &lt;a href=\&quot;https://docs-bison.netlify.app/5.0/widgets/label/filters/\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
+            <b:include name="zk:alert" data="{ message: &quot;This widget is not a valid filter. &lt;a href=\&quot;https://bison.hudocs.com/5.0/widgets/label/filters/\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
             <b:case value="wrongMenu"/>
-            <b:include name="zk:alert" data="{ message: &quot;Invalid menu structure. &lt;a href=\&quot;https://docs-bison.netlify.app/5.0/widgets/pagelist/menu/#menu-desplegable\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
+            <b:include name="zk:alert" data="{ message: &quot;Invalid menu structure. &lt;a href=\&quot;https://bison.hudocs.com/5.0/widgets/pagelist/menu/#menu-desplegable\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
             <b:case value="wrongMenuNumber"/>
-            <b:include name="zk:alert" data="{ message: &quot;Menu items cannot contain only numbers. &lt;a href=\&quot;https://docs-bison.netlify.app/5.0/widgets/pagelist/menu/#menu-desplegable\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
+            <b:include name="zk:alert" data="{ message: &quot;Menu items cannot contain only numbers. &lt;a href=\&quot;https://bison.hudocs.com/5.0/widgets/pagelist/menu/#menu-desplegable\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
             <b:case value="feedsRequired"/>
-            <b:include name="zk:alert" data="{ message: &quot;To use this feature you need to enable blogger feeds. &lt;a href=\&quot;https://docs-bison.netlify.app/5.0/starting/config/#habilitar-los-feeds\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
+            <b:include name="zk:alert" data="{ message: &quot;To use this feature you need to enable blogger feeds. &lt;a href=\&quot;https://bison.hudocs.com/5.0/starting/config/#habilitar-los-feeds\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
             <b:case value="publicRequired"/>
             <b:include name="zk:alert" data="{ message: &quot;Not available if the blog is private&quot;, type: &quot;warning&quot; }"/>
             <b:case value="missingLabel"/>
-            <b:include name="zk:alert" data="{ message: &quot;The key &amp;quot;label:&amp;quot; is not defined. &lt;a href=\&quot;https://docs-bison.netlify.app/5.0/widgets/text/section/#opciones\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
+            <b:include name="zk:alert" data="{ message: &quot;The key &amp;quot;label:&amp;quot; is not defined. &lt;a href=\&quot;https://bison.hudocs.com/5.0/widgets/text/section/#opciones\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
           </b:switch>
         </b:includable>
         <b:includable id="zk:filter">

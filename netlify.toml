@@ -4,3 +4,9 @@
 
 [build.environment]
   HUGO_VERSION = "0.106.0"
+
+[[redirects]]
+  from = "https://docs.netlify.com/*"
+  to = "https://bison.hudocs.com/:splat"
+  status = 301
+  force = true
