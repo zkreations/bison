@@ -186,6 +186,8 @@ $data-types:(
 .menu {
   &-arrow {
     margin-left: auto;
+  }
+  &-item svg {
     color: var(--color-border-inset);
   }
 }
