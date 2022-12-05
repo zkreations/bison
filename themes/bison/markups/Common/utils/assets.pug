@@ -28,7 +28,7 @@ b:includable(id='zk:assets')
       b:if(cond='data:view.isPreview or data:skin.vars.font_primary_family == "var(--font-oswald)"')
         +cdata: include /themes/assets/css/fonts/oswald.min.css
 
-      b:if(cond='data:view.isPreview or data:skin.vars.font_secondary_family == "var(--font-roboto)"')
+      b:if(cond='data:view.isPreview or data:skin.vars.body_text_font_family == "var(--font-roboto)"')
         +cdata: include /themes/assets/css/fonts/roboto.min.css
 
       b:case(value='adsense')
