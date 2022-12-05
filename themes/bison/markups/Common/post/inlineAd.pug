@@ -17,3 +17,10 @@ b:includable(id='post:inlineAd')
     b:if(cond='data:blog.adsenseHostId and data:blog.adsenseClientId and data:blog.adsenseHasAds')
       b:if(cond='!data:blog.adsenseAutoAds')
         b:include(name='@:ads')
+
+// Hooks
+b:includable(id='post:ads1')
+  b:include(name='post:inlineAd')
+
+b:includable(id='post:ads2')
+  b:include(name='post:inlineAd')
