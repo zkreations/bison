@@ -201,7 +201,7 @@
 
         Constantes (No hagas cambios, puedes romper la plantilla!)
         =====================
-        <Variable name="q.social" description="q.social" type="string" value="facebook, twitter, instagram, whatsapp, telegram, pinterest, tumblr, vk, reddit, tiktok"/>
+        <Variable name="q.social" description="q.social" type="string" value="facebook, twitter, instagram, whatsapp, telegram, pinterest, tumblr, vk, reddit, tiktok, linkedin, youtube"/>
 */ 
 /*! skin.css */
 :where(.item-control){ display: none }
@@ -1483,9 +1483,9 @@ window.addEventListener('DOMContentLoaded', () => {
         <b:includable id="post:share">
           <b:with value="data:skin.vars.p_shareOn" var="$share">
             <b:if cond="data:$share != false">
-              <b:with value="([true] not contains data:$share and (data:$share + 0 != data:$share)) ? data:$share : &quot;facebook, twitter, whatsapp, telegram, pinterest, tumblr, reddit, vk&quot;" var="hasShare">
+              <b:with value="([true] not contains data:$share and (data:$share + 0 != data:$share)) ? data:$share : &quot;facebook, twitter, whatsapp, telegram, pinterest, tumblr, reddit, vk, linkedin&quot;" var="hasShare">
                 <div class="post-share flex flex-wrap g-.5 i-m">
-                  <b:loop values="[&quot;facebook&quot;,&quot;twitter&quot;,&quot;whatsapp&quot;,&quot;telegram&quot;,&quot;pinterest&quot;,&quot;tumblr&quot;,&quot;reddit&quot;,&quot;vk&quot;]" var="social">
+                  <b:loop values="[&quot;facebook&quot;,&quot;twitter&quot;,&quot;whatsapp&quot;,&quot;telegram&quot;,&quot;pinterest&quot;,&quot;tumblr&quot;,&quot;reddit&quot;,&quot;vk&quot;,&quot;linkedin&quot;]" var="social">
                     <b:if cond="data:hasShare contains data:social"><a class="share btn btn-outline" expr:aria-label="data:social" target="_blank" rel="noopener noreferrer nofollow">
                         <b:class expr:name="&quot;share-&quot; + data:social"/>
                         <b:include name="i:svg" data="{ icon: data:social }"/>
@@ -1507,6 +1507,8 @@ window.addEventListener('DOMContentLoaded', () => {
                             <b:attr expr:value="&quot;https://reddit.com/submit&quot; params {url: data:link.url, title: data:link.text}" name="href"></b:attr>
                             <b:case value="vk"/>
                             <b:attr expr:value="&quot;http://vk.com/share.php&quot; params {url: data:link.url, title: data:link.text}" name="href"></b:attr>
+                            <b:case value="linkedin"/>
+                            <b:attr expr:value="&quot;https://www.linkedin.com/sharing/share-offsite/&quot; params {url: data:link.url}" name="href"></b:attr>
                           </b:switch>
                         </b:with></a>
                       <b:else/>

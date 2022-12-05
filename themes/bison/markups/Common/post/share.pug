@@ -6,10 +6,10 @@ b:includable(id="post:share")
     b:if(cond='data:$share != false')
 
       //- Evitamos romper el diseño con valores numéricos o boleanos
-      b:with(value='([true] not contains data:$share and (data:$share + 0 != data:$share)) ? data:$share : "facebook, twitter, whatsapp, telegram, pinterest, tumblr, reddit, vk"' var='hasShare')
+      b:with(value='([true] not contains data:$share and (data:$share + 0 != data:$share)) ? data:$share : "facebook, twitter, whatsapp, telegram, pinterest, tumblr, reddit, vk, linkedin"' var='hasShare')
 
         .post-share.flex.flex-wrap(class="g-.5 i-m")
-          b:loop(values='["facebook","twitter","whatsapp","telegram","pinterest","tumblr","reddit","vk"]', var="social")
+          b:loop(values='["facebook","twitter","whatsapp","telegram","pinterest","tumblr","reddit","vk","linkedin"]', var="social")
 
             b:if(cond='data:hasShare contains data:social')
               a.share.btn.btn-outline(expr:aria-label="data:social" target="_blank" rel='noopener noreferrer nofollow')
@@ -42,6 +42,9 @@ b:includable(id="post:share")
 
                     b:case(value='vk')
                     b:attr(expr:value='"http://vk.com/share.php" params {url: data:link.url, title: data:link.text}' name='href')
+
+                    b:case(value='linkedin')
+                    b:attr(expr:value='"https://www.linkedin.com/sharing/share-offsite/" params {url: data:link.url}' name='href')
 
               b:else
               b:class(expr:name='data:social + "-is-hidden"')
