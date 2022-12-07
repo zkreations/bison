@@ -18,14 +18,15 @@ Muchas gracias por utilizar o adquirir el tema **{{% theme %}}**. Este documento
 
 {{< pagelink title="Menú principal" href="/5.0/widgets/pagelist/menu" >}}
 
-{{< pagelink title="Formulario de contacto" href="/5.0/widgets/contactform" >}}
+{{< pagelink title="Crear secciones" href="/5.0/widgets/text/section" >}}
+
+{{< pagelink title="Tipografía" href="/5.0/entries/typography/" >}}
 
 {{< pagelink title="Carousel" href="/5.0/widgets/popularposts/carousel" >}}
 
-{{< pagelink title="Crear secciones" href="/5.0/widgets/text/section" >}}
+{{< pagelink title="Formulario de contacto" href="/5.0/widgets/contactform" >}}
 
 
 ## Changelog
-
 
 {{< pagelink title="Registro de cambios" name="Github" href="https://github.com/zkreations/bison/blob/main/CHANGELOG.md" >}}
