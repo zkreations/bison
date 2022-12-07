@@ -19,6 +19,7 @@ Todos los cambios notables en este proyecto se documentarán en este archivo.
 
 ### Fixed
 
+- Menú en modo RTL despliega en el sentido contrario [#19](https://github.com/zkreations/bison/issues/19)
 - Fuente de familia Roboto no cargan [#16](https://github.com/zkreations/bison/issues/16)
 - Sidebar desaparece en modo Diseño [#7](https://github.com/zkreations/bison/issues/7)
 - Etiquetas invisibles en primera página [#6](https://github.com/zkreations/bison/issues/6)
