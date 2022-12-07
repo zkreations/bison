@@ -7,6 +7,7 @@ Un tema para Blogger Multipropósito, desarrollado verdaderamente por un desarro
 - Sin dependencias, **sin jQuery**, de **carga rápido** 🚀 
 - Optimizado para SEO Moderno. 🌏
 - Sin anuncios ni código extraño, gratis. 📡
+- [RTL totalmente compatible](https://bison.zkreations.com/?hl=ar). ✍
 - Soporta múltiples idiomas gracias a Blogger. 🌐
 - Super optimizado de codigo pequeño. ⚡️ 
 - Compatible con [Core Web Vitals](https://pagespeed.web.dev/report?url=https://bison.zkreations.com/). 🎯
