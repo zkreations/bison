@@ -30,7 +30,7 @@ Esta función solo gestiona los botones, pero no la **capacidad de compartir**. 
 Especifica una lista de redes sociales. El orden de los nombres especificados no influye en la posición del botón. Aunque no es necesario una separación, recomendamos que utilices comas para separar los valores disponibles:
 
 ```text
-facebook, twitter, whatsapp, telegram, pinterest, tumblr, reddit, vk
+facebook, twitter, whatsapp, telegram, pinterest, tumblr, reddit, vk, linkedin
 ```
 
 ## true
