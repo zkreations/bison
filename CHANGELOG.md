@@ -7,26 +7,26 @@ Todos los cambios notables en este proyecto se documentarán en este archivo.
  
 ### Added
 
-- Boton para compartir en LinkedIn #17
-- Código de anuncios personalizable #15
-- Atributo `data` para carga diferida por Javascript #11
-- Widget archivo del blog #9
-- Anuncios debajo del título y al final #8
+- Boton para compartir en LinkedIn [#17](https://github.com/zkreations/bison/issues/17)
+- Código de anuncios personalizable [#15](https://github.com/zkreations/bison/issues/15)
+- Atributo `data` para carga diferida por Javascript [#11](https://github.com/zkreations/bison/issues/11)
+- Widget archivo del blog [#9](https://github.com/zkreations/bison/issues/9)
+- Anuncios debajo del título y al final [#8](https://github.com/zkreations/bison/issues/8)
 
 ### Changed
 
-- Clase para controlar las etiquetas del articulo #12
+- Clase para controlar las etiquetas del articulo [#12](https://github.com/zkreations/bison/issues/12)
 
 ### Fixed
 
-- Fuente de familia Roboto no cargan #16
-- Sidebar desaparece en modo Diseño #7
-- Etiquetas invisibles en primera página #6
-- Sin comentarios de Disqus en vista móvil #5
-- Color de tema de Disqus #4
-- Contenedor en metadatos #3
-- Error de evaluación de etiquetas de número #2
-- Error contador en Disqus #1
+- Fuente de familia Roboto no cargan [#16](https://github.com/zkreations/bison/issues/16)
+- Sidebar desaparece en modo Diseño [#7](https://github.com/zkreations/bison/issues/7)
+- Etiquetas invisibles en primera página [#6](https://github.com/zkreations/bison/issues/6)
+- Sin comentarios de Disqus en vista móvil [#5](https://github.com/zkreations/bison/issues/5)
+- Color de tema de Disqus [#4](https://github.com/zkreations/bison/issues/4)
+- Contenedor en metadatos [#3](https://github.com/zkreations/bison/issues/3)
+- Error de evaluación de etiquetas de número [#2](https://github.com/zkreations/bison/issues/2)
+- Error contador en Disqus [#1](https://github.com/zkreations/bison/issues/1)
 
 ## 5.0.0
 
