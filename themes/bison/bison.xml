@@ -459,7 +459,7 @@
         </b:includable>
         <b:includable id="@:image">
           <b:with value="data:src.isYoutube ? data:src.youtubeMaxResDefaultUrl : data:src" var="source">
-            <b:with value="(data:resize ? resizeImage(data:source, data:resize, data:ratio) : data:source)" var="image">
+            <b:with value="(data:resize ? resizeImage(data:src, data:resize, data:ratio) : (data:source))" var="image">
               <b:tag expr:alt="data:alt ?: data:messages.image" name="img">
                 <b:attr name="b:whitespace" value="remove"/>
                 <b:attr name="id" expr:value="data:id"/>

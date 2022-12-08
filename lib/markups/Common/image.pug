@@ -15,7 +15,7 @@
 
 b:includable(id='@:image')
   b:with(value='data:src.isYoutube ? data:src.youtubeMaxResDefaultUrl : data:src' var='source')
-    b:with(value='(data:resize ? resizeImage(data:source, data:resize, data:ratio) : data:source)' var='image')
+    b:with(value='(data:resize ? resizeImage(data:src, data:resize, data:ratio) : (data:source))' var='image')
       b:tag(expr:alt='data:alt ?: data:messages.image' name='img')
         //- Cerrar etiqueta
         b:attr(name='b:whitespace' value='remove')
