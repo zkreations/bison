@@ -31,6 +31,8 @@ Algunos estilos del diseñador de plantillas están disponibles como clases para
 {{< table >}}
 | Clase             | Variable CSS         | Descripcion
 | ----------------- | -------------------- | ---------
+| `font-primary`    | `--font-primary`     | Fuente primaria para textos
+| `font-secondary`  | `--font-secondary`   | Fuente secundaria para textos
 | `color-primary`   | `--primary`          | Color de acento primario
 | `color-secondary` | `--secondary`        | Color de acento secundario
 | `bg-template`     | `--bg-template`      | Color de fondo de template
