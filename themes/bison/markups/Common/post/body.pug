@@ -27,3 +27,4 @@ b:includable(id="post:body")
   b:if(cond='data:const.temp contains "hero"')
     script(type='deferjs') document.querySelector('.typography img[src^="<data:blog.postImageUrl/>"]').remove()
 
+  b:include(name="postMetadataJSON")

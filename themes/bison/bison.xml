@@ -1287,6 +1287,7 @@ window.addEventListener('DOMContentLoaded', () => {
           <b:if cond="data:const.temp contains &quot;hero&quot;">
             <script type="deferjs">document.querySelector('.typography img[src^="<data:blog.postImageUrl/>"]').remove()</script>
           </b:if>
+          <b:include name="postMetadataJSON"/>
         </b:includable>
         <b:includable id="post:cards">
           <b:with value="{ ratio: (data:ratio ?: data:skin.vars.e_ratio), claRatio: data:skin.vars.e_claRatio, gaRatio: data:skin.vars.e_gaRatio, type: (data:type ?: data:skin.vars.e_type), navi: data:skin.vars.f_pagination, params: data:skin.vars.f_imageParams, json: (!(data:blog.feedLinks.length &lt; 10) and !data:blog.isPrivateBlog) }" var="$config">
