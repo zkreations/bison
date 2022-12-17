@@ -32,6 +32,15 @@ Lista de identificadores de imágenes que se usa de referencia para excluirlas d
 post0, post1, post2, post3
 ```
 
+#### Significado
+
+{{< table >}}
+| Tipo           | Significado
+| -------------- | ---------------
+| `post#`        | ID de imágenes de entradas, en donde `#` es un número empezando del `0`
+| `featured0`    | ID de la imagen del [widget FeaturedPost]({{< ref "FeaturedPost.md" >}})
+{{< /table >}}
+
 ## true
 
 Las imágenes tendrás un identificador único que puedes conocer utilizando el inspector de elementos del navegador.
