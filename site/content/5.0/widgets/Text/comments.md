@@ -29,6 +29,7 @@ No disponible en **Filters**. En todas las demás secciones el widget está disp
 | --------- | ----------------- | ---------------------- | ------------- |
 | `title`   | Título            | {{< data "string" >}}  | Titulo del widget
 | `icon`    | Icono             | {{< data "string" >}}  | El nombre de un [icono de zkreations](#icons)
+| `i`       | Icono de tercero  | {{< data "string" >}}  | Etiqueta `<i>` usando el valor como clase
 | `max`     | Máximo            | {{< data "number" >}}  | Número máximo de comentarios a mostrar
 | `snippet` | Resumen           | {{< data "number" >}}  | Número máximo caracteres a mostrar
 {{< /table >}}

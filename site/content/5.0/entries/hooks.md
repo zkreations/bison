@@ -28,14 +28,15 @@ Aunque puedes modificar cualquier componente del tema, no es recomendable, por l
 {{< table >}}
 | Hook               | Destino       | Descripcion
 | ------------------ | ------------- | --------------------
-| `post:ads1`        | Entradas      | Anuncio debajo del título de la entrada
-| `post:ads2`        | Entradas      | Anuncio al final de la entrada
-| `post:labels`      | Entradas      | Etiquetas de la entrada
-| `post:title`       | Entradas      | Título de la entrada
-| `post:data`        | Entradas      | Datos de la entrada
-| `post:attachments` | Entradas      | Enlaces de adjunto de la entrada
-| `post:share`       | Entradas      | Botones de compartir de la entrada
-| `comment:main`     | Entradas      | Sección de comentarios de la entrada
+| `post:ads1`        | Entrada      | Anuncio debajo del título de la entrada
+| `post:ads2`        | Entrada      | Anuncio al final de la entrada
+| `post:labels`      | Entrada      | Etiquetas de la entrada
+| `post:title`       | Entrada      | Título de la entrada
+| `post:data`        | Entrada      | Datos de la entrada
+| `post:attachments` | Adjuntos      | Enlaces de adjunto de la entrada
+| `post:share`       | Compartir      | Botones de compartir de la entrada
+| `comment:main`     | Comentarios   | Sección de comentarios de la entrada
+| `post:icon`        | Widget Blog   | Inserta código en el título del widget
 {{< /table >}}
 
 
@@ -53,7 +54,7 @@ Aunque puedes modificar cualquier componente del tema, no es recomendable, por l
   </b:defaultmarkup>
 </b:defaultmarkups>
 <---->
-Se insertara tu código personalizado al inicio y al final del articulo.
+Se insertará tu código personalizado al inicio y al final del articulo.
 {{< /code >}}
 
 
@@ -66,7 +67,7 @@ Se insertara tu código personalizado al inicio y al final del articulo.
   </b:defaultmarkup>
 </b:defaultmarkups>
 <---->
-Se insertara tu código personalizado para compartir un articulo
+Se insertará tu código personalizado para compartir un articulo
 {{< /code >}}
 
 
@@ -79,9 +80,21 @@ Se insertara tu código personalizado para compartir un articulo
   </b:defaultmarkup>
 </b:defaultmarkups>
 <---->
-Se insertara tu sistema de comentarios personalizado
+Se insertará tu sistema de comentarios personalizado
 {{< /code >}}
 
+
+{{< code lang="html" >}}
+<b:defaultmarkups>
+  <b:defaultmarkup type="Common">
+    <b:includable id="post:icon">
+      <b:include name='i:svg' data='{ icon: "fire" }'/>
+    </b:includable>
+  </b:defaultmarkup>
+</b:defaultmarkups>
+<---->
+Insertará un [icono de zkreations](#url) en el título del widget Blog
+{{< /code >}}
 
 
 

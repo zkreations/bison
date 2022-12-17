@@ -26,6 +26,7 @@ Este widget esta disponible en todas las secciones menos en **Filters** y **Head
 | ----------- | ------------------- | ---------------------- | ------------- |
 | `title`     | Título              | {{< data "string" >}}  | Titulo del widget
 | `icon`      | Icono               | {{< data "string" >}}  | El nombre de un [icono de zkreations](#icons)
+| `i`         | Icono de tercero    | {{< data "string" >}}  | Etiqueta `<i>` usando el valor como clase
 | `ratio`     | Relación de aspecto | {{< nodata "{aspect_ratio}" >}} | Un valor de la variable [e.ratio]({{< ref "e-ratio.md" >}})
 {{< /table >}}
 

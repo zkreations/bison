@@ -17,8 +17,12 @@ b:includable(id='$:title')
         .widget-title.flex.o-hidden.uppercase
           span.widget-name.has-icon
 
-            //- Iconos de zkreations
-            b:include(cond="data:option.icon" name='i:svg' data='{ icon: data:option.icon }')
+            b:if(cond='data:widget.type == "Blog"')
+              b:include(name='post:icon')
+
+              b:else
+              b:tag(name='i' cond="data:option.i" expr:class='data:option.i')
+              b:include(cond="data:option.icon" name='i:svg' data='{ icon: data:option.icon }')
 
             //- Cantidad de comentarios
             b:if(cond='data:numComments')

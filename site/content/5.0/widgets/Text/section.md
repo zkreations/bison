@@ -29,6 +29,7 @@ Este widget solo esta disponible en la sección **After-Content** y **Before-Con
 | --------- | ----------------- | ---------------------- | ------------- |
 | `title`   | Título            | {{< data "string" >}}  | Titulo del widget
 | `icon`    | Icono             | {{< data "string" >}}  | El nombre de un [icono de zkreations](#icons)
+| `i`       | Icono de tercero  | {{< data "string" >}}  | Etiqueta `<i>` usando el valor como clase
 | `label`   | Etiqueta          | {{< data "string" >}}  | Nombre de la etiqueta
 | `type`    | Tipo de entrada   | {{< data "string" >}}  | Un valor de la variable [e.type]({{< ref "e-type.md" >}})
 | `max`     | Máximo            | {{< data "number" >}}  | Cantidad de entradas a extraer

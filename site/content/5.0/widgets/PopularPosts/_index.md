@@ -20,6 +20,7 @@ No disponible en **Filters**. En todas las demás secciones el widget está disp
 | --------- | -------------------- | --------------------- | --------------
 | `title`   | Título               | {{< data "string" >}} | Titulo del widget
 | `icon`    | Icono                | {{< data "string" >}} | El nombre de un [icono de zkreations](#icons)
+| `i`       | Icono de tercero     | {{< data "string" >}} | Etiqueta `<i>` usando el valor como clase
 | `type`    | Tipo de entrada      | {{< data "string" >}} | Un valor de la variable [e.type]({{< ref "e-type.md" >}})
 | `content` | Contenido            | {{< data "string" >}} | Permite cambiar a otro tipo de widget
 {{< /table >}}

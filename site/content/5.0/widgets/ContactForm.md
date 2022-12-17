@@ -19,6 +19,7 @@ Este widget esta disponible en todas las secciones menos en **Filters** y **Head
 | -------- | -------------------- | --------------------- | --------------
 | `title`  | Título               | {{< data "string" >}} | Titulo del widget
 | `icon`   | Icono                | {{< data "string" >}} | El nombre de un [icono de zkreations](#icons)
+| `i`      | Icono de tercero     | {{< data "string" >}} | Etiqueta `<i>` usando el valor como clase
 {{< /table >}}
 
 ```js

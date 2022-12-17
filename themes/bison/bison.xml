@@ -562,7 +562,12 @@
             <b:if cond="!([&quot;header&quot;,&quot;Filters&quot;,&quot;footer-upper&quot;,&quot;footer-lower&quot;] contains data:widget.sectionId)">
               <b:if cond="data:defaultTitle or (data:option ? data:option.title : data:title.length != 0)">
                 <div class="widget-title flex o-hidden uppercase"><span class="widget-name has-icon">
-                    <b:include cond="data:option.icon" name="i:svg" data="{ icon: data:option.icon }"/>
+                    <b:if cond="data:widget.type == &quot;Blog&quot;">
+                      <b:include name="post:icon"/>
+                      <b:else/>
+                      <b:tag name="i" cond="data:option.i" expr:class="data:option.i"/>
+                      <b:include cond="data:option.icon" name="i:svg" data="{ icon: data:option.icon }"/>
+                    </b:if>
                     <b:if cond="data:numComments">
                       <b:message name="messages.numberOfComments">
                         <b:param expr:value="data:numComments" name="numComments"/>
@@ -1435,6 +1440,7 @@ window.addEventListener('DOMContentLoaded', () => {
             </b:with>
           </div>
         </b:includable>
+        <b:includable id="post:icon"/>
         <b:includable id="post:inlineAd">
           <b:if cond="data:blog.adsenseHostId and data:blog.adsenseClientId and data:blog.adsenseHasAds">
             <b:if cond="data:post.includeAd and data:view.isMultipleItems">

@@ -24,6 +24,7 @@ Este widget solo esta disponible en la sección **Upper**, **After-Content**, **
 | ----------- | ------------------- | ------------------------------- | ------------------
 | `title`     | Título              | {{< data "string" >}}           | Titulo del widget
 | `icon`      | Icono               | {{< data "string" >}}           | El nombre de un [icono de zkreations](#icons)
+| `i`         | Icono de tercero    | {{< data "string" >}}           | Etiqueta `<i>` usando el valor como clase
 | `top`       | Destacados          | {{< data "number" >}}           | `0` `1` `2`  `3`
 | `ratio`     | Ratio (Carrusel)    | {{< nodata "{aspect_ratio}" >}} | Un valor de la variable [e.ratio]({{< ref "e-ratio.md" >}})
 | `topRatio`  | Ratio (Destacados)  | {{< nodata "{aspect_ratio}" >}} | Un valor de la variable [e.ratio]({{< ref "e-ratio.md" >}})
