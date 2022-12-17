@@ -90,7 +90,7 @@
         <Variable name="f.cleanXml" description="Clean blogger XML" type="string" value="true"/>
         <Variable name="f.imageParams" description="Custom image parameters" type="string" value="rw-l80-e30"/>
         <Variable name="f.cloudflare" description="SSL/TLS by Cloudflare" type="string" value="true"/>
-        <Variable name="f.notDefer" description="Exclude from Lazy Loading" type="string" value="post1"/>
+        <Variable name="f.notDefer" description="Exclude from Lazy Loading" type="string" value="false"/>
 
         Textos
         =====================
