@@ -19,7 +19,7 @@ b:includable(id='zk:gallery')
 
       //- Pasamos los parámetros de imagen
       b:with(value='data:post.featuredImage ?: data:const.image', var='image')
-        b:include(name="@:image" data='{ src: data:image, class: "fit-image", resize: (data:resize ?: 400), srcset: (data:srcset ?: [200,400]), alt: data:$gallery.title, ratio: data:$gallery.ratio, loading: (data:loading ?: "lazy"), sizes: (data:sizes ?: false), params: data:skin.vars.f_imageParams }')
+        b:include(name="@:image" data='{ src: data:image, class: "fit-image", resize: (data:resize ?: 400), srcset: (data:srcset ?: false), alt: data:$gallery.title, ratio: data:$gallery.ratio, loading: (data:loading ?: "lazy"), id: (data:id ?: ""), sizes: (data:sizes ?: false), params: data:skin.vars.f_imageParams }')
 
       //- El contenido consume las opciones del usuario
       .gallery-content(class="sy-.5")

@@ -11,6 +11,7 @@
 //- @param {boolean} f.cleanXml - Remover atributos de Blogger y XML
 //- @param {string} f.imageParams - Parámetros adicionales de imágenes de Google
 //- @param {string} f.cloudflare - Configura enlaces con HTTPS de Cloudflare
+//- @param {boolean|string} f.notDefer - Lista de identificadores de imágenes para excluir de la carga diferida
 
 | Funciones
 | =====================
@@ -26,5 +27,6 @@
   "f.cleanXml": { description: "Clean blogger XML", value: "true" },
   "f.imageParams": { description: "Custom image parameters", value: "rw-l80-e30" },
   "f.cloudflare": { description: "SSL/TLS by Cloudflare", value: "true" },
+  "f.notDefer": { description: "Exclude from Lazy Loading", value: "post1" },
 })
 | #{'\n'}
