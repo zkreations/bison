@@ -3,18 +3,18 @@
 
 b:includable(id='post:inlineAd')
   //- Inserta anuncios solo en donde se solicitan
-  b:if(cond='data:post.includeAd and data:view.isMultipleItems')
+  b:if(cond='data:blog.adsenseHostId and data:blog.adsenseClientId and data:blog.adsenseHasAds')
+    b:if(cond='data:post.includeAd and data:view.isMultipleItems')
 
-    //- La cantidad de anuncios totales (Incrustados y widgets Adsense)
-      no deben superar el limite de "3", (recomendado)
-    b:if(cond='data:post.adNumber + data:widgets.AdSense.size lt 3')
+      //- La cantidad de anuncios totales (Incrustados y widgets Adsense)
+        no deben superar el limite de "3", (recomendado)
+      b:if(cond='data:post.adNumber + data:widgets.AdSense.size lt 3')
 
-      //- Código de anuncios
-      b:include(name='@:ads')
+        //- Código de anuncios
+        b:include(name='@:ads')
 
-    //- Solo entradas
-    b:elseif(cond='data:view.isPost and data:skin.vars.p_ads')
-    b:if(cond='data:blog.adsenseHostId and data:blog.adsenseClientId and data:blog.adsenseHasAds')
+      //- Solo entradas
+      b:elseif(cond='data:view.isPost and data:skin.vars.p_ads')
       b:if(cond='!data:blog.adsenseAutoAds')
         b:include(name='@:ads')
 
