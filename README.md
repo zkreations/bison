@@ -1,6 +1,6 @@
 # Bison
 
-Un tema para Blogger Multipropósito, desarrollado verdaderamente por un desarrollador que conoce Blogger, aprovechando la características de su sintaxis y no depender tanto de Javascript.
+Un tema para Blogger Multipropósito, desarrollado por un desarrollador que conoce el código de Blogger, para aprovechar las características de su sintaxis y no depender tanto de JavaScript.
 
 ## Caracteristicas
 

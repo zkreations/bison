@@ -6,8 +6,13 @@ Convierte etiquetas en consultas para la [búsqueda por filtros]({{< ref "f-filt
 
 ## Vista previa
 
+#### Cloud
+
 ![widget-filters](/images/widgets/filters.png)
 
+#### List
+
+![widget-filters-list](/images/widgets/filters-list.png)
 
 ## Disponibilidad
 
@@ -38,5 +43,17 @@ No disponible para este widget
 
 .filter-button {
   /*botón filtrar*/
+}
+
+.filter-content {
+  /*contenedor de lista*/
+}
+
+.filter-list-btn {
+  /*botón de la lista*/
+}
+
+.filter-list {
+  /*filtros modo lista*/
 }
 ```
