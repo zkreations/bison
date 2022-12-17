@@ -21,7 +21,7 @@
 each injected in [1,2,3,4]
   +widget("HTML", {
       content: `<div class="alert text-center">Injected content #${injected}</div>`
-    }, (250 + injected) )(cond='data:view.isPost and data:content != ""' title=`Injected #${injected}` locked="true" visible='false')
+    }, (250 + injected) )(cond='data:view.isPost and data:content != "" and !data:view.isPreview' title=`Injected #${injected}` locked="true" visible='false')
 
     b:includable#content
     b:includable#main

@@ -2485,7 +2485,7 @@ window.addEventListener('DOMContentLoaded', () => {
                         </b:with>
                       </b:includable>
                     </b:widget>
-                    <b:widget id="HTML251" type="HTML" version="2" cond="data:view.isPost and data:content != &quot;&quot;" title="Injected #1" locked="true" visible="false">
+                    <b:widget id="HTML251" type="HTML" version="2" cond="data:view.isPost and data:content != &quot;&quot; and !data:view.isPreview" title="Injected #1" locked="true" visible="false">
                       <b:widget-settings>
                         <b:widget-setting name="content">&lt;div class=&quot;alert text-center&quot;&gt;Injected content #1&lt;/div&gt;</b:widget-setting>
                       </b:widget-settings>
@@ -2494,7 +2494,7 @@ window.addEventListener('DOMContentLoaded', () => {
                         <b:include name="widget:InnerContent"/>
                       </b:includable>
                     </b:widget>
-                    <b:widget id="HTML252" type="HTML" version="2" cond="data:view.isPost and data:content != &quot;&quot;" title="Injected #2" locked="true" visible="false">
+                    <b:widget id="HTML252" type="HTML" version="2" cond="data:view.isPost and data:content != &quot;&quot; and !data:view.isPreview" title="Injected #2" locked="true" visible="false">
                       <b:widget-settings>
                         <b:widget-setting name="content">&lt;div class=&quot;alert text-center&quot;&gt;Injected content #2&lt;/div&gt;</b:widget-setting>
                       </b:widget-settings>
@@ -2503,7 +2503,7 @@ window.addEventListener('DOMContentLoaded', () => {
                         <b:include name="widget:InnerContent"/>
                       </b:includable>
                     </b:widget>
-                    <b:widget id="HTML253" type="HTML" version="2" cond="data:view.isPost and data:content != &quot;&quot;" title="Injected #3" locked="true" visible="false">
+                    <b:widget id="HTML253" type="HTML" version="2" cond="data:view.isPost and data:content != &quot;&quot; and !data:view.isPreview" title="Injected #3" locked="true" visible="false">
                       <b:widget-settings>
                         <b:widget-setting name="content">&lt;div class=&quot;alert text-center&quot;&gt;Injected content #3&lt;/div&gt;</b:widget-setting>
                       </b:widget-settings>
@@ -2512,7 +2512,7 @@ window.addEventListener('DOMContentLoaded', () => {
                         <b:include name="widget:InnerContent"/>
                       </b:includable>
                     </b:widget>
-                    <b:widget id="HTML254" type="HTML" version="2" cond="data:view.isPost and data:content != &quot;&quot;" title="Injected #4" locked="true" visible="false">
+                    <b:widget id="HTML254" type="HTML" version="2" cond="data:view.isPost and data:content != &quot;&quot; and !data:view.isPreview" title="Injected #4" locked="true" visible="false">
                       <b:widget-settings>
                         <b:widget-setting name="content">&lt;div class=&quot;alert text-center&quot;&gt;Injected content #4&lt;/div&gt;</b:widget-setting>
                       </b:widget-settings>
