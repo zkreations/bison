@@ -3,6 +3,25 @@
 
 Todos los cambios notables en este proyecto se documentarán en este archivo.
 
+## [5.0.20] - 2022-12-17
+
+### Added
+
+- Ahora puedes elegir entre el modo Cloud y List en los filtros [#28](https://github.com/zkreations/bison/issues/28)
+- Iconos personalizados de terceros [#25](https://github.com/zkreations/bison/issues/25)
+
+### Changed
+
+- Remuevo getrevue del tema debido a cierre [#23](https://github.com/zkreations/bison/issues/23)
+
+### Fixed
+
+- Los datos estructurados no se mostraban [#21](https://github.com/zkreations/bison/issues/21)
+- La etiqueta "sponsor" no se excluye en la version premium [#26](https://github.com/zkreations/bison/issues/26)
+- Anuncios vacíos sin AdSense en el Blog [#27](https://github.com/zkreations/bison/issues/27)
+- Contenido inyectado visible en la vista previa [#22](https://github.com/zkreations/bison/issues/22)
+
+
 ## [5.0.10] - 2022-12-07
  
 ### Added
