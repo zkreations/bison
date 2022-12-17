@@ -9,6 +9,7 @@ Todos los cambios notables en este proyecto se documentarán en este archivo.
 
 - Ahora puedes elegir entre el modo Cloud y List en los filtros [#28](https://github.com/zkreations/bison/issues/28)
 - Iconos personalizados de terceros [#25](https://github.com/zkreations/bison/issues/25)
+- Variable para excluir imágenes de la carga diferida [#14](https://github.com/zkreations/bison/issues/14)
 
 ### Changed
 
