@@ -1329,7 +1329,7 @@ window.addEventListener('DOMContentLoaded', () => {
                       <b:with value="([true,false] contains data:$config.defer) or (data:$config.defer + 0 == data:$config.defer) ? &quot;null&quot; : data:$config.defer" var="deferList">
                         <b:loop index="index" values="data:items" var="post">
                           <b:with value="data:post.featuredImage ?: data:const.image" var="image">
-                            <b:with value="data:$config.defer == false ? &quot;&quot; : ((data:widget.type == &quot;Blog&quot; ? &quot;post&quot; : data:widget.instanceId + &quot;-&quot;) + data:index)" var="imageId">
+                            <b:with value="data:$config.defer == false ? &quot;&quot; : (data:widget.type == &quot;Blog&quot; ? &quot;post&quot; : (data:widget.type == &quot;FeaturedPost&quot; ? &quot;featured&quot; : data:widget.instanceId + &quot;-&quot;)) + data:index" var="imageId">
                               <b:if cond="data:$card.gallery">
                                 <b:include name="zk:gallery" data="{ resize: 400, ratio: data:$ratio, loading: (data:deferList contains data:imageId ? false : &quot;lazy&quot;), id: data:imageId }"/>
                                 <b:else/>

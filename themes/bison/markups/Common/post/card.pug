@@ -68,7 +68,7 @@ b:includable(id="post:cards")
 
                   //- Imagen principal si existe
                   b:with(value='data:post.featuredImage ?: data:const.image', var='image')
-                    b:with(value='data:$config.defer == false ? "" : ((data:widget.type == "Blog" ? "post" : data:widget.instanceId + "-") + data:index)', var='imageId')
+                    b:with(value='data:$config.defer == false ? "" : (data:widget.type == "Blog" ? "post" : (data:widget.type == "FeaturedPost" ? "featured" : data:widget.instanceId + "-")) + data:index', var='imageId')
 
                       //- Si es uno de los modos de galerías y es el widget Blog
                       b:if(cond='data:$card.gallery')
