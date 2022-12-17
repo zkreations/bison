@@ -38,7 +38,6 @@
         <Variable name="g.toggleScheme" description="Show toggle scheme" type="string" value="true"/>
         <Variable name="g.modalSearch" description="Enable modal search" type="string" value="true"/>
         <Variable name="g.formspree" description="Form ID" type="string" value="YourID"/>
-        <Variable name="g.revue" description="Revue user" type="string" value="UserID"/>
 
         Comentarios
         =====================
@@ -860,8 +859,6 @@ window.addEventListener('DOMContentLoaded', () => {
             <b:include name="zk:alert" data="{ message: &quot;Section is only available in the section &amp;quot;Before-content&amp;quot; or &amp;quot;After-content&amp;quot;. Please, move the widget and save the changes. &lt;a href=\&quot;https://bison.hudocs.com/5.0/widgets/text/section/#disponibilidad\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
             <b:case value="missingFormspreeId"/>
             <b:include name="zk:alert" data="{ message: &quot;Please add Formspree form id. &lt;a href=\&quot;https://bison.hudocs.com/5.0/variables/general/g-formspree/\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
-            <b:case value="missingRevueId"/>
-            <b:include name="zk:alert" data="{ message: &quot;Please add your Revue account user ID. &lt;a href=\&quot;https://bison.hudocs.com/5.0/variables/general/g-revue/\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
             <b:case value="wrongFilter"/>
             <b:include name="zk:alert" data="{ message: &quot;This widget is not a valid filter. &lt;a href=\&quot;https://bison.hudocs.com/5.0/widgets/label/filters/\&quot;&gt;docs&lt;/a&gt;&quot;, type: &quot;warning&quot; }"></b:include>
             <b:case value="wrongMenu"/>
@@ -2360,22 +2357,7 @@ window.addEventListener('DOMContentLoaded', () => {
             <b:elseif cond="data:widget.sectionId == &quot;header&quot;"/>
             <b:include name="docs" data="{ warn: &quot;invalidSection&quot; }"/>
             <b:else/>
-            <div class="widget-content">
-              <b:with value="data:skin.vars.g_revue" var="action">
-                <b:if cond="data:action == &quot;&quot; or data:action == &quot;UserID&quot;">
-                  <b:include name="docs" data="{ warn: &quot;missingRevueId&quot; }"/>
-                  <b:else/>
-                  <form class="subscribe-form sy-1" expr:action="+(&quot;https://www.getrevue.co/profile/&quot;,data:action,&quot;/add_subscriber&quot;)" method="POST">
-                    <div class="group-x">
-                      <input class="subscribe-input form-control" id="member_email" type="email" expr:placeholder="data:messages.emailAddress" name="member[email]" required="required"/>
-                      <button class="subscribe-button btn btn-primary flex-none" type="submit">
-                        <b:include name="i:svg" data="{ icon: &quot;envelope&quot; }"/>
-                      </button>
-                    </div>
-                  </form>
-                </b:if>
-              </b:with>
-            </div>
+            <b:include name="zk:alert" data="{ message: data:messages.theresNothingHere }"/>
           </b:if>
         </b:includable>
         <b:includable id="widget:Text">
