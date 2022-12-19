@@ -1,20 +1,20 @@
 # Bison
 
-Un tema para Blogger Multipropósito, desarrollado por un desarrollador que conoce el código de Blogger, para aprovechar las características de su sintaxis y no depender tanto de JavaScript.
+Un tema para Blogger Multipropósito. Creado por un desarrollador de Blogger, aprovechando código nativo y sin depender tanto de JavaScript.
 
-## Caracteristicas
+## Características
 
 - Sin dependencias, **sin jQuery**, de **carga rápido** 🚀 
 - Optimizado para SEO Moderno. 🌏
 - Optimizado para AdSense. 🔮
 - Modo claro y oscuro. 🌓
-- Diseño totalmente responsive. 📱
+- Diseño totalmente responsivo. 📱
 - [Soporte de escritura RTL](https://bison.zkreations.com/?hl=ar). ✍
 - Soporta múltiples idiomas gracias a Blogger. 🌐
 - Super optimizado de código pequeño. ⚡️ 
 - Compatible con [Core Web Vitals](https://pagespeed.web.dev/report?url=https://bison.zkreations.com/). 🎯
 - Muy fácil de usar 🔰
-- [Documentacion en línea](https://bison.hudocs.com/) 📖
+- [Documentación en línea](https://bison.hudocs.com/) 📖
 
 ## Instalar
 
@@ -24,13 +24,13 @@ Copia todo el contenido del archivo [bison.xml](https://github.com/zkreations/bi
 
 Puedes ayudar a mantener este código siempre y cuando tomes en cuenta los siguientes puntos:
 
-- No agregar mas estilos
-- No agregar mas codigo JavaScript
-- Ayudar a corregir y optimizar unicamente el codigo XML de Blogger
+- No agregar más estilos CSS
+- No agregar más código JavaScript
+- Ayudar a corregir y optimizar únicamente el código XML de Blogger
 
 ## Apoyar
 
-Si deseas ayudarme para mantener este y más proyectos relacionados siempre actualizados, puedes [adquirir el tema](https://store.zkreations.com/2022/11/bison.html) o [invitarme un cafe](https://ko-fi.com/zkreations) ☕. Te lo agradeceré mucho 👏.
+Si deseas ayudarme para mantener este y más proyectos relacionados siempre actualizados, puedes [adquirir el tema](https://store.zkreations.com/2022/11/bison.html) o [invitarme un café](https://ko-fi.com/zkreations) ☕. Te lo agradeceré mucho 👏.
 
 
 ## License
