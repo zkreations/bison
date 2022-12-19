@@ -8,7 +8,6 @@
   })
 
   // Copiar código
-
   const copyButtons = (blocks, clipboard) => {
     blocks.forEach(function (codeBlock) {
       var button = document.createElement('button');
@@ -136,7 +135,7 @@
 
   // Todos los botones que requieren un clic "fuera" están aquí (help)
 
-  const outsideClick = (button, target) => {
+  const outsideClick = (button, target, close) => {
     if (!button || !target){
       return
     }
@@ -149,10 +148,16 @@
     };
 
     button.onclick = function () {
-      target.classList.toggle("is-active");
+      target.classList.add("is-active");
       document.addEventListener('click', outside)
     };
 
+    if (close){
+      close.onclick = function () {
+        target.classList.remove("is-active");
+        document.removeEventListener('click', outside)
+      }
+    }
   }
 
   const toggle = document.getElementById("toggle-menu");
@@ -167,10 +172,11 @@
   outsideClick(modeToggle, modeDropdown)
   
   
-  const langToggle = document.getElementById("toggle-lang");
-  const langDropdown = document.getElementById("docs-language");
+  const searchToggle = document.getElementById("toggle-search");
+  const searchModal = document.getElementById("modal-search");
+  const closeModal = document.getElementById("close-search");
 
-  outsideClick(langToggle, langDropdown)
+  outsideClick(searchToggle, searchModal, closeModal)
   
   const versionToggle = document.getElementById("toggle-version");
   const versionDropdown = document.getElementById("docs-versions");

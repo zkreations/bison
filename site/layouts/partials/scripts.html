@@ -1,3 +1,10 @@
 {{ $js := resources.Get "js/main.js" }}
 {{ $secureJS := $js | resources.Minify | resources.ExecuteAsTemplate $js . | resources.Fingerprint "sha512" }}
+
 <script src="{{ $secureJS.Permalink }}" integrity="{{ $secureJS.Data.Integrity }}" defer></script>
+
+{{- $searchJSFile := "js/search.js" }}
+{{- $searchJS := resources.Get "js/search.js" | resources.ExecuteAsTemplate $searchJSFile . | resources.Minify | resources.Fingerprint }}
+
+<script src="https://cdn.jsdelivr.net/npm/flexsearch@0.6.30/dist/flexsearch.min.js" defer></script>
+<script src="{{ $searchJS.RelPermalink }}" integrity="{{ $searchJS.Data.Integrity }}" defer></script>

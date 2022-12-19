@@ -1,0 +1,10 @@
+{{- $.Scratch.Add "index" slice -}}
+{{- $section := $.Site.GetPage "section" .Section }}
+{{- range .Site.AllPages -}}
+  {{- if or (and (.IsDescendant $section) (and (not .Draft) (not .Params.hidden))) $section.IsHome -}}
+    {{- if .File -}}
+    {{- $.Scratch.Add "index" (dict "id" .File.UniqueID "url" .RelPermalink "summary" .Summary "title" .Title ) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $.Scratch.Get "index" | jsonify -}}
