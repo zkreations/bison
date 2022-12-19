@@ -10,7 +10,7 @@ enableRobotsTXT = true
 enableGitInfo = true
 
 enableInlineShortcodes = true
-disableKinds = ["taxonomy","taxonomyTerm","term","RSS"]
+disableKinds = ["taxonomy","taxonomyTerm","term"]
 
 # Shortcodes HTML
 [markup]
@@ -44,6 +44,8 @@ disableKinds = ["taxonomy","taxonomyTerm","term","RSS"]
     source = 'site/i18n'
     target = 'i18n'
 
+[outputs]
+  home = ["HTML", "RSS", "Algolia"]
 
 [params]
   main_template = "bison.xml"
@@ -53,3 +55,13 @@ disableKinds = ["taxonomy","taxonomyTerm","term","RSS"]
   github_repo_edit = "https://github.com/zkreations/bison/blob/main/site/content"
 
   date_format = "January 2, 2006"
+
+[outputFormats.Algolia]
+  baseName = "algolia"
+  isPlainText = true
+  mediaType = "application/json"
+  notAlternative = true
+
+[params.algolia]
+  vars = ["title", "summary", "date", "publishdate", "expirydate", "permalink"]
+  params = ["categories", "tags"]
