@@ -12,15 +12,6 @@ enableGitInfo = true
 enableInlineShortcodes = true
 disableKinds = ["taxonomy","taxonomyTerm","term","RSS"]
 
-[languages]
-  [languages.es]
-    languageName = "Español"
-    weight = 1
-
-  [languages.en]
-    languageName = "English"
-    weight = 2
-
 # Shortcodes HTML
 [markup]
   [markup.goldmark.renderer]
