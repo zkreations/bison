@@ -113,12 +113,6 @@
         <Variable name="t.filter" description="Search filter" type="string" value="Filtrar por"/>
         <Variable name="t.filterBtn" description="Filter button" type="string" value="Filtrar"/>
         <Variable name="t.filterSelect" description="Filter Select" type="string" value="Seleccionar"/>
-        <Variable name="t.free" description="Free" type="string" value="Gratis"/>
-        <Variable name="t.details" description="Details" type="string" value="Detalles"/>
-        <Variable name="t.paymentMethod" description="Payment method" type="string" value="Método de pago"/>
-        <Variable name="t.downloadWith" description="Download with" type="string" value="Descargar con"/>
-        <Variable name="t.buyWith" description="Buy with" type="string" value="Comprar con"/>
-        <Variable name="t.getIn" description="Get in" type="string" value="Obtener en"/>
         <Variable name="t.next" description="Next" type="string" value="Siguiente"/>
         <Variable name="t.prev" description="Prev" type="string" value="Anterior"/>
 
