@@ -30,6 +30,7 @@ Almacenan texto que puedes modificar para **traducirlo a tu idioma**. Blogger cu
 | `t.searching`       | Búsqueda                        | Título de las búsquedas
 | `t.filter`          | Filtrar por                     | Título del sidebar de filtros
 | `t.filterBtn`       | Filtrar                         | Botón para filtrar entradas
+| `t.filterSelect`    | Seleccionar                     | Botón para desplegar filtros modo lista
 | `t.free`            | Gratis                          | Texto de artículos gratuitos
 | `t.details`         | Detalles                        | Pestaña de detalles de un producto
 | `t.paymentMethod`   | Método de pago                  | Indicador de opciones de pago
