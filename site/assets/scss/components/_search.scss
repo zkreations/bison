@@ -90,9 +90,7 @@
     border-radius: .5rem;
     font-weight: 500;
 
-    +p {
-      margin-top: .75rem;
-    }
+
   }
 
   &-summary {
@@ -102,4 +100,16 @@
     text-overflow: ellipsis;
   }
 
+  &-type {
+    display: flex;
+    align-items: center;
+
+    +p {
+      margin-top: .75rem;
+    }
+
+    svg {
+      margin-right: .75rem;
+    }
+  }
 }

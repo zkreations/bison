@@ -23,7 +23,7 @@
           doc: {
             id: 'id',
             field: ['title', 'summary'],
-            store: ['title', 'url', 'summary']
+            store: ['title', 'url', 'summary', 'icon' ]
           }
         });
         window.docsIndex.add(pages);
@@ -53,7 +53,10 @@
       const content = truncate(page.summary, 100)
       const data = stringToHTML(`<li class="search-item">
         <a class="search-link" href="${page.url}">
-          <span class="search-title">${page.title}</span>
+          <div class="search-type">
+            <svg class="i i-${page.icon}" viewBox="0 0 24 24"><use href="/svg-sprite.svg#${page.icon}"></use></svg>
+            <span class="search-title">${page.title}</span>
+          </div>
           ${content === "" ? "" : '<p class="search-summary">' + content + '</p>'}
         </a>
       </li>`)
