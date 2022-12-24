@@ -26,7 +26,7 @@ Este widget esta disponible en todas las secciones menos en **Filters** y **Head
 | Key       | Nombre               | Tipo                  | Descripción 
 | --------- | -------------------- | --------------------- | --------------
 | `title`   | Título               | {{< data "string" >}} | Titulo del widget
-| `icon`    | Icono                | {{< data "string" >}} | El nombre de un [icono de zkreations](#icons)
+| `icon`    | Icono                | {{< data "string" >}} | El nombre de un [icono de zkreations](https://icons.zkreations.com/)
 | `i`       | Icono de tercero     | {{< data "string" >}} | Etiqueta `<i>` usando el valor como clase
 {{< /table >}}
 

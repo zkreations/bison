@@ -2,7 +2,7 @@
 title: Social
 ---
 
-Crea una lista de iconos con enlaces en el footer del blog. Aunque puedes escoger cualquier [icono de zkreations](#icons), generalmente se utiliza para **agregar redes sociales**.
+Crea una lista de iconos con enlaces en el footer del blog. Aunque puedes escoger cualquier [icono de zkreations](https://icons.zkreations.com/), generalmente se utiliza para **agregar redes sociales**.
 
 ## Vista previa
 

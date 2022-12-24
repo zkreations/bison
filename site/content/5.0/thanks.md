@@ -10,6 +10,7 @@ Este trabajo no hubiera sido posible sin los proyectos, recursos y colaboradores
 
 - [BloggerJs](#next) - Gestión de feeds de Blogger
 - [Whale](#next) - Utilidades y soluciones para diseño front-end 
+- [Icons](https://icons.zkreations.com/) - Iconos SVG diseñados a mano a nivel de código
 - [Canvas](https://github.com/zkreations/canvas) - Punto de partida e información
 - [Flickity (Commercial License)](https://flickity.metafizzy.co/) - Carruseles táctiles, receptivos y móviles con motor de físicas
 - [DeferJs](https://github.com/shinsenter/defer.js) - Carga diferida compatible con Web Vitals
