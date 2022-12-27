@@ -780,7 +780,7 @@ window.addEventListener('DOMContentLoaded', () => {
               </b:if>
               <b:case value="adsense"/>
               <b:if cond="data:blog.adsenseHostId and data:blog.adsenseClientId and data:blog.adsenseHasAds">
-                <style>ins.adsbygoogle[data-ad-status=unfilled] { display: none !important }</style>
+                <style>ins.adsbygoogle[data-ad-status=unfilled], .header .google-auto-placed { display: none !important }</style>
                 <b:if cond="!data:blog.adsenseAutoAds">
                   <meta name="google-adsense-client" expr:content="data:blog.adsenseClientId"/>
                 </b:if>

@@ -35,7 +35,7 @@ b:includable(id='zk:assets')
       b:if(cond='data:blog.adsenseHostId and data:blog.adsenseClientId and data:blog.adsenseHasAds')
         //- Evitamos mostrar anuncios en blanco
         //- https://support.google.com/adsense/answer/10762946?hl=es-419
-        style ins.adsbygoogle[data-ad-status=unfilled] { display: none !important }
+        style ins.adsbygoogle[data-ad-status=unfilled], .header .google-auto-placed { display: none !important }
         b:if(cond='!data:blog.adsenseAutoAds')
           meta(name='google-adsense-client' expr:content='data:blog.adsenseClientId')
 
