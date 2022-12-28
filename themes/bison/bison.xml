@@ -2251,7 +2251,7 @@ window.addEventListener('DOMContentLoaded', () => {
                   </ul>
                 </div>
                 <b:if cond="!data:view.isPreview">
-                  <div class="nav-right i-bold ms-auto flex gx-.75">
+                  <div class="nav-right i-bold ms-auto flex flex-none gx-.75">
                     <b:if cond="data:skin.vars.g_toggleScheme">
                       <button class="theme-toggle capitalize" data-tts="down">
                         <b:include name="i:svg" data="{ icon: &quot;moon&quot; }"/>

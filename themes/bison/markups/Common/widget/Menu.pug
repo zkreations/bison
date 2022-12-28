@@ -45,7 +45,7 @@ b:includable(id='widget:Menu')
                 span.nav-link <data:messages.noTitle/>
 
         b:if(cond='!data:view.isPreview')
-          .nav-right.i-bold.ms-auto.flex(class="gx-.75")
+          .nav-right.i-bold.ms-auto.flex.flex-none(class="gx-.75")
             b:if(cond="data:skin.vars.g_toggleScheme")
               button.theme-toggle.capitalize(data-tts="down")
                 b:include(name="i:svg", data='{ icon: "moon" }')
