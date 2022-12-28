@@ -437,15 +437,17 @@
       </b:defaultmarkup>
       <b:defaultmarkup type="Common">
         <b:includable id="@:ads">
-          <b:tag class="adsbygoogle" name="ins" data-full-width-responsive="true">
-            <b:attr name="data-ad-slot" expr:value="data:slot"/>
-            <b:attr name="data-ad-client" expr:value="data:adClientId ?: data:blog.adsenseClientId"/>
-            <b:attr name="data-ad-host" expr:value="data:blog.adsenseHostId"/>
-            <b:attr name="data-ad-format" expr:value="data:layout ? &quot;fluid&quot; : &quot;auto&quot;"/>
-            <b:attr expr:name="&quot;data-ad-layout&quot; + (data:layout != &quot;in-article&quot; ? &quot;-key&quot; : &quot;&quot;)" expr:value="data:layout"/>
-            <b:attr name="style" expr:value="data:style ?: &quot;display: block&quot;"/>
-          </b:tag>
-          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+          <b:if cond="!data:view.isError">
+            <b:tag class="adsbygoogle" name="ins" data-full-width-responsive="true">
+              <b:attr name="data-ad-slot" expr:value="data:slot"/>
+              <b:attr name="data-ad-client" expr:value="data:adClientId ?: data:blog.adsenseClientId"/>
+              <b:attr name="data-ad-host" expr:value="data:blog.adsenseHostId"/>
+              <b:attr name="data-ad-format" expr:value="data:layout ? &quot;fluid&quot; : &quot;auto&quot;"/>
+              <b:attr expr:name="&quot;data-ad-layout&quot; + (data:layout != &quot;in-article&quot; ? &quot;-key&quot; : &quot;&quot;)" expr:value="data:layout"/>
+              <b:attr name="style" expr:value="data:style ?: &quot;display: block&quot;"/>
+            </b:tag>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+          </b:if>
         </b:includable>
         <b:includable id="@:adsense">
           <b:if cond="data:blog.adsenseHostId and not data:blog.adsenseAutoAds">
