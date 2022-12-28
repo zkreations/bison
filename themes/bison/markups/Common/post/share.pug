@@ -17,7 +17,7 @@ b:includable(id="post:share")
                 b:include(name="i:svg" data='{ icon: data:social }')
 
                 //- Atributo href dependiendo de la red social
-                b:with(value='{ url: (data:skin.vars.f_cloudflare ? data:post.url.canonical.https : data:post.url.canonical), text: (data:post.title.escaped != "" ? data:post.title.escaped : data:messages.noTitle) }' var='link')
+                b:with(value='{ url: (data:skin.vars.f_cloudflare ? data:post.url.canonical.https : data:post.url.canonical), text: (data:post.title.escaped != "" ? data:post.title : data:messages.noTitle) }' var='link')
                   b:switch(var='data:social')
                     b:case(value='facebook')
                     b:attr(expr:value='"https://www.facebook.com/sharer.php" params {u: data:link.url}' name='href')

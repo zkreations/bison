@@ -1516,7 +1516,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     <b:if cond="data:hasShare contains data:social"><a class="share btn btn-outline" expr:aria-label="data:social" target="_blank" rel="noopener noreferrer nofollow">
                         <b:class expr:name="&quot;share-&quot; + data:social"/>
                         <b:include name="i:svg" data="{ icon: data:social }"/>
-                        <b:with value="{ url: (data:skin.vars.f_cloudflare ? data:post.url.canonical.https : data:post.url.canonical), text: (data:post.title.escaped != &quot;&quot; ? data:post.title.escaped : data:messages.noTitle) }" var="link">
+                        <b:with value="{ url: (data:skin.vars.f_cloudflare ? data:post.url.canonical.https : data:post.url.canonical), text: (data:post.title.escaped != &quot;&quot; ? data:post.title : data:messages.noTitle) }" var="link">
                           <b:switch var="data:social">
                             <b:case value="facebook"/>
                             <b:attr expr:value="&quot;https://www.facebook.com/sharer.php&quot; params {u: data:link.url}" name="href"></b:attr>
