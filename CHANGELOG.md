@@ -3,6 +3,23 @@
 
 Todos los cambios notables en este proyecto se documentarán en este archivo.
 
+## [5.0.30] - 2022-12-28
+
+### Added
+
+- No mostrar anuncios en el header al usar los "auto-ads" de adsense [#38](https://github.com/zkreations/bison/issues/38)
+
+### Changed
+
+- [Meteor icons](https://github.com/zkreations/icons) como dependencia [#35](https://github.com/zkreations/bison/issues/35)
+
+### Fixed
+
+- Comentarios de desarrollo en producción
+- Anuncios en la pagina de error 404 [#31](https://github.com/zkreations/bison/issues/31)
+- Menu sección derecha comprimida [#30](https://github.com/zkreations/bison/issues/30)
+- Variables sin uso en version GPL [#29](https://github.com/zkreations/bison/issues/29)
+
 ## [5.0.20] - 2022-12-17
 
 ### Added
