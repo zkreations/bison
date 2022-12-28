@@ -1,6 +1,17 @@
-# Bison
+<div align="center">
+  <img width='80' src="https://raw.githubusercontent.com/zkreations/bison/main/.github/logo.png" align="center" />
 
-Un tema para Blogger Multipropósito. Creado por un desarrollador de Blogger, aprovechando código nativo y sin depender tanto de JavaScript.
+  # Bison 
+
+  <p>Tema para Blogger Multipropósito. Creado por un desarrollador de Blogger, aprovechando código nativo y sin depender tanto de JavaScript.<p>
+
+  <p><a href="https://bison.zkreations.com/"><strong> Demo en vivo &rarr;</strong></a></p>
+
+  <p>
+    <a href="https://github.com/zkreations/bison/releases"><img src="https://img.shields.io/github/v/release/zkreations/bison" alt="Release"></a>
+    <a href="https://github.com/zkreations/bison/blob/main/LICENSE"><img src="https://img.shields.io/github/license/zkreations/bison" alt="LICENSE"></a>
+  </p>
+</div>
 
 ## Características
 
