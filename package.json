@@ -1,6 +1,6 @@
 {
-  "name": "bison",
-  "version": "5.0.0",
+  "name": "blogger-bison",
+  "version": "5.0.30",
   "description": "Desarrollo y documentación del tema Bison",
   "scripts": {
     "build": "gulp build"
