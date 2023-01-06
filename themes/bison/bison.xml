@@ -437,43 +437,48 @@
       </b:defaultmarkup>
       <b:defaultmarkup type="Common">
         <b:includable id="@:ads">
-          <b:if cond="!data:view.isError">
-            <b:tag class="adsbygoogle" name="ins" data-full-width-responsive="true">
-              <b:attr name="data-ad-slot" expr:value="data:slot"/>
-              <b:attr name="data-ad-client" expr:value="data:adClientId ?: data:blog.adsenseClientId"/>
-              <b:attr name="data-ad-host" expr:value="data:blog.adsenseHostId"/>
-              <b:attr name="data-ad-format" expr:value="data:layout ? &quot;fluid&quot; : &quot;auto&quot;"/>
-              <b:attr expr:name="&quot;data-ad-layout&quot; + (data:layout != &quot;in-article&quot; ? &quot;-key&quot; : &quot;&quot;)" expr:value="data:layout"/>
-              <b:attr name="style" expr:value="data:style ?: &quot;display: block&quot;"/>
-            </b:tag>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-          </b:if>
+          <b:tag class="adsbygoogle" name="ins" data-full-width-responsive="true">
+            <b:attr name="data-ad-slot" expr:value="data:slot"/>
+            <b:attr name="data-ad-client" expr:value="data:adClientId ?: data:blog.adsenseClientId"/>
+            <b:attr name="data-ad-host" expr:value="data:blog.adsenseHostId"/>
+            <b:attr name="data-ad-format" expr:value="data:layout ? &quot;fluid&quot; : &quot;auto&quot;"/>
+            <b:attr expr:name="&quot;data-ad-layout&quot; + (data:layout != &quot;in-article&quot; ? &quot;-key&quot; : &quot;&quot;)" expr:value="data:layout"/>
+            <b:attr name="style" expr:value="data:style ?: &quot;display: block&quot;"/>
+          </b:tag>
+          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         </b:includable>
         <b:includable id="@:adsense">
           <b:if cond="data:blog.adsenseHostId and not data:blog.adsenseAutoAds">
             <b:tag async="async" name="script" cond="data:blog.adsenseClientId and data:blog.adsenseHasAds" expr:src="&quot;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&quot; params {client: data:blog.adsenseClientId}" crossorigin="anonymous"></b:tag>
           </b:if>
         </b:includable>
+        <b:includable id="@:attr">
+          <b:loop values="data:" var="i">
+            <b:attr expr:name="data:i[0] ?: &quot;null&quot;" expr:value="data:i[1]"/>
+          </b:loop>
+        </b:includable>
         <b:includable id="@:image">
-          <b:with value="data:src.isYoutube ? data:src.youtubeMaxResDefaultUrl : data:src" var="source">
-            <b:with value="(data:resize ? resizeImage(data:src, data:resize, data:ratio) : (data:source))" var="image">
-              <b:tag expr:alt="data:alt ?: data:messages.image" name="img">
-                <b:attr name="b:whitespace" value="remove"/>
-                <b:attr name="id" expr:value="data:id"/>
-                <b:attr name="width" expr:value="data:width ?: data:image.width"/>
-                <b:attr name="height" expr:value="data:height ?: data:image.height"/>
-                <b:attr cond="data:sizes" name="sizes" expr:value="data:sizes"/>
-                <b:attr cond="data:loading" name="loading" expr:value="data:loading"/>
-                <b:class cond="data:class" expr:name="data:class"/>
-                <b:with value="&quot;blogger.googleusercontent.com/img/a/&quot;" var="serve">
-                  <b:attr name="src" expr:value="(data:srcset ? resizeImage(data:image, data:srcset.first, data:ratio) : data:image) + ((data:image contains data:serve) and data:params ? (&quot;-&quot; + data:params) : &quot;&quot;)"/>
-                  <b:if cond="data:srcset">
-                    <b:attr name="srcset" expr:value="sourceSet(data:image, data:srcset, data:ratio)"/>
-                  </b:if>
-                </b:with>
-              </b:tag>
+          <b:if cond="data:src">
+            <b:with value="data:src.isYoutube ? data:src.youtubeMaxResDefaultUrl : data:src" var="source">
+              <b:with value="(data:resize ? resizeImage(data:src, data:resize, data:ratio) : (data:source))" var="image">
+                <b:tag expr:alt="data:alt ?: data:messages.image" name="img">
+                  <b:attr name="b:whitespace" value="remove"/>
+                  <b:attr name="id" expr:value="data:id"/>
+                  <b:attr name="width" expr:value="data:width ?: data:image.width"/>
+                  <b:attr name="height" expr:value="data:height ?: data:image.height"/>
+                  <b:attr cond="data:sizes" name="sizes" expr:value="data:sizes"/>
+                  <b:attr cond="data:loading" name="loading" expr:value="data:loading"/>
+                  <b:class cond="data:class" expr:name="data:class"/>
+                  <b:with value="&quot;blogger.googleusercontent.com/img/a/&quot;" var="serve">
+                    <b:attr name="src" expr:value="(data:srcset ? resizeImage(data:image, data:srcset.first, data:ratio) : data:image) + ((data:image contains data:serve) and data:params ? (&quot;-&quot; + data:params) : &quot;&quot;)"/>
+                    <b:if cond="data:srcset">
+                      <b:attr name="srcset" expr:value="sourceSet(data:image, data:srcset, data:ratio)"/>
+                    </b:if>
+                  </b:with>
+                </b:tag>
+              </b:with>
             </b:with>
-          </b:with>
+          </b:if>
         </b:includable>
         <b:includable id="@:kind">
           <b:class cond="data:view.isHomepage" name="is-home"/>
