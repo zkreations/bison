@@ -2,6 +2,7 @@
 node_modules/
 package-lock.json
 bison-pro/
+*-pro.*
 
 # gohugo
 _site/
