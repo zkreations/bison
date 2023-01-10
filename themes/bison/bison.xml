@@ -2620,7 +2620,7 @@ window.addEventListener('DOMContentLoaded', () => {
               <b:widget id="LinkList52" type="LinkList" version="2" title="Social Networks" locked="true"/>
               <b:widget id="HTML57" type="HTML" version="2" title="Copyright" locked="true">
                 <b:widget-settings>
-                  <b:widget-setting name="content">Developed by &lt;a href=&quot;https://zkreations.com&quot; rel=&quot;noopener noreferrer nofollow&quot; target=&quot;_blank&quot; property=&quot;cc:attributionName&quot;&gt;zkreations&lt;/a&gt; — © Bison 2022</b:widget-setting>
+                  <b:widget-setting name="content">Developed by &lt;a href=&quot;https://zkreations.com&quot; rel=&quot;noopener noreferrer nofollow&quot; target=&quot;_blank&quot; property=&quot;cc:attributionName&quot;&gt;zkreations&lt;/a&gt; — © Your Copyright 2023</b:widget-setting>
                 </b:widget-settings>
               </b:widget>
             </b:section>
