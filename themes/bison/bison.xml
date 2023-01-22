@@ -1349,55 +1349,57 @@ window.addEventListener('DOMContentLoaded', () => {
                         <b:loop index="index" values="data:items" var="post">
                           <b:with value="data:post.featuredImage ?: data:const.image" var="image">
                             <b:with value="data:$config.defer == false ? &quot;&quot; : (data:widget.type == &quot;Blog&quot; ? &quot;post&quot; : (data:widget.type == &quot;FeaturedPost&quot; ? &quot;featured&quot; : data:widget.instanceId + &quot;-&quot;)) + data:index" var="imageId">
-                              <b:if cond="data:$card.gallery">
-                                <b:include name="zk:gallery" data="{ resize: 400, ratio: data:$ratio, loading: (data:deferList contains data:imageId ? false : &quot;lazy&quot;), id: data:imageId }"/>
-                                <b:else/>
-                                <article expr:class="&quot;card card-&quot; + (data:featured ?: data:$type)">
-                                  <b:class cond="data:$card.row" name="flex"/>
-                                  <b:if cond="data:display.showFeaturedImage ?: true">
-                                    <header class="card-header relative">
-                                      <b:class cond="data:$card.row" name="flex-none w-1/4"></b:class>
-                                      <b:include cond="data:post.labels.any" name="post:featuredLabels" data="{ tags: data:post.labels }"/><a class="card-image ratio o-hidden mask" expr:href="data:post.url.canonical" expr:aria-label="data:messages.image">
-                                        <b:class cond="data:$card.row" name="h-1/1"></b:class>
-                                        <b:class expr:name="&quot;ratio-&quot; + data:$ratio"/>
-                                        <b:include name="@:image" data="{ class: &quot;fit-image&quot;, src: data:image, alt: data:post.title.escaped, srcset: (data:$card.classic ? [400,800] : false), sizes: (data:$card.classic ? &quot;(min-width: 780px) 800px, (min-width: 400px) 400px, 300px&quot; : false), resize: (data:$card.classic ? 800 : (data:$card.row ? 200 : 400)), ratio: data:$ratio, loading: (data:deferList contains data:imageId ? false : &quot;lazy&quot;), id: data:imageId, params: data:$config.params }"/></a>
-                                    </header>
-                                  </b:if>
-                                  <div class="card-body m:p-1.75 p-1.25 sy-1">
-                                    <b:class cond="data:$card.classic" name="text-center"/>
-                                    <b:class cond="data:$card.row" name="flex-auto"/>
-                                    <b:if cond="data:display.showTitle ?: true">
-                                      <h3 class="card-title font-primary m:fs-3 s:fs-4 fs-5"><a expr:href="data:post.url.canonical"> 
-                                          <b:eval expr="data:post.title.escaped != &quot;&quot; ? data:post.title.escaped : data:messages.noTitle"/></a></h3>
+                              <b:with value="data:$config.defer and (data:deferList contains data:imageId) ? false : &quot;lazy&quot;" var="$loading">
+                                <b:if cond="data:$card.gallery">
+                                  <b:include name="zk:gallery" data="{ resize: 400, ratio: data:$ratio, loading: data:$loading, id: data:imageId }"/>
+                                  <b:else/>
+                                  <article expr:class="&quot;card card-&quot; + (data:featured ?: data:$type)">
+                                    <b:class cond="data:$card.row" name="flex"/>
+                                    <b:if cond="data:display.showFeaturedImage ?: true">
+                                      <header class="card-header relative">
+                                        <b:class cond="data:$card.row" name="flex-none w-1/4"></b:class>
+                                        <b:include cond="data:post.labels.any" name="post:featuredLabels" data="{ tags: data:post.labels }"/><a class="card-image ratio o-hidden mask" expr:href="data:post.url.canonical" expr:aria-label="data:messages.image">
+                                          <b:class cond="data:$card.row" name="h-1/1"></b:class>
+                                          <b:class expr:name="&quot;ratio-&quot; + data:$ratio"/>
+                                          <b:include name="@:image" data="{ class: &quot;fit-image&quot;, src: data:image, alt: data:post.title.escaped, srcset: (data:$card.classic ? [400,800] : false), sizes: (data:$card.classic ? &quot;(min-width: 780px) 800px, (min-width: 400px) 400px, 300px&quot; : false), resize: (data:$card.classic ? 800 : (data:$card.row ? 200 : 400)), ratio: data:$ratio, loading: data:$loading, id: data:imageId, params: data:$config.params }"/></a>
+                                      </header>
                                     </b:if>
-                                    <b:if cond="data:display.showSnippet ?: data:skin.vars.e_snippet and ((data:post.snippets.short snippet { linebreaks: false }) != &quot;&quot;)">
-                                      <p class="card-snippet truncate-line s:fs-6">
-                                        <b:with value="((data:skin.vars.e_truncate not in [true,false]) and (data:skin.vars.e_truncate + 0) == data:skin.vars.e_truncate) ? (data:skin.vars.e_truncate * 1) : 100" var="truncate">
-                                          <b:eval expr="data:post.snippets.long snippet { length: data:truncate, links: false, linebreaks: false, ellipsis: true }"/>
-                                        </b:with>
-                                      </p>
-                                    </b:if>
-                                    <b:if cond="data:skin.vars.e_meta">
-                                      <b:if cond="data:show.author or data:show.timestamp or data:show.comments or data:skin.vars.a_edit or data:skin.vars.a_jumpLink">
-                                        <footer class="card-meta flex items-center flex-wrap g-1">
-                                          <b:class cond="data:$card.classic" name="justify-center"/>
-                                          <b:include name="post:meta"/>
-                                        </footer>
+                                    <div class="card-body m:p-1.75 p-1.25 sy-1">
+                                      <b:class cond="data:$card.classic" name="text-center"/>
+                                      <b:class cond="data:$card.row" name="flex-auto"/>
+                                      <b:if cond="data:display.showTitle ?: true">
+                                        <h3 class="card-title font-primary m:fs-3 s:fs-4 fs-5"><a expr:href="data:post.url.canonical"> 
+                                            <b:eval expr="data:post.title.escaped != &quot;&quot; ? data:post.title.escaped : data:messages.noTitle"/></a></h3>
                                       </b:if>
-                                    </b:if>
-                                  </div>
-                                </article>
-                                <b:if cond="data:widget.type == &quot;Blog&quot; and (data:$type in [&quot;grid&quot;,&quot;row&quot;,&quot;classic&quot;])">
-                                  <b:include name="post:inlineAd" data="post"/>
+                                      <b:if cond="data:display.showSnippet ?: data:skin.vars.e_snippet and ((data:post.snippets.short snippet { linebreaks: false }) != &quot;&quot;)">
+                                        <p class="card-snippet truncate-line s:fs-6">
+                                          <b:with value="((data:skin.vars.e_truncate not in [true,false]) and (data:skin.vars.e_truncate + 0) == data:skin.vars.e_truncate) ? (data:skin.vars.e_truncate * 1) : 100" var="truncate">
+                                            <b:eval expr="data:post.snippets.long snippet { length: data:truncate, links: false, linebreaks: false, ellipsis: true }"/>
+                                          </b:with>
+                                        </p>
+                                      </b:if>
+                                      <b:if cond="data:skin.vars.e_meta">
+                                        <b:if cond="data:show.author or data:show.timestamp or data:show.comments or data:skin.vars.a_edit or data:skin.vars.a_jumpLink">
+                                          <footer class="card-meta flex items-center flex-wrap g-1">
+                                            <b:class cond="data:$card.classic" name="justify-center"/>
+                                            <b:include name="post:meta"/>
+                                          </footer>
+                                        </b:if>
+                                      </b:if>
+                                    </div>
+                                  </article>
+                                  <b:if cond="data:widget.type == &quot;Blog&quot; and (data:$type in [&quot;grid&quot;,&quot;row&quot;,&quot;classic&quot;])">
+                                    <b:include name="post:inlineAd" data="post"/>
+                                  </b:if>
                                 </b:if>
-                              </b:if>
+                              </b:with>
                             </b:with>
                           </b:with>
                         </b:loop>
+                        <b:if cond="[&quot;infinite&quot;, &quot;load&quot;] contains data:$config.navi">
+                          <b:include name="js:templates" data="{ name: data:$type, ratio: data:$ratio }"/>
+                        </b:if>
                       </b:with>
-                      <b:if cond="[&quot;infinite&quot;, &quot;load&quot;] contains data:$config.navi">
-                        <b:include name="js:templates" data="{ name: data:$type, ratio: data:$ratio }"/>
-                      </b:if>
                     </b:if>
                   </b:with>
                 </b:with>
