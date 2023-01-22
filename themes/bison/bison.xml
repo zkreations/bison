@@ -2443,7 +2443,6 @@ window.addEventListener('DOMContentLoaded', () => {
     <b:with value="{ temp: (data:view.isPost and (data:blog.postImageUrl contains &quot;qTemp&quot;) ? data:blog.postImageUrl : (&quot;qTemp-&quot; + data:skin.vars.p_template)), image: (data:skin.vars.d_image != &quot;&quot; ? data:skin.vars.d_image : &quot;data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&quot;), avatar: (data:skin.vars.d_avatar != &quot;&quot;  ? data:skin.vars.d_avatar : &quot;https://lh3.googleusercontent.com/a/default-user&quot;), homeUrl: (data:skin.vars.f_cloudflare ? data:blog.homepageUrl.canonical.https : data:blog.homepageUrl.canonical) }" var="const">
       <b:tag expr:class="&quot;template fs-7 l:px-2&quot; + (data:view.isLayoutMode and data:skin.vars.a_access ? &quot; layout-accessibility&quot; : &quot;&quot;)" name="div">
         <div class="template-content flex flex-column container">
-          <b:class name="layout-accessibility"/>
           <header class="header layout-section">
             <b:section id="header" cond="data:widgets any (w =&gt; w.sectionId == &quot;header&quot;)">
               <b:widget id="Header51" type="Header" version="2"/>
