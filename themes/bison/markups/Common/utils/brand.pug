@@ -34,5 +34,17 @@ b:includable(id='zk:brand')
     b:elseif(cond='(data:url contains "coinbase.com")')
     b:include(name="i:svg", data='{ icon: "coinbase" }')
 
+    b:elseif(cond='(data:url contains "://www.amazon.") or (data:url contains "://a.co/")')
+    b:include(name="i:svg", data='{ icon: "amazon" }')
+
+    b:elseif(cond='(data:url contains "appgallery.huawei.com")')
+    b:include(name="i:svg", data='{ icon: "app-gallery" }')
+
+    b:elseif(cond='(data:url contains "apps.apple.com")')
+    b:include(name="i:svg", data='{ icon: "app-store" }')
+
+    b:elseif(cond='(data:url contains "play.google.com")')
+    b:include(name="i:svg", data='{ icon: "google-play" }')
+
     b:else
     b:include(name="i:svg", data='{ icon: "paperclip" }')

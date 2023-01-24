@@ -1077,6 +1077,14 @@ window.addEventListener('DOMContentLoaded', () => {
             <b:include name="i:svg" data="{ icon: &quot;cart-shopping&quot; }"/>
             <b:elseif cond="(data:url contains &quot;coinbase.com&quot;)"/>
             <b:include name="i:svg" data="{ icon: &quot;coinbase&quot; }"/>
+            <b:elseif cond="(data:url contains &quot;://www.amazon.&quot;) or (data:url contains &quot;://a.co/&quot;)"></b:elseif>
+            <b:include name="i:svg" data="{ icon: &quot;amazon&quot; }"/>
+            <b:elseif cond="(data:url contains &quot;appgallery.huawei.com&quot;)"/>
+            <b:include name="i:svg" data="{ icon: &quot;app-gallery&quot; }"/>
+            <b:elseif cond="(data:url contains &quot;apps.apple.com&quot;)"/>
+            <b:include name="i:svg" data="{ icon: &quot;app-store&quot; }"/>
+            <b:elseif cond="(data:url contains &quot;play.google.com&quot;)"/>
+            <b:include name="i:svg" data="{ icon: &quot;google-play&quot; }"/>
             <b:else/>
             <b:include name="i:svg" data="{ icon: &quot;paperclip&quot; }"/>
           </b:if>
