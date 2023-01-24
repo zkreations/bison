@@ -3,6 +3,24 @@
 
 Todos los cambios notables en este proyecto se documentarán en este archivo.
 
+## [5.0.40] - 2023-1-24
+
+### Added
+
+- Actualizo Meteor Icons a la [version 1.0.10](https://github.com/zkreations/icons/releases/tag/v1.0.10)
+- Más iconos de redes interpretables en el Header
+- Mas marcas reconocibles en los enlaces adjuntos
+
+### Changed
+
+- Agrega tu propio copyright en el footer
+
+### Fixed
+
+- Variable `f.noDefer` establecido en false [#40](https://github.com/zkreations/bison/issues/40)
+- Clase `layout-accessibility` innecesaria [#38](https://github.com/zkreations/bison/issues/38)
+- Indicador del shortcode acordeón [#41](https://github.com/zkreations/bison/issues/41)
+
 ## [5.0.30] - 2022-12-28
 
 ### Added
@@ -66,6 +84,6 @@ Todos los cambios notables en este proyecto se documentarán en este archivo.
 - Error de evaluación de etiquetas de número [#2](https://github.com/zkreations/bison/issues/2)
 - Error contador en Disqus [#1](https://github.com/zkreations/bison/issues/1)
 
-## 5.0.0
+## [5.0.0]
 
 Version inicial del proyecto
