@@ -1,8 +1,10 @@
 <div class="container">
   <div class="header-wrapper">
-    <button class="header-toggle" id="toggle-menu" aria-label="toggle navigation">
-      {{ partial "svg" (dict "icon" "bars") }}
-    </button>
+    {{- with .Section -}}
+      <button class="header-toggle" id="toggle-menu" aria-label="toggle navigation">
+        {{ partial "svg" (dict "icon" "bars") }}
+      </button>
+    {{- end -}}
     <div class="header-logo fw-500">
       <a class="has-icon i-md" href="{{ $.Site.BaseURL }}{{- with .Section -}}{{ . }}{{ end }}">
         {{ partial "svg" (dict "icon" $.Site.Params.main_icon) }}
