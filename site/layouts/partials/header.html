@@ -1,7 +1,7 @@
 <div class="container">
   <div class="header-wrapper">
     {{- with .Section -}}
-      <button class="header-toggle" id="toggle-menu" aria-label="toggle navigation">
+      <button class="header-toggle" data-dropdown="docs-sidebar" aria-label="toggle navigation">
         {{ partial "svg" (dict "icon" "bars") }}
       </button>
     {{- end -}}
@@ -12,17 +12,17 @@
       </a>
     </div>
     <div class="header-right">
-      <button class="theme-toggle" id="toggle-mode" aria-label="Light mode">
+      <button class="theme-toggle" data-dropdown="docs-mode" aria-label="Light mode">
         {{ partial "svg" (dict "icon" "sun") }}
       </button>
       <a class="toc-toggle" href="#doc" aria-label="toggle toc">
         {{ partial "svg" (dict "icon" "bars-sort") }}
       </a>
       {{- with .Section -}}
-        <button class="toggle-version" id="toggle-version" aria-label="Version">
+        <button class="toggle-version" data-dropdown="docs-versions" aria-label="Version">
           {{ . }}
         </button>
-        <button class="toggle-search" id="toggle-search" aria-label="Search">
+        <button class="toggle-search" data-dropdown="modal-search" aria-label="Search">
           {{ partial "svg" (dict "icon" "search") }}
         </button>
       {{- end -}}
@@ -39,13 +39,7 @@
       </div>
     {{- end -}}
 
-    <div class="dropdown" id="docs-language">
-      <div class="list fw-500">
-        {{ range $.Site.Home.Translations }}
-        <a class="list-link" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
-        {{ end }}
-      </div>
-    </div>
+
     <div class="dropdown" id="docs-mode">
       <div class="list fw-500 theme-handle">
         <button class="list-link has-icon" data-theme="system">

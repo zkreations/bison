@@ -135,7 +135,7 @@
 
   // Todos los botones que requieren un clic "fuera" están aquí (help)
 
-  const outsideClick = (button, target, close) => {
+  const outsideClick = (button, target) => {
     if (!button || !target){
       return
     }
@@ -152,6 +152,8 @@
       document.addEventListener('click', outside)
     };
 
+    const close = target.querySelector("[data-close]")
+
     if (close){
       close.onclick = function () {
         target.classList.remove("is-active");
@@ -160,28 +162,12 @@
     }
   }
 
-  const toggle = document.getElementById("toggle-menu");
-  const sidebar = document.getElementById("docs-sidebar");
+  const dropdowns = document.querySelectorAll("[data-dropdown]")
 
-  outsideClick(toggle,sidebar)
-
-  
-  const modeToggle = document.getElementById("toggle-mode");
-  const modeDropdown = document.getElementById("docs-mode");
-
-  outsideClick(modeToggle, modeDropdown)
-  
-  
-  const searchToggle = document.getElementById("toggle-search");
-  const searchModal = document.getElementById("modal-search");
-  const closeModal = document.getElementById("close-search");
-
-  outsideClick(searchToggle, searchModal, closeModal)
-  
-  const versionToggle = document.getElementById("toggle-version");
-  const versionDropdown = document.getElementById("docs-versions");
-
-  outsideClick(versionToggle, versionDropdown)
+  dropdowns.forEach((dropdown) => {
+    const target = document.getElementById(dropdown.dataset.dropdown)
+    outsideClick(dropdown, target)
+  })
 
   document.body.classList.remove("preload")
 })(this);
