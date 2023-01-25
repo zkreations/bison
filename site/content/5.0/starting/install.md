@@ -1,5 +1,5 @@
 ---
-title: Instalar
+title: Instalar tema
 weight: 1
 ---
 
