@@ -11,7 +11,7 @@ Muchas gracias por utilizar o adquirir el tema **{{% theme %}}**. Este documento
 
 {{< pagelink title="Instalar tema" href="install" >}}
 
-{{< pagelink title="Configuración básica" href="config" >}}
+{{< pagelink title="Configuración" href="config" >}}
 
 
 ## Más consultado

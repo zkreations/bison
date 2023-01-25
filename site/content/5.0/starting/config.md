@@ -1,5 +1,5 @@
 ---
-title: Configuración básica
+title: Configuración
 weight: 2
 ---
 
