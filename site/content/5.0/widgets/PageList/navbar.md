@@ -13,7 +13,7 @@ Convierte la lista de páginas en un navbar. Este widget se obtiene al mover o a
 Cuando uno de los enlaces tiene el nombre de una red social, el enlace **se agrega del lado contrario**, reemplazando el nombre por el respectivo icono:
 
 ```text
-facebook, twitter, instagram, whatsapp, telegram, pinterest, tumblr, vk, reddit, tiktok, linkedin, youtube
+facebook, twitter, instagram, whatsapp, telegram, pinterest, tumblr, vk, reddit, tiktok, linkedin, youtube, github, codepen, codesandbox
 ```
 
 ![widget-navbar-social](/images/widgets/navbar-social.png)
