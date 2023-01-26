@@ -140,16 +140,24 @@
       return
     }
 
+    function closeStatus() {
+      target.classList.remove("is-active");
+      document.removeEventListener('click', outside)
+    }
+  
     function outside(event) {
       if (!target.contains(event.target) && !button.contains(event.target)) {
-        target.classList.remove("is-active");
-        document.removeEventListener('click', outside)
+        closeStatus();
       }
     };
 
     button.onclick = function () {
-      target.classList.add("is-active");
-      document.addEventListener('click', outside)
+      if (target.classList.contains("is-active")) {
+        closeStatus();
+      } else {
+        target.classList.add("is-active");
+        document.addEventListener('click', outside)
+      }
     };
 
     const close = target.querySelector("[data-close]")
