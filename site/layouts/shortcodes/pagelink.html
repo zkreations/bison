@@ -8,14 +8,21 @@
 {{- $icon := .Get "icon" | default ( cond (hasPrefix $href "http") "arrow-up-right" "chain" ) -}}
 {{- $name := .Get "name" -}}
 
+{{- $snippet := .Get "snippet" | default false -}}
+
 <a class="pagelink" href="{{ $href }}"{{ if hasPrefix  $href  "http" }} target="_blank" rel="noreferrer nofollow noopener"{{ end }}>
-  <div class="pagelink-icon i-md">
-    {{- partial "svg" (dict "icon" $icon) -}}
-  </div>
+  {{ if not $snippet }}
+    <div class="pagelink-icon i-md">
+      {{- partial "svg" (dict "icon" $icon) -}}
+    </div>
+  {{- end -}}
   <div class="pagelink-content">
     <div class="pagelink-title fw-500">{{ $title }}</div>
     {{- with $name -}}
       <span class="pagelink-meta">{{ . }}</span>
+    {{- end -}}
+    {{- with $snippet -}}
+      <p class="pagelink-meta">{{ . }}</p>
     {{- end -}}
   </div>
 </a>

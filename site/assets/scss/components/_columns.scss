@@ -5,6 +5,9 @@
   align-items: flex-start;
   > * {
     flex: 1 1 0;
+    gap: var(--space-block,1.5rem);
+    display: flex;
+    flex-direction: column;
   }
   @include media(max, m) {
     flex-direction: column;

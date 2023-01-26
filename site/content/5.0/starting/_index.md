@@ -4,27 +4,46 @@ weight: 1
 icon: book-open
 ---
 
-Muchas gracias por utilizar o adquirir el tema **{{% theme %}}**. Este documento contiene información detallada para comprender mejor las características. Si tienes ideas o deseas ayudar a mejorar este documento, no dudes en enviar tus sugerencias o solicitudes de cambios.
-
+Este documento contiene información detallada del tema. Si deseas ayudar a mejorar este documento, no dudes en enviar tus sugerencias o solicitudes de cambios.
 
 ## Recomendado
 
-{{< pagelink title="Instalar tema" href="install" >}}
+{{< columns >}}
 
-{{< pagelink title="Configuración" href="config" >}}
+{{< pagelink title="Instalar tema" href="install" snippet="Aprende a instalar cualquier plantilla sin errores" >}}
+
+<---->
+
+{{< pagelink title="Configuración" href="config" snippet="Aspectos opcionales que puedes activar en Blogger" >}}
+
+<---->
+
+{{< pagelink title="Actualizar" href="update" snippet="Pasa a una version más reciente de varias formas" >}}
+
+{{< /columns >}}
 
 
 ## Más consultado
 
-{{< pagelink title="Menú principal" href="/5.0/widgets/pagelist/menu" >}}
+{{< columns >}}
 
-{{< pagelink title="Crear secciones" href="/5.0/widgets/text/section" >}}
+{{< pagelink title="Menú" href="/5.0/widgets/pagelist/menu" snippet="Crea elementos del menú y desplegables" >}}
 
-{{< pagelink title="Tipografía" href="/5.0/entries/typography/" >}}
+{{< pagelink title="Tipografía" href="/5.0/entries/typography/" snippet="Shortcodes, textos y otros códigos para tus artículos" >}}
 
-{{< pagelink title="Carousel" href="/5.0/widgets/popularposts/carousel" >}}
+<---->
 
-{{< pagelink title="Formulario de contacto" href="/5.0/widgets/contactform" >}}
+{{< pagelink title="Secciones" href="/5.0/widgets/text/section" snippet="Widget de secciones de entradas por etiquetas" >}}
+
+{{< pagelink title="Tipos de entradas" href="/5.0/entries/templates" snippet="Aprende a usar el modo Hero y mas estilo de entradas" >}}
+
+<---->
+
+{{< pagelink title="Carousel" href="/5.0/widgets/popularposts/carousel" snippet="Configura un carrusel de entradas populares" >}}
+
+{{< pagelink title="Formulario de contacto" href="/5.0/widgets/contactform" snippet="Agrega una página de contacto para tus usuarios" >}}
+
+{{< /columns >}}
 
 
 ## Changelog
