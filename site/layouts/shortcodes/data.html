@@ -1,4 +1,10 @@
 {{- $type := .Get 0 | default "none" -}}
 {{- $class := replaceRE `(\[.*\])` "" $type -}}
 
-<a class="type{{ with $class }} type-{{ . }}{{ end }}" href="#url">{{ $type }}</a>
+{{- $path := "2016/04/typeof-" -}}
+
+{{- if or (eq $type "date") (eq $type "locale") (eq $type "message") -}}
+  {{- $path := "2017/04/typeof-" -}}
+{{- end -}}
+
+<a class="type{{ with $class }} type-{{ . }}{{ end }}" href="https://bloggercode-blogconnexion.blogspot.com/{{ $path }}{{ $type }}.html" target="_blank" rel="nofollow noopener">{{ $type }}</a>
