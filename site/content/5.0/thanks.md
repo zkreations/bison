@@ -33,6 +33,7 @@ Este trabajo no hubiera sido posible sin los proyectos, recursos y colaboradores
 ## Colaboradores
 
 - **Carlos Arturo** - Principal patrocinador de este proyecto
+- **Gian Franco Imperiale** - Patrocinador de proyectos [mediante Ko-fi](https://ko-fi.com/zkreations)
 - **Maizi** - Pruebas con proxy en China
 
 ## Notas finales
