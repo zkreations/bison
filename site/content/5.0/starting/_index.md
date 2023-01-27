@@ -29,13 +29,16 @@ Este documento contiene información detallada del tema. Si deseas ayudar a mejo
 
 {{< pagelink title="Menú" href="/5.0/widgets/pagelist/menu" snippet="Crea elementos del menú y desplegables" >}}
 
-{{< pagelink title="Tipografía" href="/5.0/entries/typography/" snippet="Shortcodes, textos y otros códigos para tus artículos" >}}
+{{< pagelink title="Tipografía" href="/5.0/entries/typography" snippet="Shortcodes, textos y otros códigos para tus artículos" >}}
 
+{{< pagelink title="Slider" href="/5.0/widgets/popularposts/slider" snippet="Widget que muestra artículos como diapositivas" >}}
 <---->
 
 {{< pagelink title="Secciones" href="/5.0/widgets/text/section" snippet="Widget de secciones de entradas por etiquetas" >}}
 
 {{< pagelink title="Tipos de entradas" href="/5.0/entries/templates" snippet="Aprende a usar el modo Hero y mas estilo de entradas" >}}
+
+{{< pagelink title="Producto" href="/5.0/entries/templates/product" snippet="Conecta a tus usuarios con tus productos o servicios" >}}
 
 <---->
 
