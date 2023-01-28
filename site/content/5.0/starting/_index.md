@@ -4,7 +4,12 @@ weight: 1
 icon: book-open
 ---
 
-Este documento contiene información detallada del tema. Si deseas ayudar a mejorar este documento, no dudes en enviar tus sugerencias o solicitudes de cambios.
+
+<p>
+  <img src="/images/portada.png" alt="Tema Bison" width="1140"  height="400">
+</p>
+
+<p class='lead'>Muchas gracias por usar o adquirir el tema. Este documento contiene información detallada de la plantilla. Si deseas ayudar a mejorar la documentación, no dudes en enviar tus sugerencias o solicitudes de cambios, te lo agradeceré mucho.</p>
 
 ## Recomendado
 
