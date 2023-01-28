@@ -452,6 +452,17 @@
             <b:tag async="async" name="script" cond="data:blog.adsenseClientId and data:blog.adsenseHasAds" expr:src="&quot;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&quot; params {client: data:blog.adsenseClientId}" crossorigin="anonymous"></b:tag>
           </b:if>
         </b:includable>
+        <b:includable id="@:analytics">
+          <b:if cond="data:blog.analyticsAccountNumber">
+            <script async="async" expr:src="params(&quot;https://www.googletagmanager.com/gtag/js&quot;,{id: data:blog.analyticsAccountNumber})"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config','<data:blog.analyticsAccountNumber/>');
+            </script>
+          </b:if>
+        </b:includable>
         <b:includable id="@:attr">
           <b:loop values="data:" var="i">
             <b:attr expr:name="data:i[0] ?: &quot;null&quot;" expr:value="data:i[1]"/>
@@ -861,7 +872,7 @@
             <b:include name="zk:assets" data="{ get: &quot;inlineCSS&quot; }"/>
           </b:if>
           <b:include name="zk:assets" data="{ get: &quot;adsense&quot; }"/>
-          <b:include data="blog" name="google-analytics"/>
+          <b:include name="@:analytics"/>
           <b:if cond="data:view.isPreview">
             <b:include name="zk:assets" data="{ get: &quot;preview&quot; }"/>
           </b:if>

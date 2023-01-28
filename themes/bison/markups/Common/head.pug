@@ -37,7 +37,7 @@ b:includable(id='zk:head')
 
   //- Google
   b:include(name="zk:assets", data='{ get: "adsense" }')
-  b:include(data='blog' name='google-analytics')
+  b:include(name='@:analytics')
 
   b:if(cond='data:view.isPreview')
     b:include(name="zk:assets", data='{ get: "preview" }')
