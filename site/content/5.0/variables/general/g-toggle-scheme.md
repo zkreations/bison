@@ -25,11 +25,6 @@ Si el valor ingresado no es válido, el valor por defecto será `true`.
 
 El botón para alternar entre los valores Sistema, Claro y Oscuro será visible en la sección secundaria del menú principal y estará disponible en cualquier página del blog.
 
-<video controls preload="none">
-  <source src="/videos/g-toggle-scheme.mp4" type="video/mp4">
-</video>
-
-
 ## false
 
 El botón para alternar el esquema de color no estará disponible en el blog.

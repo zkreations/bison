@@ -27,7 +27,3 @@ El numero especificado se utiliza en la formula que finalmente obtiene la cantid
 {{< hint "warning" >}}
 Mientras mayor sea el número **más datos deberán descargarse** en la consulta, lo que puede perjudicar el rendimiento. Si no estás seguro no modifiques el valor por defecto.
 {{< /hint >}}
-
-<video controls preload="none">
-  <source src="/videos/p-rel-random.mp4" type="video/mp4">
-</video>

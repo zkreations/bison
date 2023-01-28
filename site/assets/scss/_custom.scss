@@ -182,3 +182,55 @@ $data-types:(
     padding: 6px 8px;
   }
 }
+
+.ratio {
+  position: relative;
+  width: 100%;
+  background-color: var(--bg-inset);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  max-width: 340px;
+
+  &::before {
+    content: "";
+    display: block;
+    padding-top: calc(var(--ratio-y, 9)/ var(--ratio-x, 16) * 100%)
+  }
+  
+  &-21\:9 {
+    --ratio-x: 21;
+    --ratio-y: 9
+  }
+  
+  &-16\:9 {
+    --ratio-x: 16;
+    --ratio-y: 9
+  }
+  
+  &-4\:3 {
+    --ratio-x: 4;
+    --ratio-y: 3
+  }
+  
+  &-1\:1 {
+    --ratio-x: 1;
+    --ratio-y: 1
+  }
+  
+  &-1\:2 {
+    --ratio-x: 1;
+    --ratio-y: 2
+  }
+  
+  &-2\:3 {
+    --ratio-x: 2;
+    --ratio-y: 3
+  }
+  
+  &-5\:7 {
+    --ratio-x: 5;
+    --ratio-y: 7
+  }
+}

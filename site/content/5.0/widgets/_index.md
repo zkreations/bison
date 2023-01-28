@@ -12,24 +12,15 @@ Widgets de Blogger con nueva estructura que puedes instalar desde el panel de ad
 
 ## Super widgets
 
-Se crean a partir de widgets normales. Para acceder a ellos debes reemplazar el título por un dato tipo {{< data object >}} válido de Blogger, por ejemplo:
+Se crean a partir de widgets normales. Para acceder a ellos debes **reemplazar el título** por un dato tipo {{< data object >}} válido de Blogger, haz la prueba, edita cualquier widget y cambia el título por el siguiente ejemplo:
 
 ```js
 { title: "Prueba", icon: "fire" }
 ```
 
-<video controls preload="none" poster="/images/posters/super-widgets.png">
-  <source src="/videos/super-widget.mp4" type="video/mp4">
-</video>
-
 ## Mutabilidad
 
-Algunos widgets cambian de estructura dependiendo de la sección en la que se encuentran, para observar estos cambios mueve el gadget a una sección en donde puedan mutar.
-
-<video controls preload="none" poster="/images/posters/mutation-widgets.png">
-  <source src="/videos/mutation-widget.mp4" type="video/mp4">
-</video>
-
+Algunos widgets **cambian de estructura** dependiendo de la **sección** en la que se encuentran, para observar estos cambios mueve cualquier [widget PopularPosts]({{< ref "/5.0/widgets/popularposts/" >}}) a la sección header, notarás que cambia a [Breaking News]({{< ref "breaking-news.md" >}}) automáticamente, esi funciona la mutación.
 
 ## Errores
 
@@ -37,7 +28,7 @@ En cualquier caso, puede que te encuentres con algún error, los cuales te indic
 
 ### Invalid object key
 
-Este problema se da cuando alguno de los elementos del objeto no es valido. Para blogger, los objetos validos deben contener una llave de abiero y de cierre, en su interior, las "key" deben tener siempre un espacio antes de su valor:
+Problema que ocurre cuando alguno de los elementos del **objeto no es válido** para Blogger. Los objetos deben contener una llave de abierto y de cierre, en su interior, las "key" deben tener siempre un espacio antes de su valor:
 
 ```js
 // Correcto
@@ -49,8 +40,7 @@ Este problema se da cuando alguno de los elementos del objeto no es valido. Para
 
 ### Object is not closed
 
-Significa que la llave no esta cerrada. Simplemente asegúrate de que la ultima llave del objeto este presente:
-
+Significa que la llave no esta cerrada, solo debes asegurarte de que la última llave del objeto este presente:
 
 ```js
 // Correcto
@@ -72,7 +62,7 @@ Todas las key de los super widgets pueden contener casi cualquier valor, sin emb
 
 ### Invalid content value for this widget type
 
-Ademas de el número limitado de opciones para la opción `content`, cada valor esta limitado a su tipo de widget, solo puedes usarlo en el tipo que le corresponde.
+Ademas del número limitado de opciones para la opción `content`, cada valor esta limitado a su tipo de widget, solo puedes usarlo en el tipo que le corresponde.
 
 
 ### Invalid value for this option
@@ -89,7 +79,7 @@ Este mensaje indica que el valor que haz ingresado en la opción escogida no es 
 
 ### Invalid widget type for this section
 
-No todos los widgets están disponibles en todas las secciones, cuando esto ocurra, veras este error, solo debes mover el widget a otra sección.
+No todos los widgets están disponibles en todas las secciones, cuando esto ocurra, veras este error, solo debes mover el widget a otra sección en donde si esté disponible.
 
 
 

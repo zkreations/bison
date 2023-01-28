@@ -30,47 +30,46 @@ Si el valor ingresado no es válido, el valor por defecto será `16:9`.
 
 **Ultra ancha**, como películas grabadas en CinemaScope.
 
-![e-ratio-21-9](/images/variables/cards/e-ratio-21-9.png)
+{{< ratio "21:9" >}}
 
 
 ## 16:9
 
 **Ancha**, el estándar en monitores y otras pantallas.
 
-![e-ratio-16-9](/images/variables/cards/e-ratio-16-9.png)
-
+{{< ratio "16:9" >}}
 
 ## 4:3
 
 **Cuatro tercios**, cercano a un cuadrado.
 
-![e-ratio-4-3](/images/variables/cards/e-ratio-4-3.png)
+{{< ratio "4:3" >}}
 
 
 ## 1:1
 
 **Lados iguales**, un cuadrado perfecto.
 
-![e-ratio-1-1](/images/variables/cards/e-ratio-1-1.png)
+{{< ratio "1:1" >}}
 
 
 ## 1:2
 
 **Rectángulo vertical**, el formato más largo.
 
-![e-ratio-1-2](/images/variables/cards/e-ratio-1-2.png)
+{{< ratio "1:2" >}}
 
 
 ## 2:3
 
 **Dos tercios**, dimensiones de un diseño de impresión.
 
-![e-ratio-2-3](/images/variables/cards/e-ratio-2-3.png)
+{{< ratio "2:3" >}}
 
 
 ## 5:7
 
 **Portada**, para portadas de series o películas.
 
-![e-ratio-5-7](/images/variables/cards/e-ratio-5-7.png)
+{{< ratio "5:7" >}}
 

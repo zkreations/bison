@@ -23,7 +23,7 @@ Si el valor ingresado no es válido, el valor por defecto será `null`.
 
 ## headings
 
-Especifica una lista separada por comas de etiquetas `<h#>` del 1 al 6 que serán incluidos en la tabla ed contenido, las etiquetas de encabezados que no se menciones se excluirán automáticamente:
+Especifica una lista separada por comas de etiquetas `<h#>` del 1 al 6 que serán incluidos en la tabla ed contenido, las etiquetas de encabezados que no se mencionen se excluirán:
 
 ```text
 h1, h2, h3, h4, h5, h6
