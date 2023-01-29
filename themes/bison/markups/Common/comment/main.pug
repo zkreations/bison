@@ -12,10 +12,13 @@
 //- @param {boolean} [newestFirst=false] - Organizar comentarios del mas nuevo al mas antiguo
 
 b:includable(id="comment:main")
+
   b:if(cond='not data:view.isPreview and data:post.allowComments')
+
     b:if(cond='data:skin.vars.c_disqus and data:skin.vars.c_disqus != ""')
-      b:if(cond='data:skin.vars.c_disqusOnClick')
-        .btn.btn-full#disqus_btn
+
+      b:if(cond='data:skin.vars.c_clickToLoad') 
+        button.btn.btn-full#disqus_btn
           b:include(name='i:svg' data='{ icon: "disqus"}')
           <data:messages.postAComment/>
 
@@ -24,5 +27,12 @@ b:includable(id="comment:main")
       b:else
       .post-comments
         b:include(name='$:title' data='{ numComments: data:post.numberOfComments }')
+
+        b:if(cond='data:skin.vars.c_clickToLoad') 
+          input.none(type="checkbox" id="blogger_btn" name='blogger_btn')
+          label.btn.btn-full(for="blogger_btn")
+            b:include(name='i:svg' data='{ icon: "blogger"}')
+            <data:messages.postAComment/>
+
         .comments#comments(class="b:skin-g1 flex flex-column")
           b:include(name='comment:list' data='{ minDepth: ([0,1,2,3] contains data:skin.vars.c_depth ? data:skin.vars.c_depth : 1), newestFirst: (data:skin.vars.c_newer == "true" ? true : false), formFirst: data:skin.vars.c_formFirst, maxDepth: 3, filterLinks: data:skin.vars.c_filter, hiddenText: data:skin.vars.t_filtered, avatarImage: data:const.avatar, avatarSize: 50, replyText: data:skin.vars.t_reply }')

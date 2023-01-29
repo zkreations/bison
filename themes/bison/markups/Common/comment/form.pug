@@ -8,7 +8,7 @@ b:includable(id="comment:form")
     b:else
     #comment-form
       b:if(cond='data:level.min != 0')
-        button#comment-restore-form.btn.btn-outline.comment-cancel
+        button#comment-restore-form.btn.btn-full.comment-cancel
           b:include(name='i:svg' data='{ icon: "comment"}')
           <data:messages.postAComment/>
 
