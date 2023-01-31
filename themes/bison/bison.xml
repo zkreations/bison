@@ -46,7 +46,7 @@
         <Variable name="c.formFirst" description="Form first" type="string" value="true"/>
         <Variable name="c.filter" description="Enable link filter" type="string" value="true"/>
         <Variable name="c.disqus" description="Disqus shortname" type="string" value="false"/>
-        <Variable name="c.clickToLoad" description="Click and load comments" type="string" value="true"/>
+        <Variable name="c.clickToLoad" description="Click and load comments" type="string" value="false"/>
 
         Cards
         =====================
