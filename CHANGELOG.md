@@ -3,6 +3,19 @@
 
 Todos los cambios notables en este proyecto se documentarán en este archivo.
 
+## [5.0.50] - 2023-1-31
+
+### Changed
+
+- Google Analytics v4 [#44] (https://github.com/zkreations/bison/issues/44)
+- Cargar comentarios de Blogger por click [#43](https://github.com/zkreations/bison/issues/43)
+
+### Fixed
+
+- Error anuncios basados en iframe [#45](https://github.com/zkreations/bison/issues/45)
+- Scroll inconsistente solo en Chrome
+
+
 ## [5.0.40] - 2023-1-24
 
 ### Added
