@@ -14,6 +14,7 @@ Todos los cambios notables en este proyecto se documentarán en este archivo.
 
 - Error anuncios basados en iframe [#45](https://github.com/zkreations/bison/issues/45)
 - Scroll inconsistente solo en Chrome
+- Instalar Flickity de forma independiente [#47](https://github.com/zkreations/bison/issues/47)
 
 
 ## [5.0.40] - 2023-1-24
