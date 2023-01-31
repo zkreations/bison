@@ -7,7 +7,7 @@ Todos los cambios notables en este proyecto se documentarán en este archivo.
 
 ### Changed
 
-- Google Analytics v4 [#44] (https://github.com/zkreations/bison/issues/44)
+- Google Analytics v4 [#44](https://github.com/zkreations/bison/issues/44)
 - Cargar comentarios de Blogger por click [#43](https://github.com/zkreations/bison/issues/43)
 
 ### Fixed
