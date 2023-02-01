@@ -25,11 +25,7 @@ Si el valor ingresado no es válido, el valor por defecto será `true`.
 
 El formulario de comentarios será insertado **antes de la lista de comentarios**. Si las respuestas están habilitadas, el botón para restaurar las respuestas también se situará primero.
 
-![c-newer-true](/images/variables/comments/c-form-first-true.png)
-
 
 ## false
 
 El formulario se insertará después de la lista de comentarios.
-
-![c-newer-false](/images/variables/comments/c-form-first-false.png)

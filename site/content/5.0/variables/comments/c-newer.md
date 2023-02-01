@@ -25,12 +25,8 @@ Si el valor ingresado no es válido, el valor por defecto será `false`.
 
 Los comentarios y las respuestas de los comentarios se ordenaran desde el **más nuevo** al más antiguo.
 
-![c-newer-true](/images/variables/comments/c-newer-true.png)
-
-
 ## false
 
 Los comentarios y las respuestas de los comentarios se ordenaran desde el **más antiguo** al más reciente.
 
-![c-newer-false](/images/variables/comments/c-newer-false.png)
 

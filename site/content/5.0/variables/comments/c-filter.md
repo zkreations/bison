@@ -26,13 +26,9 @@ Si el valor ingresado no es válido, el valor por defecto será `true`.
 
 Oculta solo los enlaces del comentario, lo que dejará visible el resto del contenido. Puedes configurar el texto del enlace modificando la variable [t.hiddenLink]({{< ref "../text.md" >}}).
 
-![c-filter-only-links](/images/variables/comments/c-filter-only-links.png)
-
 ## true
 
 Oculta todo el contenido de los comentarios y deja un aviso en su lugar. Puedes configurar el mensaje que quedará en su lugar modificando la variable de texto [t.filtered]({{< ref "../text.md" >}}).
-
-![c-filter-true](/images/variables/comments/c-filter-true.png)
 
 ## false
 
