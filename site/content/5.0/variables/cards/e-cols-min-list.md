@@ -23,5 +23,3 @@ Si el valor ingresado no es válido, el valor por defecto será `null`.
 ## unit
 
 La unidad de medida especificada servirá para indicarle a las listas **hasta cuanto pueden reducir su ancho**. Cuando el ancho mínimo es alcanzado, las listas continuarán en la siguiente fila, lo que favorece al diseño responsive.
-
-![e-cols-min-list](/images/variables/cards/e-cols-min-list.png)

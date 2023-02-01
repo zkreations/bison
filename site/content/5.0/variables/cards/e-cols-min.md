@@ -23,4 +23,3 @@ Si el valor ingresado no es válido, el valor por defecto será `null`.
 
 La unidad de medida especificada servirá para indicarle a las columnas **hasta cuanto pueden reducir su ancho**. Cuando el ancho mínimo es alcanzado, las columnas continuarán en la siguiente fila, lo que favorece al diseño responsive.
 
-![e-cols-min](/images/variables/cards/e-cols-min.png)
