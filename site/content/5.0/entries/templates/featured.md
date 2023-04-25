@@ -14,6 +14,9 @@ Puedes ver una vista previa de el modo hero en la página de demostración.
 
 {{< pagelink title="Demostración Featured" name="Bison" href="https://bison.zkreations.com/2022/09/wooden-houses-on-grass-field.html" >}}
 
+## Imagen diferente
+
+Para destacar una imagen diferente a la principal, activa los [enlaces de adjuntos]({{< ref "config.md#habilitar-enlaces-de-adjuntos" >}}) en tu blog, luego ingresa la url de una **imagen** como adjunto.
 
 ## Video destacado
 
