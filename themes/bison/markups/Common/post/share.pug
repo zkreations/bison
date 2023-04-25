@@ -14,7 +14,7 @@ b:includable(id="post:share")
             b:if(cond='data:hasShare contains data:social')
               a.share.btn.btn-outline(expr:aria-label="data:social" target="_blank" rel='noopener noreferrer nofollow')
                 b:class(expr:name='"share-" + data:social')
-                b:include(name="i:svg" data='{ icon: data:social }')
+                b:include(name="i:meteor" data='{ icon: data:social }')
 
                 //- Atributo href dependiendo de la red social
                 b:with(value='{ url: (data:skin.vars.f_cloudflare ? data:post.url.canonical.https : data:post.url.canonical), text: (data:post.title.escaped != "" ? data:post.title : data:messages.noTitle) }' var='link')
@@ -29,7 +29,7 @@ b:includable(id="post:share")
                     b:attr(expr:value='"https://pinterest.com/pin/create/button/" params {url: data:link.url}' name='href')
 
                     b:case(value='whatsapp')
-                    b:attr(expr:value='"https://wa.me/" params {text: data:link.url, text: data:link.text}' name='href')
+                    b:attr(expr:value='"https://wa.me/" params {text: (data:link.text + " - " + data:link.url) }' name='href')
 
                     b:case(value='telegram')
                     b:attr(expr:value='"https://t.me/share/url" params {url: data:link.url}' name='href')
