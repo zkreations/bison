@@ -5,12 +5,12 @@
 //- @param {string} [metaClass] - Clases adicionales para metadatos
 
 b:includable(id='post:hero')
-  b:with(value='data:post.enclosures first (e => e.mimeType in {"video","video/mp4"})' var='cover')
+  b:with(value='{ video: (data:post.enclosures first (e => e.mimeType contains "video")), image: (data:post.enclosures first (e => e.mimeType contains "image")) }' var='cover')
     b:with(value='data:post.featuredImage ?: data:const.image', var='postImage')
-      b:if(cond='data:cover.url')
-        video.hero-image(playsinline="playsinline" expr:poster="data:postImage" autoplay="autoplay" muted="muted" loop="loop" expr:src="data:cover.url")
+      b:if(cond='data:cover.video')
+        video.hero-image(playsinline="playsinline" expr:poster="data:postImage" autoplay="autoplay" muted="muted" loop="loop" expr:src="data:cover.video.url")
         b:else
-        b:include(name='@:image', data='{ class: "hero-image", src: data:postImage, alt: data:post.title.escaped, srcset: [400,780,1280], sizes: "(min-width: 1000px) 1280px, (min-width: 720px) 780px, 400px", ratio: "16:9", height: 720, width: 1280 }')
+        b:include(name='@:image', data='{ class: "hero-image", src: (data:cover.image.url ?: data:postImage), alt: data:post.title.escaped, srcset: [400,780,1280], sizes: "(min-width: 1000px) 1280px, (min-width: 720px) 780px, 400px", ratio: "16:9", height: 720, width: 1280 }')
 
   .sy-1.relative.z-10
     b:class(cond='data:class', expr:name='data:class')
