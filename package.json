@@ -30,6 +30,6 @@
     "gulp-replace": "^1.1.4"
   },
   "dependencies": {
-    "@zkreations/icons": "^1.0.10"
+    "meteor-icons": "^2.1.4"
   }
 }

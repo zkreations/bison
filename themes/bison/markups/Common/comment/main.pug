@@ -19,7 +19,7 @@ b:includable(id="comment:main")
 
       b:if(cond='data:skin.vars.c_clickToLoad') 
         button.btn.btn-full#disqus_btn
-          b:include(name='i:svg' data='{ icon: "disqus"}')
+          b:include(name='i:meteor' data='{ icon: "disqus"}')
           <data:messages.postAComment/>
 
       #disqus_thread(expr:data-post-url="data:post.url.canonical.https" expr:data-post-id="data:post.id" expr:data-shortname="data:skin.vars.c_disqus")
@@ -31,7 +31,7 @@ b:includable(id="comment:main")
         b:if(cond='data:skin.vars.c_clickToLoad') 
           input.none(type="checkbox" id="blogger_btn" name='blogger_btn')
           label.btn.btn-full(for="blogger_btn")
-            b:include(name='i:svg' data='{ icon: "blogger"}')
+            b:include(name='i:meteor' data='{ icon: "blogger"}')
             <data:messages.postAComment/>
 
         .comments#comments(class="b:skin-g1 flex flex-column")

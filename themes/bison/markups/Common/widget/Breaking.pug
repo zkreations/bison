@@ -6,8 +6,8 @@ b:includable(id='widget:Breaking')
   b:if(cond="data:posts.notEmpty")
     .breaking.flex.items-center(class='b:skin-px')
 
-      b:include(name="i:svg", data='{ icon: "fire", class: "breaking-icon flex-none" }')
-      b:include(name="i:svg", data='{ icon: "angle-right", class: "breaking-arrow mx-.75 flex-none" }')
+      b:include(name="i:meteor", data='{ icon: "fire", class: "breaking-icon flex-none" }')
+      b:include(name="i:meteor", data='{ icon: "angle-right", class: "breaking-arrow mx-.75 flex-none" }')
 
       .breaking-content.relative.truncate
         .breaking-items.flex.flex-column(expr:style='"--news-items:" + data:posts.length')

@@ -18,19 +18,19 @@ b:includable(id='widget:ContactForm')
           form(expr:action='"https://formspree.io/f/" + data:action', method="POST").contact-form.sy-1
             .group-x
               span.form-text.flex-none
-                b:include(name="i:svg", data='{ icon: "user" }')
+                b:include(name="i:meteor", data='{ icon: "user" }')
               input.contact-input.form-control(type="text", expr:placeholder="data:contactFormNameMsg", name="name", required)
             .group-x
               span.form-text.flex-none
-                b:include(name="i:svg", data='{ icon: "at" }')
+                b:include(name="i:meteor", data='{ icon: "at" }')
               input.contact-input.form-control(type="email", expr:placeholder="data:contactFormEmailMsg", name="email", required)
             .group-x
               span.form-text.flex-none
-                b:include(name="i:svg", data='{ icon: "pencil" }')
+                b:include(name="i:meteor", data='{ icon: "pencil" }')
               input.contact-input.form-control(type="text", expr:placeholder="data:skin.vars.t_subject", name="subject", required)
 
             textarea.contact-textarea.form-control(expr:placeholder="data:contactFormMessageMsg", name="Message", required)
 
             button.contact-button.btn.btn-full.btn-primary(type="submit")
-              b:include(name="i:svg", data='{ icon: "paper-plane" }')
+              b:include(name="i:meteor", data='{ icon: "paper-plane" }')
               <data:contactFormSendMsg/>

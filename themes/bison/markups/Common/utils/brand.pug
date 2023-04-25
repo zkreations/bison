@@ -5,46 +5,46 @@
 b:includable(id='zk:brand')
 
   b:if(cond='data:url contains "drive.google.com"')
-    b:include(name="i:svg", data='{ icon: "google-drive" }')
+    b:include(name="i:meteor", data='{ icon: "google-drive" }')
 
     b:elseif(cond='data:url contains "mediafire.com"')
-    b:include(name="i:svg", data='{ icon: "fire" }')
+    b:include(name="i:meteor", data='{ icon: "fire" }')
 
     b:elseif(cond='(data:url contains "onedrive.live.com") or (data:url contains "1drv.ms")')
-    b:include(name="i:svg", data='{ icon: "cloud" }')
+    b:include(name="i:meteor", data='{ icon: "cloud" }')
 
     b:elseif(cond='(data:url contains "mega.io") or (data:url contains "mega.co.nz") or (data:url contains "mega.nz")')
-    b:include(name="i:svg", data='{ icon: "mega" }')
+    b:include(name="i:meteor", data='{ icon: "mega" }')
 
     b:elseif(cond='(data:url contains "gumroad.com") or (data:url contains "gum.co")')
-    b:include(name="i:svg", data='{ icon: "gumroad" }')
+    b:include(name="i:meteor", data='{ icon: "gumroad" }')
 
     b:elseif(cond='(data:url contains "paypal.com") or (data:url contains "paypal.me")')
-    b:include(name="i:svg", data='{ icon: "paypal" }')
+    b:include(name="i:meteor", data='{ icon: "paypal" }')
 
     b:elseif(cond='(data:url contains "github.com") or (data:url contains "githubusercontent.com")')
-    b:include(name="i:svg", data='{ icon: "github" }')
+    b:include(name="i:meteor", data='{ icon: "github" }')
 
     b:elseif(cond='(data:url contains "ko-fi.com")')
-    b:include(name="i:svg", data='{ icon: "coffee" }')
+    b:include(name="i:meteor", data='{ icon: "coffee" }')
 
     b:elseif(cond='(data:url contains "sellfy.store") or (data:url contains "sellfy.com")')
-    b:include(name="i:svg", data='{ icon: "cart-shopping" }')
+    b:include(name="i:meteor", data='{ icon: "cart-shopping" }')
 
     b:elseif(cond='(data:url contains "coinbase.com")')
-    b:include(name="i:svg", data='{ icon: "coinbase" }')
+    b:include(name="i:meteor", data='{ icon: "coinbase" }')
 
     b:elseif(cond='(data:url contains "://www.amazon.") or (data:url contains "://a.co/")')
-    b:include(name="i:svg", data='{ icon: "amazon" }')
+    b:include(name="i:meteor", data='{ icon: "amazon" }')
 
     b:elseif(cond='(data:url contains "appgallery.huawei.com")')
-    b:include(name="i:svg", data='{ icon: "app-gallery" }')
+    b:include(name="i:meteor", data='{ icon: "app-gallery" }')
 
     b:elseif(cond='(data:url contains "apps.apple.com")')
-    b:include(name="i:svg", data='{ icon: "app-store" }')
+    b:include(name="i:meteor", data='{ icon: "app-store" }')
 
     b:elseif(cond='(data:url contains "play.google.com")')
-    b:include(name="i:svg", data='{ icon: "google-play" }')
+    b:include(name="i:meteor", data='{ icon: "google-play" }')
 
     b:else
-    b:include(name="i:svg", data='{ icon: "paperclip" }')
+    b:include(name="i:meteor", data='{ icon: "paperclip" }')

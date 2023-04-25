@@ -14,7 +14,7 @@ b:includable(id="post:pagination")
 
           //- Remplaza la url con el parámetro de entrada
           b:attr(name='href' cond='data:newerPageUrl != data:blog.homepageUrl.canonical and (data:$navi.layout != data:skin.vars.e_type)' expr:value='data:newerPageUrl params {view: data:$navi.layout}')
-          b:include(name="i:svg", data='{ icon: "arrow-left" }')
+          b:include(name="i:meteor", data='{ icon: "arrow-left" }')
           <data:messages.newer/>
 
       //- Botón MAS ANTIGUOS
@@ -24,4 +24,4 @@ b:includable(id="post:pagination")
           //- Remplaza la url con el parámetro de entrada
           b:attr(name='href' cond='data:$navi.layout != data:skin.vars.e_type' expr:value='data:olderPageUrl params {view: data:$navi.layout}')
           <data:messages.older/>
-          b:include(name="i:svg", data='{ icon: "arrow-right" }')
+          b:include(name="i:meteor", data='{ icon: "arrow-right" }')

@@ -23,5 +23,3 @@ Si el valor ingresado no es válido, el valor por defecto será `null`.
 ## unit
 
 La unidad de medida especificada servirá para indicarle a las columnas **hasta que punto pueden reducir su ancho**. Cuando el ancho mínimo es alcanzado, las columnas continuarán en la siguiente fila, lo que favorece al diseño responsive.
-
-![p-rel-cols](/images/variables/post/p-rel-cols.png)

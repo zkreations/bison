@@ -8,12 +8,12 @@ b:includable(id="post:meta")
 
   b:if(cond='data:show.timestamp')
     time.meta-item.has-icon.capitalize(expr:datetime='data:post.date.iso8601')
-      b:include(name='i:svg' data='{ icon: "clock" }')
+      b:include(name='i:meteor' data='{ icon: "clock" }')
       <data:post.date/>
 
   b:if(cond='data:show.comments')
     a.meta-item.has-icon(expr:href='data:post.url.canonical.https fragment "comments"')
-      b:include(name='i:svg' data='{ icon: "comment" }')
+      b:include(name='i:meteor' data='{ icon: "comment" }')
       b:if(cond='data:skin.vars.c_disqus and data:skin.vars.c_disqus != ""')
         span.disqus-comment-count(expr:data-disqus-url='data:post.url.canonical.https') 0
         b:else

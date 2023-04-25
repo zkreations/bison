@@ -88,7 +88,7 @@ Se insertará tu sistema de comentarios personalizado
 <b:defaultmarkups>
   <b:defaultmarkup type="Common">
     <b:includable id="post:icon">
-      <b:include name='i:svg' data='{ icon: "fire" }'/>
+      <b:include name='i:meteor' data='{ icon: "fire" }'/>
     </b:includable>
   </b:defaultmarkup>
 </b:defaultmarkups>

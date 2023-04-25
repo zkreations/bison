@@ -13,4 +13,4 @@ b:includable(id='widget:Navbar')
     .header-social.ms-auto(class="none m:flex").flex-wrap.items-center.g-1.fs-5
       b:loop(values='data:links where (l => l.title in data:skin.vars.q_social)', var='link')
         a.header-link(expr:href='data:link.href' expr:aria-label="data:link.title" target="_blank" rel="noopener noreferrer nofollow")
-          b:include(name="i:svg", data="{ icon: data:link.title }")
+          b:include(name="i:meteor", data="{ icon: data:link.title }")

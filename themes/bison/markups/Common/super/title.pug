@@ -22,7 +22,7 @@ b:includable(id='$:title')
 
               b:else
               b:tag(name='i' cond="data:option.i" expr:class='data:option.i')
-              b:include(cond="data:option.icon" name='i:svg' data='{ icon: data:option.icon }')
+              b:include(cond="data:option.icon" name='i:meteor' data='{ icon: data:option.icon }')
 
             //- Cantidad de comentarios
             b:if(cond='data:numComments')
@@ -35,6 +35,6 @@ b:includable(id='$:title')
 
           b:if(cond='data:more')
             a(expr:href='data:more', expr:aria-label="data:messages.showAll").widget-name.name-more.ms-auto.has-icon
-              b:include(name="i:svg", data='{ icon: "arrow-right-long" }')
+              b:include(name="i:meteor", data='{ icon: "arrow-right-long" }')
 
 

@@ -25,7 +25,7 @@ b:includable(id="js:templates")
         .gallery-name.fw-500 {{title}}
         b:if(cond="data:show.timestamp")
           .gallery-time.has-icon
-            b:include(name='i:svg' data='{ icon: "clock" }')
+            b:include(name='i:meteor' data='{ icon: "clock" }')
             | {{time}}
 
     //- GRID, CLASSIC, ROW
@@ -62,16 +62,16 @@ b:includable(id="js:templates")
                 img.author-avatar.rounded-pill(alt='{{author_name}}' height='30' data-src='{{author_image}}' width='30')
             b:if(cond='data:show.timestamp')
               span.meta-item.has-icon.capitalize
-                b:include(name='i:svg' data='{ icon: "clock" }')
+                b:include(name='i:meteor' data='{ icon: "clock" }')
                 | {{time}}
             b:if(cond='data:show.comments')
               a.meta-item.has-icon(href='{{url}}#comments')
-                b:include(name='i:svg' data='{ icon: "comment" }')
+                b:include(name='i:meteor' data='{ icon: "comment" }')
                 | {{thr}}
             b:if(cond='!data:view.isPreview and data:skin.vars.a_edit')
               span.item-control.blog-admin
                 a.meta-item.flex.items-center(href='https://www.blogger.com/blog/post/edit/{{blog_id}}/{{post_id}}')
-                  b:include(name='i:svg', data='{ icon: "pencil", class: "me-.5"}')
+                  b:include(name='i:meteor', data='{ icon: "pencil", class: "me-.5"}')
                   <data:messages.edit/>
 
 

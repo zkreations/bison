@@ -34,7 +34,7 @@ b:includable(id="comment:item" var='comment')
               //- Si es que existe alguna respuesta mostramos controlador
               b:if(cond='data:replies.any')
                 label.cursor-pointer.has-icon(expr:for='"r"+ data:comment.id')
-                  b:include(name='i:svg' data='{ icon: "message-dots"}')
+                  b:include(name='i:meteor' data='{ icon: "message-dots"}')
                   b:eval(expr='data:replies.length + " " + data:skin.vars.t_replies')
 
             //- Si es que existe alguna, entonces agregamos un input
