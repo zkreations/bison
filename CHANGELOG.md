@@ -3,6 +3,21 @@
 
 Todos los cambios notables en este proyecto se documentarán en este archivo.
 
+## [5.0.60] - 2023-4-25
+
+### Added
+
+- Permitir imagen personalizada en las plantillas de entradas [#49](https://github.com/zkreations/bison/issues/49)
+
+### Fixed
+
+- Error al compartir con whatsapp [#48](https://github.com/zkreations/bison/issues/48)
+
+### Changed
+
+- Actualizo Meteor Icons
+
+
 ## [5.0.50] - 2023-1-31
 
 ### Changed
